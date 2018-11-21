@@ -1,45 +1,38 @@
 {% extends 'dados/base.html' %}
 
 {% block content %}
-    
-<body id="page-top">
 
-    <!-- Form Grid Section -->
-    <section class="portfolio" id="portfolio">
+{% block title %}Qual é a sua construção?{% endblock %}
+
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
     <div class="container">
         <br/><br/>
-        <form class="row" action="/tela2/" method="post">
-            
-            <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
-                <label for="{{form.Bairro}}">Bairro</label><br>
-                {% csrf_token %}
-                {{ form.bairro }}            
+        <h1 class="js-scroll-trigger text-center">Qual construção você possui?</h1>
+        <br/><br/>
+        <form class="row">
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela4' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Prédios</button>  
+                </a>
             </div>
-            <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
-                <label for="{{form.Nome}}">Rua</label><br>
-                {% csrf_token %}
-                {{ form.nome }}            
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela5' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Casas</button>
+                </a>
             </div>
-            <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
-                <label for="{{form.Area}}">Area do Lote</label><br>
-                {% csrf_token %}
-                {{ form.area }} 
-
-            </div>
-            <div>
-                <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
-            </div>
-            <div>
-            <a href="{% url 'dados:index' %}">
-                <button type="button" class="btn btn-danger btn-lg">Voltar</button>
-            </a>
-            </div>
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela6' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Condomínios</button>
+                </a>
+            </div>                          
         </form>
-       
-        
+        <br/><br/>  
+        <a href="{% url 'dados:index' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>        
     </div>
-    </section>
-    
-</body>
+
+</section>
 
 {% endblock %}

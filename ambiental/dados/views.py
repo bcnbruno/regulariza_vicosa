@@ -49,17 +49,55 @@ def tela4(request):
             f.save()
 
             dado = Dados.objects.get(bairro=bairro, nome=nome) 
-
             if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
                 return HttpResponseRedirect('../tela8/')
-            else:
-                return HttpResponseRedirect('../naoehpossivel/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = FirstForm()
 
     return render(request, 'dados/tela4.html', {'form': form, 'op':opcaoEscolhida})
+
+def tela4_2(request):
+
+    global opcaoEscolhida 
+
+    if Formulario.objects.count() != 0:
+        Formulario.objects.all().delete()
+    
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = FirstForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            
+            bairro = form['bairro'].value()
+            nome = form['nome'].value()
+            area = form['area'].value()
+            area_planta = form['area'].value()
+            num_pav = form['num_pav'].value()
+            num_pessoas = form['num_pessoas'].value()
+
+            global caminho
+            caminho="4"
+
+            f = Formulario(bairro=bairro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f.save()
+
+            dado = Dados.objects.get(bairro=bairro, nome=nome) 
+            if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
+                return HttpResponseRedirect('../tela8/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = FirstForm()
+
+    return render(request, 'dados/tela4.html', {'form': form, 'op':opcaoEscolhida})
+
 
 def tela5(request):
     
@@ -89,14 +127,52 @@ def tela5(request):
 
             if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
                 return HttpResponseRedirect('../tela8/')
-            else:
-                return HttpResponseRedirect('../naoehpossivel/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = FirstForm()
 
     return render(request, 'dados/tela5.html', {'form': form})
+
+def tela5_2(request):
+    
+    if Formulario.objects.count() != 0:
+        Formulario.objects.all().delete()
+    
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = FirstForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            
+            bairro = form['bairro'].value()
+            nome = form['nome'].value()
+            area = form['area'].value()
+            area_planta = form['area'].value()
+            num_pav = form['num_pav'].value()
+            num_pessoas = form['num_pessoas'].value()
+
+            global caminho
+            caminho="5"
+
+            f = Formulario(bairro=bairro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f.save()
+
+            dado = Dados.objects.get(bairro=bairro, nome=nome) 
+
+            if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
+                return HttpResponseRedirect('../tela8/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = FirstForm()
+
+    return render(request, 'dados/tela5.html', {'form': form})
+
 
 def tela6(request):
     return render(request, 'dados/tela6.html', {})
@@ -135,8 +211,45 @@ def tela10(request):
 
             if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
                 return HttpResponseRedirect('../tela8/')
-            else:
-                return HttpResponseRedirect('../naoehpossivel/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = FirstForm()
+
+    return render(request, 'dados/tela10.html', {'form': form})
+
+def tela10_2(request):
+
+    if Formulario.objects.count() != 0:
+        Formulario.objects.all().delete()
+
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = FirstForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            
+            bairro = form['bairro'].value()
+            nome = form['nome'].value()
+            area = form['area'].value()
+            area_planta = form['area'].value()
+            num_pav = form['num_pav'].value()
+            num_pessoas = form['num_pessoas'].value()
+
+            global caminho
+            caminho="10"
+
+            f = Formulario(bairro=bairro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f.save()
+
+            dado = Dados.objects.get(bairro=bairro, nome=nome) 
+
+            if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
+                return HttpResponseRedirect('../tela8/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -172,14 +285,52 @@ def tela11(request):
 
             if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
                 return HttpResponseRedirect('../tela8/')
-            else:
-                return HttpResponseRedirect('../naoehpossivel/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = FirstForm()
 
     return render(request, 'dados/tela11.html', {'form': form})
+
+def tela11_2(request):
+    
+    if Formulario.objects.count() != 0:
+        Formulario.objects.all().delete()
+
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = FirstForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            
+            bairro = form['bairro'].value()
+            nome = form['nome'].value()
+            area = form['area'].value()
+            area_planta = form['area'].value()
+            num_pav = form['num_pav'].value()
+            num_pessoas = form['num_pessoas'].value()
+
+            global caminho
+            caminho="11"
+
+            f = Formulario(bairro=bairro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f.save()
+
+            dado = Dados.objects.get(bairro=bairro, nome=nome) 
+
+            if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
+                return HttpResponseRedirect('../tela8/')
+            elif int(num_pav) > dado.num_pav:
+                return render(request, 'dados/naoehpossivel.html', {'value': dado.num_pav})
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = FirstForm()
+
+    return render(request, 'dados/tela11.html', {'form': form})
+
 
 def tela12(request):
     return render(request, 'dados/tela12.html', {})
@@ -198,6 +349,9 @@ def tela16(request):
 
 def tela17(request):
     return render(request, 'dados/tela17.html', {})
+
+def tela18(request):
+    return render(request, 'dados/tela18.html', {})
 
 def naoehpossivel(request):
  
@@ -220,3 +374,7 @@ def organicos(request):
 def rejeitos(request):
  
     return render(request, 'dados/rejeitos.html', {})
+
+def regularizadosim(request):
+ 
+    return render(request, 'dados/regularizadosim.html', {})

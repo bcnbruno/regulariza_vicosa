@@ -1,0 +1,38 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Possibilidade de construção{% endblock %}
+  
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <br/><br/>
+        <h1 class="js-scroll-trigger text-center">O que você deseja?</h1>
+        <br/><br/>
+        <form class="row">
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela13' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Coleta e tratamento de esgotos</button>  
+                </a>
+            </div>
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela14' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Abasteciemento de água</button>
+                </a>
+            </div>
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela15' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Autorização para corte de árvores</button>
+                </a>
+            </div>      
+            
+        </form>
+        <br/><br/>
+        <a href="{% url 'dados:tela3' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>        
+    </div>
+</section>
+
+{% endblock %}

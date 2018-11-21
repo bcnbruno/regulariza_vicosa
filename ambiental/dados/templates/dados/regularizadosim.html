@@ -1,0 +1,36 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Documentos para contrução{% endblock %}
+   
+    <div class="container">
+        <br><br><br><br><br>
+        <h3 class="js-scroll-trigger text-left">Emissão alvará de contrução</h1> <br>
+
+        <p class="lead">Caso o seu terreno esteja localizado próximo a um rio, nascente, 
+            manancial, em topo de morro, áreas muito declivosas ou em área que contenha 
+            vegetação é preciso consultar o Órgão Ambiental da cidade antes de iniciar a 
+            construção, pois pode estar localizado em uma área de proteção permanente (APP)! 
+            Em Viçosa o órgão ambiental responsável é o CODEMA localizado na Rua Gomes Barbosa, 
+            nº 803, Centro, Viçosa/MG. Telefones: 3891-3714 | 3891-7648.
+        </p>
+
+        <p class="lead">Clique aqui para saber mais sobre as APPs!</p>
+
+
+        <p class="lead">Os documentos a serem requisitados no IPLAM também podem ser obtidos no 
+            site:</p>
+        <p><a href="http://www.vicosa.mg.gov.br/detalhe-da-materia/info/instituto-de-planejamento-e-meio-ambiente-do-municipio-iplam/11028">
+            http://www.vicosa.mg.gov.br/detalhe-da-materia/info/instituto-de-planejamento-e
+            -meio-ambiente-do-municipio-iplam/11028</a>
+        </p>
+        <br><br><br><br>
+        <div>
+            <a href="{% url 'dados:tela8' %}">
+                <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            </a>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Contrucao regularizada?{% endblock %}
+
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <br/><br/>
+        <h1 class="js-scroll-trigger text-center">Sua contrução está regularizada?</h1>
+        <br/><br/>
+        <form class="row">
+            <div class="col-md-6 pt-2 pb-2">
+                <a href="{% url 'dados:regularizadosim' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Sim</button>  
+                </a>
+            </div>
+            <div class="col-md-6 pt-2 pb-2">
+                <a href="{% url 'dados:tela19' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Não</button>
+                </a>
+            </div>                          
+        </form>
+        <br/><br/>  
+        <a href="{% url 'dados:index' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>        
+    </div>
+
+</section>
+
+{% endblock %}

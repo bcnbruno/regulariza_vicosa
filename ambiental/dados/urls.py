@@ -9,6 +9,9 @@ urlpatterns = [
     path('tela3/', views.tela3, name='tela3'),
     path('tela4/', views.tela4, name='tela4'),
     path('tela5/', views.tela5, name='tela5'),
+    path('tela4_2/', views.tela4_2, name='tela4_2'),
+    path('tela5_2/', views.tela5_2, name='tela5_2'),
+    
     path('tela6/', views.tela6, name='tela6'),
     path('tela7/', views.tela7, name='tela7'),
     path('tela8/', views.tela8, name='tela8'),   
@@ -20,6 +23,9 @@ urlpatterns = [
     path('tela15/', views.tela15, name='tela15'),
     path('tela16/', views.tela16, name='tela16'),
     path('tela17/', views.tela17, name='tela17'),
+    path('tela18/', views.tela18, name='tela18'),
+    
+    path('regularizadosim/', views.regularizadosim, name='regularizadosim'),
     path('naoehpossivel/', views.naoehpossivel, name='naoehpossivel'),
     path('docconstrucao/', views.docconstrucao, name='docconstrucao'),
     path('reciclaveis/', views.reciclaveis, name='reciclaveis'),

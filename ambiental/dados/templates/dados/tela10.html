@@ -22,12 +22,12 @@
             {{ form.nome }}            
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Area}}">Area do Lote</label><br>
+            <label for="{{form.Area}}">Área do total lote (m<sup>2</sup>)</label><br>
             {% csrf_token %}
             {{ form.area }}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Area}}">Area do Lote (em planta)</label><br>
+            <label for="{{form.Area}}">Área construída em planta (m<sup>2</sup>)</label><br>
             {% csrf_token %}
             {{ form.area_planta }}
         </div>
@@ -45,7 +45,7 @@
                 <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
         </div>
         <div>
-            <a href="{% url 'dados:tela3' %}">
+            <a href="{% url 'dados:tela6' %}">
                 <button type="button" class="btn btn-danger btn-lg">Voltar</button>
             </a>
         </div>
