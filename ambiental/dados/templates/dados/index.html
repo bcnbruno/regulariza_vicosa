@@ -1,0 +1,44 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+
+<!-- Header -->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="../../static/dados/bootstrap/img/profile.png" alt="">
+        <h1 class="text-uppercase mb-0">Sistema de Regularização Ambiental</h1>
+        <br/><br/>
+        
+        <form action="/tela3/" method="post">
+        <div class="row">   
+            <div class="col-md-6 pt-2 pb-2">
+                {% csrf_token %}
+                <input name="0" value="Vou iniciar uma contrução" type="submit" class="btn btn-secondary btn-lg btn-block"> 
+            
+            </div>
+            <div class="col-md-6 pt-2 pb-2">
+                {% csrf_token %} 
+                <input name="0" value="Já tenho residencia no local" type="submit" class="btn btn-secondary btn-lg btn-block">
+                
+            </div>                         
+        </div> 
+        </form>
+        
+    </div>
+</header>
+
+<div class="container">
+</div>
+<div class="copyright py-4 text-center text-white">
+    <div class="container">
+        <small>Copyright &copy; Your Website 2018</small>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+       

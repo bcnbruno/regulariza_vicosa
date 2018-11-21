@@ -1,0 +1,17 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+<div class="container">
+    <br><br><br><br><br>
+    <h1 class="text-uppercase mb-0">Não é possível contruir no local :(</h1>
+    <br><br><br>
+    <div>
+        <a href="{% url 'dados:tela3' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

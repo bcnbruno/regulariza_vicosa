@@ -1,0 +1,57 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Construção de casa{% endblock %}
+
+<!-- Grid Section -->
+<section class="predio" id="predio">
+  <div class="container">
+    <br/><br/>
+    <h1 class="js-scroll-trigger text-center">Casa</h1>
+    <br/><br/>
+    <form class="row" action="/tela5/" method="post">
+        <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
+            <label for="{{form.Bairro}}">Bairro</label><br>
+            {% csrf_token %}
+            {{ form.bairro }}            
+        </div>
+        <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
+            <label for="{{form.Nome}}">Rua</label><br>
+            {% csrf_token %}
+            {{ form.nome }}            
+        </div>
+        <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
+            <label for="{{form.Area}}">Area do Lote</label><br>
+            {% csrf_token %}
+            {{ form.area }}
+        </div>
+        <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
+            <label for="{{form.Area}}">Area do Lote (em planta)</label><br>
+            {% csrf_token %}
+            {{ form.area_planta }}
+        </div>
+        <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
+            <label for="{{form.Num_pav}}">Número de pavimentos</label><br>
+            {% csrf_token %}
+            {{form.num_pav}}
+        </div>
+        <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
+            <label for="{{form.Num_pessoas}}">Quantidade de moradores</label><br>
+            {% csrf_token %}
+            {{form.num_pessoas}}
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+        </div>
+        <div>
+            <a href="{% url 'dados:tela3' %}">
+                <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            </a>
+        </div>            
+    </form>   
+
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Tratamentos{% endblock %}
+
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <br/><br/>
+        <h1 class="js-scroll-trigger text-center">Escolha uma opção de destino final</h1>
+        <br/><br/>
+        <form class="row">
+          <div class="col-md-6 pt-2 pb-2">
+              <a href="./tela5.html">
+                  <button type="button" class="btn btn-secondary btn-lg btn-block">Sumidouro</button>  
+              </a>
+          </div>
+          <div class="col-md-6 pt-2 pb-2">
+              <a href="./tela16.html">
+                  <button type="button" class="btn btn-secondary btn-lg btn-block">Wetlands</button>
+              </a>
+          </div> 
+                        
+        </form>
+        <br/><br/>  
+          <a href="./tela12.html">
+              <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+          </a>        
+    </div>
+</section>
+
+{% endblock %}

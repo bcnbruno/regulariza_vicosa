@@ -1,0 +1,32 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Construção de Condomínio{% endblock %}
+  
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <br/><br/>
+        <h1 class="js-scroll-trigger text-center">Condomínio</h1>
+        <br/><br/>
+        <form class="row">
+            <div class="col-md-6 pt-2 pb-2">
+                <a href="{% url 'dados:tela10' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Vertical</button>  
+                </a>
+            </div>
+            <div class="col-md-6 pt-2 pb-2">
+                <a href="{% url 'dados:tela11' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Horizontal</button>
+                </a>
+            </div>                 
+        </form>
+        <br/><br/>  
+        <a href="{% url 'dados:tela3' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>        
+    </div>
+</section>
+
+{% endblock %}
