@@ -378,3 +378,25 @@ def rejeitos(request):
 def regularizadosim(request):
  
     return render(request, 'dados/regularizadosim.html', {})
+
+def sumidouro(request):
+ 
+    return render(request, 'dados/sumidouro.html', {})
+
+def tanque(request):
+ 
+    return render(request, 'dados/tanque.html', {})
+
+def orientacao_ocupacao(request):
+ 
+    f = Formulario.objects.get()
+    bairro = f.bairro
+    nome = f.nome
+    dados = Dados.objects.get(bairro=bairro, nome=nome) 
+
+    ar_arPlanta = (f.area_planta / f.area)*100 
+    tx_area = dados.taxa_prm * f.area_planta
+    #cp_area = float(dados.coef_aprov) * f.area_planta
+    cp_area = f.area_planta
+
+    return render(request, 'dados/orientacao_ocupacao.html', {'cp_area':cp_area, 'tx_area':tx_area, 'dados':dados, 'ar_arPlanta': ar_arPlanta, 'form':f})

@@ -31,4 +31,7 @@ urlpatterns = [
     path('reciclaveis/', views.reciclaveis, name='reciclaveis'),
     path('organicos/', views.organicos, name='organicos'),
     path('rejeitos/', views.rejeitos, name='rejeitos'),
+    path('sumidouro/', views.sumidouro, name='sumidouro'),
+    path('tanque/', views.tanque, name='tanque'),
+    path('orientacao_ocupacao/', views.orientacao_ocupacao, name='orientacao_ocupacao'),
 ]

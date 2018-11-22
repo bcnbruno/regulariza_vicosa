@@ -1,0 +1,35 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+<div class="container">
+    <br><br><br><br><br>
+    <p class="lead" align="justify">O Sumidouro é uma forma de infiltra a água já limpa no 
+        solo, sem contamina-lo, e também é aterrado. Ele receberá a água do filtro anaeróbio 
+        pode ter suas laterais com furos, permitindo a infiltração lenta da água já tratada 
+        no solo. Sendo assim ele pode ter as mesmas dimensões que a fossa séptica, o efluente 
+        tratado sai do filtro e entra no sumidouro por cima.
+        <br>
+
+        <div align="center">
+            <style>
+                img{
+                    max-width:100%;
+                    height:auto;
+                    }
+                </style>
+            <img src="../../static/img/sumidouro.png" />
+
+        </div>
+    
+    </p>
+    <br>
+    <div>
+        <a href="{% url 'dados:tela3' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

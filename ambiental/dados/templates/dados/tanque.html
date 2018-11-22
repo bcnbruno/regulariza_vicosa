@@ -1,0 +1,44 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+<div class="container">
+    <br><br><br><br><br>
+    <p align="justify">
+            A fossa s&eacute;ptica e o filtro anaer&oacute;bio s&atilde;o formas de tratamento de efluentes que ocorrem sem a presen&ccedil;a de oxig&ecirc;nio, as bact&eacute;rias ali presentes s&atilde;o capazes de remover a mat&eacute;ria org&acirc;nica presente no esgoto e assim devolver a &aacute;gua ao meio ambiente de forma mais limpa. O tanque e o filtro s&atilde;o estrutura que ficam abaixo do n&iacute;vel do solo, aterradas, por isso deve-se tomar cuidado para n&atilde;o cavar at&eacute; o n&iacute;vel do len&ccedil;ol fre&aacute;tico.</p>
+            <p>Orienta&ccedil;&otilde;es iniciais para a constru&ccedil;&atilde;o do Tanque S&eacute;ptico, Filtro Anaer&oacute;bio e Sumidouro.</p>
+            <p>Os tanques s&eacute;pticos devem observar as seguintes dist&acirc;ncias horizontais m&iacute;nimas:</p>
+            <ol>
+            <li align="justify">&nbsp;1,50 m de constru&ccedil;&otilde;es, limites de terreno, sumidouros, valas de infiltra&ccedil;&atilde;o e ramal predial de &aacute;gua;</li>
+            <li align="justify">&nbsp;3,0 m de &aacute;rvores e de qualquer ponto de rede p&uacute;blica de abastecimento de &aacute;gua;</li>
+            <li align="justify">15,0 m de po&ccedil;os fre&aacute;ticos e de corpos de &aacute;gua de qualquer natureza.</li>
+            </ol>
+            <p align="justify"><strong>Nota:</strong> As dist&acirc;ncias m&iacute;nimas s&atilde;o computadas a partir da face externa mais pr&oacute;xima aos elementos considerados.</p>
+            <p align="justify">Para constru&ccedil;&atilde;o tanto do Tanque S&eacute;ptico quanto do Filtro Anaer&oacute;bio &eacute; necess&aacute;rio utilizar material imperme&aacute;vel para evitar a contamina&ccedil;&atilde;o do solo. Os materiais indicados s&atilde;o tijolos e concreto. As indica&ccedil;&otilde;es abaixo s&atilde;o para constru&ccedil;&atilde;o do Tanque S&eacute;ptico Retangular ou Prism&aacute;tico. </p>
+            <p align="justify">Os tubos de chegada e sa&iacute;da do tanque recomendados s&atilde;o de 100mm de di&acirc;metro, podendo variar, contudo n&atilde;o podem ser maiores 150 mm segundo especifica&ccedil;&otilde;es da norma.</p>
+            <p align="justify">&nbsp;</p>
+            <p align="justify">Para {X} pessoas a sugest&atilde;o de dimens&otilde;es do seu tanque s&atilde;o:</p>
+        <br>
+
+        <div align="center">
+            <style>
+                img{
+                    max-width:100%;
+                    height:auto;
+                    }
+                </style>
+            <img src="../../static/img/sumidouro.png" />
+
+        </div>
+    
+    </p>
+    <br>
+    <div>
+        <a href="{% url 'dados:tela3' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container">
+    <br><br><br><br><br>
+        <p class="lead" align="justify">
+            Nessa etapa a pessoa que estiver utilizando o programa receberá os valores de taxa de ocupação, coeficiente de aproveitamento, testada mínima e taxa de impermeabilização de acordo com a zona a qual seu lote está localizado. Também serão dadas as definições para que seja esclarecido o que significa cada item. As definições serão colocadas da seguinte forma:
+        </p>
+        <br>
+
+        <p>
+            <div align="center">
+                    <style type="text/css">
+                        .tg  {border-collapse:collapse;border-spacing:0;}
+                        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+                        .tg .tg-0lax{text-align:left;vertical-align:top}
+                        .tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+                        .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+                        </style>
+                        <table class="tg" style="undefined;table-layout: fixed; width: 705px">
+                        <colgroup>
+                        <col style="width: 101px">
+                        <col style="width: 151px">
+                        <col style="width: 151px">
+                        <col style="width: 151px">
+                        <col style="width: 151px">
+                        </colgroup>
+                          <tr>
+                            <th class="tg-0lax"></th>
+                            <th class="tg-7btt">Taxa de Ocupação Máxima</th>
+                            <th class="tg-7btt">Testada Mínima</th>
+                            <th class="tg-7btt">Taxa de Permeabilização Mínima</th>
+                            <th class="tg-7btt">Coeficiente de Aproveitamento Máximo</th>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Limite em Lei</td>
+                            <td class="tg-amwm">{{dados.taxa_ocp}}</td>
+                            <td class="tg-c3ow">{{dados.testada_min}}</td>
+                            <td class="tg-c3ow">{{dados.taxa_prm}}</td>
+                            <td class="tg-c3ow">{{dados.coef_aprov}}</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-amwm">Usuário</td>
+                            <td class="tg-c3ow">{{ar_arPlanta}}%</td>
+                            <td class="tg-c3ow">{{dados.testada_min}}</td>
+                            <td class="tg-c3ow">{{tx_area}}</td>
+                            <td class="tg-c3ow">CP * área do lote<br>
+                                                {{cp_area}}</td>
+                          </tr>
+                        </table>
+            </div>
+
+            <h3>Taxa de ocupação</h3>
+
+        <p>A Taxa de Ocupação (TO) é definida pela porcentagem que a projeção do 
+            imóvel ocupa do terreno, não importando nesse caso a quantidade de 
+            pavimentos ou a área ocupada, mas a projeção dessa estrutura no lote, 
+            nas imagens da figura a seguir podemos ver que apesar do segundo imóvel 
+            não ocupar os dois primeiros andares como o desenho do primeiro imóvel os 
+            dois terão a mesma Taxa de Ocupação já que as projeções dos imóveis no terreno 
+            são iguais, porém o seus coeficientes de aproveitamento são diferentes e isso será
+             mostrado no próximo item.</p>
+
+
+        </p>
+        
+    <div>
+        <a href="{% url 'dados:tela8' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+{% endblock %}
