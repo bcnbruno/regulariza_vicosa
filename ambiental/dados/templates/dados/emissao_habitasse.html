@@ -1,0 +1,45 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+<div class="container">
+    <br><br><br><br><br>
+                              
+    <p class="lead">Por que ter habite-se? Ele é um documento que atesta que o imóvel foi construído
+        seguindo as diretrizes municipais. Sem ele você não consegue transferir a propriedade 
+        do imóvel em cartório e pode ter problemas conseguindo um financiamento.</p>
+        <p class="lead">Descrição:</p>
+        <p class="lead">Emissão de habite-se para construções no território urbano 
+            de Viçosa (MG).</p>
+            <p class="lead">Documentos:</p>
+        <ul>
+            <li class="lead">Certidão de Registro de Imóveis – CRI revalidado;</li>
+            <li class="lead">Certidão Negativa de Débitos Municipais – CND do lote;</li>
+            <li class="lead">Cópia do RG ou documento similar de identificação;</li>
+            <li class="lead">Cópia do RG ou documento similar de identificação;</li>
+            <li class="lead">Pessoa Jurídica: Cópia do contrato social da empresa (no caso de mais de um 
+            responsável legal todos deverão assinar o projeto arquitetônico ou quadro de áreas 
+            ou apresentar procuração nomeando o responsável por movimentar o processo junto ao</li>
+            
+        
+        </ul>
+        
+        <p class="lead">IPLAM.</p>
+    
+        <p class="lead">Prazo para prestação do serviço:</p>
+        <p class="lead">15 dias úteis</p>
+        <p class="lead">Taxas:</p>
+        <p class="lead">0,02 UFM POR M²</p>
+        <p class="lead">[UFM= R$ 49,09 (2018)]</p>
+        
+        <div>
+                <a href="{% url 'dados:docconstrucao' %}">
+                    <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+                </a>
+            </div><br>
+
+</div>            
+    
+    
+{% endblock %}

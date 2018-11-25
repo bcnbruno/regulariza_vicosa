@@ -1,0 +1,42 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container">
+    <br><br><br><br><br>
+
+    <p class="lead">Caso você queira analisar a conformidade do projeto arquitetônico 
+        com as leis municipais antes de iniciar o processo de construção você pode requisitar
+        uma Análise desse projeto. Se você quiser já iniciar com a construção poderá começar 
+        pela emissão do Alvará de construção. As exigências da análise de projetos 
+        arquitetônicos são:</p>
+    <p class="lead">Descrição:</p>
+    <ul class="lead">
+        <li>Certidão de Registro de Imóveis – CRI revalidado;</li>
+        <li>Certidão Negativa de Débitos Municipais – CND do lote;</li>
+        <li>Cópia do RG ou documento similar de identificação;</li>
+        <li>Anotação de responsabilidade técnica (ART) ou Registro de 
+            responsabilidade técnica (RRT);</li>
+        <li>ISSQN dos responsáveis técnicos;</li>
+        <li>Projeto arquitetônico completo;</li>
+        <li>Quadro de áreas (modelo IPLAM) (facultativo para os casos de edificações destinadas 
+            ao uso residencial unifamiliar);</li>
+        <li>No caso de Pessoa Jurídica: Cópia do contrato social da empresa (no caso de mais de um 
+            responsável legal todos deverão assinar o projeto arquitetônico ou quadro de áreas ou 
+            apresentar procuração nomeando o responsável por movimentar o processo junto ao IPLAM.</li>
+    </ul>
+    <p class="lead">Prazo para prestação do serviço:</p>
+    <p class="lead">30 dias úteis.</p>
+    <p class="lead">Taxas:</p>
+    <p class="lead">0,04 UFM POR M<sup>2</sup></p>
+    <p class="lead">[UFM= R$ 49,09 (2018)]</p>
+    </p>
+    <div><br>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div><br>
+{% endblock %}
+

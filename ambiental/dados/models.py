@@ -42,3 +42,7 @@ class Formulario(models.Model):
     area_planta = models.FloatField()
     num_pav = models.IntegerField()
     num_pessoas = models.IntegerField()
+
+class Tanque(models.Model):
+    comprimento = models.FloatField()
+    largura = models.FloatField()

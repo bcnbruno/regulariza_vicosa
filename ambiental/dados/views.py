@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 from django.db.models import Q
-from .models import Dados, Formulario
+from .models import Dados, Formulario, TSeptico, Tanque
 from .forms import FirstForm
+import pylab as pl
 
 opcaoEscolhida = ""
 caminho = ""
@@ -38,7 +39,7 @@ def tela4(request):
             bairro = form['bairro'].value()
             nome = form['nome'].value()
             area = form['area'].value()
-            area_planta = form['area'].value()
+            area_planta = form['area_planta'].value()
             num_pav = form['num_pav'].value()
             num_pessoas = form['num_pessoas'].value()
 
@@ -347,8 +348,35 @@ def tela15(request):
 def tela16(request):
     return render(request, 'dados/tela16.html', {})
 
+def comprimento(area):
+    comp = []
+    larg = []
+    for l in pl.frange(0.8, 100, 0.2):
+        c = round((area / l),1)
+        if (c / l) >= 2 and (c / l) <= 4:
+            comp.append(round(c, 2))
+            larg.append(round(l, 2))
+    return comp, larg
+
 def tela17(request):
-    return render(request, 'dados/tela17.html', {})
+    f = Formulario.objects.get()
+
+    pessoas = f.num_pessoas
+
+    tanque = TSeptico.objects.get(num_pessoas=pessoas)
+
+    volume = tanque.volume_util_M
+    diametro = tanque.diametro.replace(",", ".")
+    area = float(tanque.area.replace(",", "."))
+    profundidade = float( str(tanque.alt_adotada).replace(",", ".") ) + 0.30
+    comp, larg = comprimento(area)
+  
+    c = zip(comp,larg)
+    
+
+    return render(request, 'dados/tela17.html', {'c':c, 'pessoas':pessoas, 'volume':volume, 'profundidade':profundidade, 'diametro':diametro, 'area':area, 'comp':comp, 'larg':larg})
+
+
 
 def tela18(request):
     return render(request, 'dados/tela18.html', {})
@@ -383,10 +411,6 @@ def sumidouro(request):
  
     return render(request, 'dados/sumidouro.html', {})
 
-def tanque(request):
- 
-    return render(request, 'dados/tanque.html', {})
-
 def orientacao_ocupacao(request):
  
     f = Formulario.objects.get()
@@ -394,9 +418,35 @@ def orientacao_ocupacao(request):
     nome = f.nome
     dados = Dados.objects.get(bairro=bairro, nome=nome) 
 
-    ar_arPlanta = (f.area_planta / f.area)*100 
+    ar_arPlanta = round( ((f.area_planta / f.area)*100), 2) 
     tx_area = dados.taxa_prm * f.area_planta
-    #cp_area = float(dados.coef_aprov) * f.area_planta
-    cp_area = f.area_planta
+    cp_area = float(dados.coef_aprov.replace(",", ".")) * f.area_planta
+    #cp_area = f.area_planta
 
     return render(request, 'dados/orientacao_ocupacao.html', {'cp_area':cp_area, 'tx_area':tx_area, 'dados':dados, 'ar_arPlanta': ar_arPlanta, 'form':f})
+
+def doc_saae(request):
+
+    return render(request, 'dados/doc_saae.html', {})
+
+def pocos(request):
+    f = Formulario.objects.get()
+    n = (int(f.num_pessoas) * 190 )/ 1000
+
+    return render(request, 'dados/pocos.html', {'n':n})
+
+def emissao_habitasse(request):
+    
+    return render(request, 'dados/emissao_habitasse.html', {})
+
+def emissao_alvara_const(request):
+    
+    return render(request, 'dados/emissao_alvara_const.html', {})
+
+def emissao_alvara(request):
+    
+    return render(request, 'dados/emissao_alvara.html', {})
+
+def proj_arq(request):
+    
+    return render(request, 'dados/proj_arq.html', {})

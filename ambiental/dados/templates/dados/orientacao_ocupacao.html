@@ -49,29 +49,73 @@
                             <td class="tg-c3ow">{{ar_arPlanta}}%</td>
                             <td class="tg-c3ow">{{dados.testada_min}}</td>
                             <td class="tg-c3ow">{{tx_area}}</td>
-                            <td class="tg-c3ow">CP * área do lote<br>
-                                                {{cp_area}}</td>
+                            <td class="tg-c3ow">{{cp_area}}</td>
                           </tr>
                         </table>
             </div>
+        <br><br>
+        <h3 class="js-scroll-trigger text-left">Taxa de ocupação</h3>
 
-            <h3>Taxa de ocupação</h3>
-
-        <p>A Taxa de Ocupação (TO) é definida pela porcentagem que a projeção do 
+        <p class="lead">A Taxa de Ocupação (TO) é definida pela porcentagem que a projeção do 
             imóvel ocupa do terreno, não importando nesse caso a quantidade de 
             pavimentos ou a área ocupada, mas a projeção dessa estrutura no lote, 
             nas imagens da figura a seguir podemos ver que apesar do segundo imóvel 
             não ocupar os dois primeiros andares como o desenho do primeiro imóvel os 
             dois terão a mesma Taxa de Ocupação já que as projeções dos imóveis no terreno 
             são iguais, porém o seus coeficientes de aproveitamento são diferentes e isso será
-             mostrado no próximo item.</p>
+             mostrado no próximo item.</p><br>        
 
+        <h3 class="js-scroll-trigger text-left">Coeficientes de Aproveitamento</h3>
 
+        <p class="lead">O Coeficiente de Aproveitamento (CA) é um multiplicador que permite 
+            determinar quantas vezes a área do lote pode ser ocupada, por exemplo: Um lote com 
+            100 m2 e um Coeficiente de aproveitamento igual à 2, significa que o imóvel a ser 
+            construído pode ter uma área construída 2 vezes maior que a área do terreno, ou seja  
+            200m2 neste caso. Combinando com uma taxa de ocupação hipotética de 50% o imóvel pode 
+            ocupar então 50% da área do terreno, ou seja, 50 m2. Para atingir os 200 m2 permitido o 
+            proprietário pode então optar por um prédio de 4 andares com 50 m2 cada um ou 8 andares 
+            com 25 m2, 2 andares com 50 m2 e 4 com 25 m2, ou seja, qualquer combinação que atenda 
+            tanto a Taxa de Ocupação Quanto o Coeficiente de aproveitamento 
+        </p><br>
+
+        <p class="text-center">Exemplo de Taxa e Ocupação e Coeficiente de Aproveitamento</p><br>
+        <div class="text-center">
+            <img class="text-center" src="../../static/img/uso_1.png">
+        </div>
+        <p class="text-center">Fonte: PMV (2000)</p>
+
+        <h3 class="js-scroll-trigger text-left">Testada mínima</h3>
+
+        <p class="lead">A testada é a largura da frente do lote, do lado que está voltado para a 
+            via, a legislação determina que esta largura deve atender a pelo menos um valor 
+            mínimo que varia de acordo com a região do lote</p><br>
+
+        <p class="text-center">Testada</p>
+        <div class="text-center">
+            <img class="text-center" src="../../static/img/uso_2.jpg">
+        </div>
+        <p class="text-center">Fonte: PMV (2000)</p><br>
+    
+
+        <h3 class="js-scroll-trigger text-left">Taxa de permeabilização</h3>
+
+        <p class="lead">É a porcentagem da área do lote capaz de absorver as águas da chuva para 
+            dentro do solo livremente, sem o impedimento de garagens ou outras construções no 
+            subsolo. A prefeitura adota uma taxa de permeabilização mínima que deve ser 
+            considerada no projeto sendo comumente adotado a utilização de jardins, mas podendo
+             também ser empregado calçamentos especiais drenantes.
         </p>
+
+        <p class="text-center">Ocupação do solo</p><br>
+        <div class="text-center">
+            <img class="text-center" src="../../static/img/uso_3.png">
+        </div>
+        <p class="text-center">Fonte: PMV (2000)</p><br>
+
         
     <div>
         <a href="{% url 'dados:tela8' %}">
             <button type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
-    </div>
+    </div><br>
 {% endblock %}

@@ -32,6 +32,11 @@ urlpatterns = [
     path('organicos/', views.organicos, name='organicos'),
     path('rejeitos/', views.rejeitos, name='rejeitos'),
     path('sumidouro/', views.sumidouro, name='sumidouro'),
-    path('tanque/', views.tanque, name='tanque'),
     path('orientacao_ocupacao/', views.orientacao_ocupacao, name='orientacao_ocupacao'),
+    path('doc_saae/', views.doc_saae, name='doc_saae'),
+    path('pocos/', views.pocos, name='pocos'),
+    path('emissao_habitasse/', views.emissao_habitasse, name='emissao_habitasse'),
+    path('emissao_alvara_const/', views.emissao_alvara_const, name='emissao_alvara_const'),
+    path('emissao_alvara/', views.emissao_alvara, name='emissao_alvara'),
+    path('proj_arq/', views.proj_arq, name='proj_arq'),
 ]

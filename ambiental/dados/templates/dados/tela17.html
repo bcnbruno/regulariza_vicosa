@@ -7,12 +7,202 @@
 <!-- Option Grid Section -->
 <section class="portfolio" id="portfolio">
     <div class="container">
-        <br/><br/>
+        <br/>
+
+        <div class="container">
+            
+            <p class="lead">A fossa séptica e o filtro anaeróbio são formas de tratamento de efluentes que 
+            ocorrem sem a presença de oxigênio, as bactérias ali presentes são capazes de remover 
+            a matéria orgânica presente no esgoto e assim devolver a água ao meio ambiente de 
+            forma mais limpa. O tanque e o filtro são estrutura que ficam abaixo do nível do solo, 
+            aterradas, por isso deve-se tomar cuidado para não cavar até o nível do lençol freático.</p>
+            <p class="lead">Orientações iniciais para a construção do Tanque Séptico, Filtro Anaeróbio e Sumidouro.</p>
+            <p class="lead">Os tanques sépticos devem observar as seguintes distâncias horizontais mínimas:</p>
+            <ul class="lead">
+                <li>1,50 m de construções, limites de terreno, sumidouros, valas de infiltração e ramal 
+                predial de água;</li>
+                <li>3,0 m de árvores e de qualquer ponto de rede pública de abastecimento de água;</li>
+                <li>15,0 m de poços freáticos e de corpos de água de qualquer natureza.</li>
+            </ul>
+            <p class="lead">Nota: As distâncias mínimas são computadas a partir da face externa mais próxima aos 
+            elementos considerados.</p>
+            <p class="lead">Para construção tanto do Tanque Séptico quanto do Filtro Anaeróbio é necessário utilizar 
+            erial impermeável para evitar a contaminação do solo. Os materiais indicados são tijolos e 
+            concreto. As indicações abaixo são para construção do Tanque Séptico Retangular ou 
+            Prismático. </p>
+            <p class="lead">Os tubos de chegada e saída do tanque recomendados são de 100mm de diâmetro, podendo variar, 
+            contudo não podem ser maiores 150 mm segundo especificações da norma.</p>
+    
+            <p class="lead">Para {{pessoas}} pessoas a sugestão de dimensões do seu tanque são:</p>
+            <br>
+            <div align="center">
+                <p>Dimensões para tanque Cilíndrico</p>
+                <table border="solid">
+                    
+                    <tr>
+                        <th class="text-center" colspan="4">Cilíndrico</th>
+                    </tr>
+                        <tr>
+                            <td class="tg-amwm">Volume (m<sup>3</sup>)</td>
+                            <td class="tg-amwm">Diâmetro (m)</td>
+                            <td class="tg-c3ow">Área (m<sup>2</sup>)</td>
+                            <td class="tg-c3ow">Profundidade (m)</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">{{volume}}</td>
+                            <td class="tg-amwm">{{diametro}}</td>
+                            <td class="tg-amwm">{{area}}</td>
+                            <td class="tg-amwm">{{profundidade}}</td>
+                        </tr>
+                </table>
+            </div>
+            <br><br><br>
+
+            <div align="center">
+                <p>Dimensões para tanque Retangular</p>
+                <table border="solid">
+                    <tr>
+                        <th class="text-center" colspan="5">Retangular - 1 câmara</th>
+                        </tr>
+                            <td class="tg-amwm">Volume (m<sup>3</sup>)</td>
+                            <td class="tg-amwm">Profundidade (m)</td>
+                            <td class="tg-c3ow">Área (m<sup>2</sup>)</td>
+                            <td class="tg-c3ow">Comprimento (m)</td>
+                            <td class="tg-c3ow">Largura (m)</td>
+                        </tr>
+                        {% for x, y in c%}
+                        <tr>
+                            <td class="tg-amwm">{{volume}}</td>
+                            <td class="tg-amwm">{{profundidade}}</td>
+                            <td class="tg-amwm">{{area}}</td>
+                            <td class="tg-amwm">{{x}}</td>
+                            <td class="tg-amwm">{{y}}</td>
+                        </tr>
+                        {% endfor %}
+                        
+                </table>
+            </div>
+            <br><br><br>
+                    
+            <p class="lead text-center">Esquema em planta do tanque séptico</p>
+            <div align="center">
+                <style>
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        }
+                </style>
+                <img src="../../static/img/tanque_2.png" />    
+                <p class="lead text-center">Fonte: Adaptado de CadBlocks </p><br>
+            </div>
+            
+
+            <p class="lead text-center">Dimensionamento do tanque séptico (desenho sem escala)</p>
+            <div align="center">
+                <style>
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        }
+                </style>
+                <img src="../../static/img/tanque_1.png" />    
+            </div>
+            <p class="lead text-center">Fonte: Adaptado de CadBlocks </p><br>
+
+            <p class="lead"> O tanque deverá ser tampado com uma laje de concreto bem fechada com ao menos uma 
+                abertura para limpeza posterior do tanque.</p>
+            <p class="lead"> O Filtro anaeróbio terá uma altura do leito filtrante de 1,20m e fundo falso 
+                de 0,60m, sendo assim as dimensões serão:</p>
+
+            <div align="center">
+                <p>Dimensões filtro anaeróbio</p>
+                <table border="solid">
+                        <tr>
+                            <th class="text-center" colspan="4">Filtro Biológico</th>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">hlf(altura do leito filtrante)</td>
+                            <td class="tg-amwm">0.6</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">hf (altura fundo falso)</td>
+                            <td class="tg-amwm">0.6</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">h (altura útil)</td>
+                            <td class="tg-amwm">1.2</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">h1</td>
+                            <td class="tg-amwm">0.20</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">h2</td>
+                            <td class="tg-amwm">0.10 a 0.20</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">H (altura total)</td>
+                            <td class="tg-amwm">1.5 a 1.6</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">Volume (m<sup>3</sup>)</td>
+                            <td class="tg-amwm">{{volume}}</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">Área (m<sup>2</sup>)</td>
+                            <td class="tg-amwm">{{area}}</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-amwm">Diâmetro</td>
+                            <td class="tg-amwm">{{diametro}}</td>
+                        </tr>
+
+                </table>
+            </div><br><br>
+
+            <p class="lead"> O material recomendado para o meio filtrante é brita n°4 ou n°5 e os tubos 
+                preferencialmente iguais aos utilizados no tanque séptico (100mm).</p><br>
+
+            <p class="lead text-center">Detalhamento do filtro anaeróbio (desenho sem escala)</p>
+            <div align="center">
+                <style>
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        }
+                </style>
+                <img src="../../static/img/filtro_anaerobico_1.png" />    
+            </div>
+            <p class="lead text-center">Fonte: Adaptado de CadBlocks </p><br>
+
+            <p class="lead text-center">Dimensionamento do filtro aeróbico (desenho sem escala)</p>
+            <div align="center">
+                <style>
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        }
+                </style>
+                <img src="../../static/img/filtro_anaerobico_2.png" />    
+            </div>
+            <p class="lead text-center">Fonte: Adaptado de CadBlocks </p><br>
+
+            <p class="lead">É muito importante seguir as recomendações de medida acima ou procurar 
+                um profissional que esteja habituado a construir tanques sépticos e filtros, pois 
+                assim há garantia de que o tratamento ocorrerá de forma adequada! Existem também outras 
+                configurações para o mesmo volume de esgoto a ser tratada, como uso de tanques e filtros 
+                em paralelo ou com mais câmaras, sendo assim você pode buscar um profissional da área de 
+                engenharia e pedir ajuda para fazer as adaptações para melhor atende-lo! </p>
+
+            
+    
+            </p>
+            <br><br>
         <h1 class="js-scroll-trigger text-center">Escolha uma opção de destino final</h1>
         <br/><br/>
         <form class="row">
           <div class="col-md-6 pt-2 pb-2">
-              <a href="./tela5.html">
+              <a href="{% url 'dados:sumidouro' %}">
                   <button type="button" class="btn btn-secondary btn-lg btn-block">Sumidouro</button>  
               </a>
           </div>
@@ -24,7 +214,7 @@
                         
         </form>
         <br/><br/>  
-          <a href="./tela12.html">
+        <a href="{% url 'dados:tela16' %}">
               <button type="button" class="btn btn-danger btn-lg">Voltar</button>
           </a>        
     </div>

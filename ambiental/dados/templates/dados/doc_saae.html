@@ -1,0 +1,43 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container">
+    <br><br><br><br><br>
+        
+        <br>
+        <p class="lead">O proprietário do imóvel terá de requerer a ligação do imóvel à rede de 
+            água e esgoto, esta será executada exclusivamente pelo SAAE, depois de totalmente 
+            concluídas e aceitas as obras relativas ao projeto aprovado.</p>
+            <p class="lead"> o caso de loteamentos ou prédios onde será necessário reforçar ou expandir 
+            a rede que atenderá o projeto este reforço será executado pelo SAAE sendo as 
+            despesas arcadas pelo interessado.</p>
+            <p class="lead">A documentação e as exigências do SAAE se encontram abaixo:</p>
+            <p class="lead">Art. 60 - As ligações de água e de esgoto serão cedidas mediante requerimento 
+            firmado em impresso especial para esse fim em nome do proprietário, ou em nome 
+            de quem estiver cadastrado na Prefeitura, mediante apresentação dos seguintes 
+            documentos:</p>
+            <ol class="lead">
+                <li>Certidão de numeração fornecida pelo Setor de Cadastro da Prefeitura ou 
+                outro documento que vier a substituí-lo;</li> 
+                <li>CPF/CNPJ;</li>
+                <li>cópia da planta de situação e da planta baixa do projeto arquitetônico 
+            aprovado pela municipalidade, no caso de prédios com subsolo e/ou acima de 3
+            (três) pavimentos (10 m de altura) e área superior ou igual a 300 m<sup>2</sup>.</li>
+            </ol>
+            <p class="lead">Parágrafo Único - O ramal predial para construção ou definitivo será dimensionado
+            Parágrafo Único - O ramal predial para construção ou definitivo será dimensionado
+            pelo SAAE. </p>
+            <p class="lead">A ligação de água e/ou esgoto está sujeita ao pagamento de valores, estes devem 
+            ser orçados junto ao SAAE e podem ser pagos em parcela única ou em até 10 parcelas 
+            ndo necessário, para a concessão da ligação, o pagamento da primeira parcela.</p>
+        
+        
+    <div><br>
+        <a href="{% url 'dados:tela8' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div><br>
+{% endblock %}

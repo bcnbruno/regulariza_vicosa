@@ -1,0 +1,183 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Tratamentos{% endblock %}
+  
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <br>
+     
+       <p class="lead">A vazão estimada para a captação no poço é de:
+        {{n}} m<sup>3</sup></p>
+        <p class="lead">Caso o poço forneça menos do que 10m<sup>3</sup> de água por dia não é necessário 
+            a outorga, mas é necessário o registro no site de usos insignificantes:</p>
+        <a href="http://usoinsignificante.igam.mg.gov.br/mrhi/login.xhtml">http://usoinsignificante.igam.mg.gov.br/mrhi/login.xhtml</a>
+        <br><br><p class="lead">Caso o poço tenha um fornecimento de água maior do que 10 m3 por dia é necessário 
+            a contratação de um profissional para estudar a viabilidade, o projeto desse poço e fazer o 
+            pedido de Outorga junto ao Instituto Mineiro de Gestão de Águas (IGAM), que nesse caso 
+            será necessário.</p>
+        <p class="lead">Mais informações no site do IGAM:</p> 
+        <a href="http://www.igam.mg.gov.br/igam/outorga">http://www.igam.mg.gov.br/igam/outorga</a><br><br>
+        <p class="lead">ATENÇÃO! A água do poço muitas vezes pode estar contaminada com 
+            pequenas partículas, metais pesados, organismos patogênicos (causadores de doenças) 
+            e outros contaminantes e elementos devido a infiltração deste, por isso é indicada 
+            uma análise prévia de qualidade da água antes de utiliza-la.</p>
+        <p class="lead">Por exemplo, se tentar ensaboar a mão com a água e não formar muita espuma, a água pode 
+        estar com muito Cálcio ou Magnésio, sendo assim existe uma tratamento especifico. Por 
+        isso é necessária a análise de qualidade da água e a escolha do tratamento adequado.</p>
+        <p class="lead">Abaixo seguem algumas formas de tratamento doméstico existentes</p>
+        <h3 class="js-scroll-trigger text-left">Tratamento de água proveniente dos poços:</h3>
+        <br>
+        <h5 class="js-scroll-trigger text-left">Filtração</h5><br>
+
+        <p class="lead"> Filtro para poços artesianos</p><br>
+        <p class="lead">O filtro para poços artesianos realizam o tratamento físico da água, removendo 
+            impurezas como sólidos suspensos na água e partículas que podem conter organismos causadores 
+            de doença. Após o tratamento físico é recomendado o químico feita a partir da cloração da 
+            água.</p>
+
+        <p class="lead text-center">Filtro para poços artesianos</p><br>
+        <div class="text-center" >
+            <style>
+                #id1{
+                    max-width:30%;
+                    height:auto;
+                    }
+                </style>
+            <img id="id1" src="../../static/img/filtro_novo_1.png"  />
+        </div><br>
+
+        <p class="lead text-center">Fonte: Vida Água</p>
+        <br>
+        <p class="lead text-center">Conjunto de filtração e cloração</p>
+        <div class="text-center">
+                <style>
+                    #id2{
+                        max-width:30%;
+                        height:auto;
+                        }
+                    </style>
+                <img id="id2" src="../../static/img/filtro_novo_2.png" />
+            </div><br>
+        <p class="lead text-center">Fonte: Filtração Água </p><br>
+
+        <p class="lead text-center">Filtro de Alta Vazão para residências</p>
+        <div class="text-center">
+                <style>
+                    #id3{
+                        max-width:25%;
+                        height:auto;
+                        }
+                    </style>
+                <img id="id3" src="../../static/img/filtro_novo_3.png" />
+            </div><br>
+        <p class="lead text-center">Fonte: Mercado livre </p>
+
+        <h5 class="js-scroll-trigger text-left">Filtro de vela</h5><br>
+
+    <p class="lead"> Os filtros de vela de porcelana são muito recomendados após a filtração e tratamento 
+    inicial pois são mais uma forma de purificar a água e melhorar sua qualidade. Os filtros
+    de vela de porcelana são os mais comuns e conhecidos pelo brasileiro, mas no mercado já
+    existem inúmeros filtros usualmente com velas descartáveis, para os de porcelanas em que 
+    é necessário fazer a limpeza do filtro na qual não é recomendado o uso de materiais 
+    abrasivos, como sal e açúcar que comprometem a porosidade da vela e diminuem a capacidade 
+    de filtração.</p>
+
+    <p class="lead text-center">Filtro de vela de porcelana</p>
+        <div class="text-center">
+                <style>
+                    #id4{
+                        max-width:100%;
+                        height:auto;
+                        }
+                    </style>
+                <img id="id4" src="../../static/img/filtro_1.png" />
+            </div><br>
+        <p class="lead text-center">Fonte: Casa & Construção (2018) </p>
+        <br>
+        <p class="lead text-center">Vela descartável para filtros</p>
+        <div class="text-center">
+                <style>
+                    #id5{
+                        max-width:30%;
+                        height:auto;
+                        }
+                    </style>
+                <img id="id5" src="../../static/img/filtro_2.png" />
+            </div><br>
+        <p class="lead text-center">Fonte: Mercado Livre (2018) </p>
+
+        <h5 class="js-scroll-trigger text-left">Filtro de areia</h5><br>
+
+        <p class="lead">O filtro de areia é recomendado para a retirada de partículas da água este método 
+        requer uma limpeza periódica da camada filtrante e com o tempo a reposição dela, para 
+        auxiliar na remoção de odores combinando ao filtro uma camada de carvão, porém não são 
+        capazes de retirar microorganismos da água como bactérias e vírus sendo nesse caso 
+        necessário a utilização de outros métodos de tratamento para desinfecção tratados a 
+        seguir.</p><br>
+        <p class="lead text-center">Esquema de um filtro de areia</p>
+        <div class="text-center">
+                <style>
+                    #id6{
+                        max-width:30%;
+                        height:auto;
+                        }
+                    </style>
+                <img id="id6" src="../../static/img/filtro_3.png" />
+            </div><br>
+        <p class="lead text-center">Fonte: Raia1 (2018) </p>
+
+    <h5 class="js-scroll-trigger text-left">Desinfecção</h5><br>
+
+    <p class="lead">  Hipocloração
+            A hipocloração precisa ser realizada por um dispositivo dosador para controlar a 
+            aplicação da quantidade necessária vem disponível na forma sólida com o hipoclorito 
+            de cálcio que precisará ser diluído antes de aplicado, ou então já em solução como 
+            hipoclorito de sódio</p>
+
+
+            <p class="lead text-center">Dosador para hipoclorito</p>
+            <div class="text-center">
+                    <style>
+                        #id7{
+                            max-width:30%;
+                            height:auto;
+                            }
+                        </style>
+                    <img id="id7" src="../../static/img/filtro_4.png" />
+                </div><br>
+            <p class="lead text-center">Fonte: Mercado Livre (2018) </p>
+
+            <h5 class="js-scroll-trigger text-left">Clorador de Pastilha</h5><br>
+
+            <p class="lead">Uma alternativa para o dosador, as pastilhas de hipoclorito não precisam de
+             dosadores já que a dosagem é feita pela dissolução da pastilha na água, 
+             perguntar para o fornecedor qual a quantidade que será necessário para a 
+             sua demanda. </p>
+             <p class="lead">Atenção! Existem pastilhas próprias para a cloração da água para o consumo 
+            humano, não utilizar pastilhas para piscina que podem ser prejudiciais a saúde</p>
+
+            <p class="lead text-center">Pastilhas de hipoclorito de cálcio</p>
+            <div class="text-center">
+                    <style>
+                        #id8{
+                            max-width:30%;
+                            height:auto;
+                            }
+                        </style>
+                    <img id="id8" src="../../static/img/filtro_5.png" />
+                </div><br>
+            <p class="lead text-center">Fonte: Mercado Livre (2018) </p>
+
+
+
+        <br/><br/>  
+        <a href="{% url 'dados:tela8' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>        
+    </div>
+</section>
+
+{% endblock %} 

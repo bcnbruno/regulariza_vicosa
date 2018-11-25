@@ -1,0 +1,74 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+<div class="container">
+    <br><br><br><br><br>
+                              
+    <p class="lead">Seu Empreendimento irá requerer movimento de terra? Se sim:</p>
+    <p class="lead">Então você precisará da emissão de um Alvará para a Movimentação de Terra:
+        </p>
+    <p class="lead">Descrição:</p>
+    <p class="lead">Este serviço é requerido no Instituto de Planejamento e Meio Ambiente do Município de Viçosa – IPLAM, junto à Diretoria de Cartografia e Agrimensura - DCA. Existindo algum erro no projeto de Terraplanagem apresentado ao IPLAM, é emitido um parecer ao Responsável Técnico pelo projeto ou ao proprietário do imóvel, cobrando-se uma taxa no valor de 0,60 UFM. Uma vez corrigido o projeto, será emitido o Alvará de Movimentação de Terra, e para cada alvará emitido é cobrada uma taxa no valor de 0,60 UFM. A cada nova entrada de documentos, atendimento de parecer ou qualquer outra solicitação o IPLAM/DCA tem prazo para resposta de 30 dias úteis, seja a resposta em forma de parecer ou emissão do Alvará.
+        Documentos necessários:</p>
+    <p class="lead">Documentos:</p>
+    <ul>
+        <li class="lead">Requerimento com pedido de terraplanagem, assinado pelo proprietário;</li>
+        <li class="lead">Requerimento com pedido de terraplanagem, assinado pelo proprietário;</li>
+        <li class="lead">Certidão de Registro de Imóveis original e revalidada (30 dias);</li>
+        <li class="lead">Certidão Negativa de Débitos Municipais do Imóvel;</li>
+        <li class="lead">ISSQN dos responsáveis técnicos;</li>
+        <li class="lead">Cópia do alvará de bota-fora;</li>
+        <li class="lead">Contrato de prestação de serviço contendo o volume a ser movimentado e o número do 
+            alvará do bota-fora;</li>
+        <li class="lead">ART de execução de obra /serviço da terraplanagem (m3) de acordo com a Lei Municipal 
+            nº 1.633/2004 Capítulo III, Art. 10, Parágrafo 4°:
+            <br>§4°- Quando houver serviços de terraplanagem e movimentos de terra, a obra deverá 
+            ter Anotações de Responsabilidade Técnica (ART) de projeto e de execução desses serviços, 
+            em separado.</li>
+        <li class="lead">ART do levantamento planialtimétrico (m<sup>2</sup>);</li>
+        <li class="lead">ART de projeto de terraplanagem (m<sup>3</sup>);</li>
+        <li class="lead">02 (duas) cópias do projeto geométrico completo contendo:
+            <br>Planta planialtimétrica com representação do canevá, orientação, escala 
+            numérica e as seções transversais estaqueadas ao longo do perfil;
+        </li>
+        <li class="lead">Perfil longitudinal com a representação dos eixos horizontal/vertical, as cotas de 
+            terreno e greide, estaqueamento e os outros elementos de projeto;</li>
+        <li class="lead">Seção transversal com a representação dos eixos horizontal/vertical, as cotas de 
+            terreno e greide, estaqueamento e os outros elementos de projeto;</li>
+        <li class="lead">Tabela de balanceamento de corte e aterro, com empolamento de 30%;</li>
+        <li class="lead">Curvas de nível cotadas com equidistância máxima de 1,00 metro;</li>
+        <li class="lead">Planta de localização com o lote amarrado à esquina mais próxima;</li>
+        <li class="lead">Quadro de convenções;</li>
+        <li class="lead">Quadro de áreas;</li>
+        <li class="lead">Representação das edificações existentes no lote;</li>
+        <li class="lead">Representação de linhas de divisas e nome dos confrontantes;</li>
+        <li class="lead">Assinatura do proprietário e responsável técnico;</li>
+        <li class="lead">Projeto geométrico completo em formato digital (.dxf).</li>
+    </ul>
+
+    <p class="lead">IPLAM.</p>
+
+    <p class="lead">Prazo para prestação do serviço:</p>
+    <p class="lead">15 dias úteis</p>
+    <p class="lead">Taxas:</p>
+    <p class="lead">0,60 UFM por parecer/correção e 0,60 UFM por certidão emitida.</p>
+    <p class="lead">[UFM= R$ 49,09 (2018)]</p>
+    <p class="lead">Onde requerer:</p>
+    <p class="lead">Instituto de Planejamento e Meio Ambiente do Município (IPLAM).</p>
+    <p class="lead">Rua Dr. Milton Bandeira, nº 380, Viçosa Shopping - 3º piso, Centro.</p>
+    <div>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div><br>
+
+</div>            
+    
+    
+{% endblock %}
+    
+
+
+
