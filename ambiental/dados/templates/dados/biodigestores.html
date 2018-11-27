@@ -1,0 +1,102 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+<div class="container">
+    <br><br><br><br><br>
+    <h1>Biodigestores</h1>
+    <br>
+    <p class="lead" align="justify">Os biodigestores serão dados como opção para o tratamento do esgoto da casa, tanto para o todo o esgoto, como é o caso dos biodigestores pré-moldados, quanto para águas escuras que é o caso da fossa biodigestora desenvolvida pela Embrapa. Sendo assim as opções serão dispostas da seguinte forma no site:
+        <br>    
+        Biodigestores realizam o tratamento eficiente dos efluentes gerados na casa, são uma forma anaeróbia de tratar os efluentes da casa. Abaixo seguem duas sugestões de biodigestores, um para todo o esgoto e o outro apenas para as águas escuras:
+        <br>
+    </p>
+    <p class="lead" align="justify">
+        <b>Biodigestores pré-moldados:</b>
+        <br><br>
+        Nos biodigestores pré-fabricados, o esgoto doméstico entra na parte inferior do biodigestor, com fluxo ascendente, passa pelo lodo anaeróbio com as bactérias biodegradadoras e depois por um filtro interno, então o efluente tratado sai na parte superior do sistema.  
+ 	    Esse tipo de biodigestor pode ser encontrado em lojas físicas e virtuais especificas para esses produtos. A vantagem desses biodigestores é que são de fácil limpeza e muito práticos de serem instalados. 
+        <br><br>
+         <div align="center">
+            Biodigestor
+            <br>
+            <style>
+                img{
+                    max-width:100%;
+                    height:auto;
+                    }
+                </style>
+            <img src="../../static/img/biodigestor_01.jpg" />
+            <br>
+            Fonte: Acqualimp (2018)
+
+        </div>
+        <br><br>
+    </p>
+        <p class="lead" align="justify">
+        Os tamanhos e áreas são dados de acordo com os fabricantes, assim como as recomendações para o número de pessoas que os biodigestores atendem.
+    
+    </p>
+    <p class="lead" align="justify">
+            <b>Fossa Biodigestora:</b>
+            <br><br>
+            A fossa biodigestora é usualmente empregada na área rural, devido a necessidade de espaço e também por utilizar esterco de animais para seu funcionamento! Além disso a fossa biodigestora fornece na sua saída biofertilizante que pode ser usado como adubo natural em plantações e jardins.
+            <br>
+            A Fossa biodigestora funciona da seguinte maneira: 
+            <br>
+            São 3 caixas d’água em série, como indicado na figura abaixo:
+            <br><br>
+             <div align="center">
+                Esquematização de uma fossa biodigestora
+                <br>
+                <style>
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        }
+                    </style>
+                <img src="../../static/img/biodigestor_02.jpg" />
+                <br>
+                Fonte: Embrapa (2010)
+    
+            </div>
+        </p>
+        <p class="lead" align="justify">
+            <br><br>
+            A água escura (proveniente apenas do vaso sanitário) passa pela primeira caixa, onde também é adicionado o esterco que contem diversos microrganismos, esses junto ao esgoto da casa crescem, consomem a matéria orgânica do esgoto e matam os organismos patogênicos, esse processo ocorre nas 3 caixas e ao sair o efluente pode ser utilizado como biofertilizante. 
+            <br>
+            Caso não haja a intenção de se utilizar o biofertilizante, também existe a opção de utilizar a água para irrigação. Para isso a terceira caixa deve conter um filtro de brita n° 3 e n°2, purificando ainda mais a água, depois da terceira caixa a água já estará limpa o suficiente para ser irrigada.
+            <br>
+            A Empresa Brasileira de Pesquisa Agropecuária indica dois modelos de fossa biogestora, um deles faz uso da caixa d’água e a outro uma delas utiliza manilhas no lugar das caixas d’água. 
+            <br>
+            Ambos os modelos tem funcionamento semelhante e possuem ótimos resultados. Para acessar o passo a passo consulte:
+        
+        </p>
+        <p class="lead" align="justify">
+            <b>Para o biodigestor utilizando caixas d’água:</b>
+            <br><br>
+            Como montar e usar a fossa séptica modelo Emprapa (2014)
+            Acesso em:
+            <a href="https://www.embrapa.br/instrumentacao/busca-de-publicacoes/-/publicacao/1004077/como-montar-e-usar-a-fossa-septica-modelo-embrapa-cartilhas-adaptadas-ao-letramento-do-produtor"></a>
+            Cartilha Embrapa
+            </a>.
+        </p>
+        <p class="lead" align="justify">
+            <b>Para o biodigestor utilizando manilhas:</b>
+            <br><br>
+            Tecnologia Social Fossa Séptica Biodigestora  (2010)
+            <a href="https://drive.google.com/open?id=1rGepCTSPiAm6zA_pB6gC5jJOhcaGdHh3"></a>
+            Cartilha Embrapa
+            </a>.
+        </p>
+    <br><br>
+    <div>
+        <a href="{% url 'dados:tela16' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+    <br><br>
+</div>
+
+{% endblock %}

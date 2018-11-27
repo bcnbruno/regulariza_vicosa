@@ -84,6 +84,8 @@
             </div>
             <br><br><br>
                     
+            <p class="lead">{{texto}}</p><br>
+
             <p class="lead text-center">Esquema em planta do tanque séptico</p>
             <div align="center">
                 <style>
@@ -193,10 +195,38 @@
                 configurações para o mesmo volume de esgoto a ser tratada, como uso de tanques e filtros 
                 em paralelo ou com mais câmaras, sendo assim você pode buscar um profissional da área de 
                 engenharia e pedir ajuda para fazer as adaptações para melhor atende-lo! </p>
-
-            
-    
             </p>
+            <p class="lead" align="justify">
+            É muito importante seguir as recomendações de medida acima ou procurar um profissional que esteja habituado a construir tanques sépticos e filtros, pois assim há garantia de que o tratamento ocorrerá de forma adequada! Existem também outras configurações para o mesmo volume de esgoto a ser tratada, como uso de tanques e filtros em paralelo ou com mais câmaras, sendo assim você pode buscar um profissional da área de engenharia e pedir ajuda para fazer as adaptações para melhor atende-lo!
+            </p>
+            <p class="lead" align="justify">
+            <div class="lead" align="center">
+                Figura 9 - Sistema de fossa e filtro
+                <div class="lead" align="center">
+                    <style >
+                        img{
+                            max-width:60%;
+                            height:auto;
+                            }
+                        </style>
+                    <img src="../../static/img/tanque_filtro.png" />
+                </div>
+
+                Fonte: SAMAE GASPAR (2018)
+            </div>  
+                <br>
+                <p class="lead">Assista também os vídeos a seguir para visualizar melhor como é a construção da fossa séptica e do filtro!</p>
+                <br>
+                <p class="lead"> Como Construir Fossa Séptica e Sumidouro:</p>
+                
+                <a class="lead" href="https://www.youtube.com/watch?v=YuVDGzPIkuw">https://www.youtube.com/watch?v=YuVDGzPIkuw</a>
+                <br><br>
+                <p class="lead"> Como construir uma Fossa Séptica Biodigestora com Sumidouro:</p>
+                
+                <p class="lead"> <a href="https://www.youtube.com/watch?v=zperesMGR_M">https://www.youtube.com/watch?v=zperesMGR_M</a></p>
+                <br>
+                <p class="lead"> Existe também a opção de fossas sépticas e filtros pré-moldados, que podem ser encontrados já prontos para instalar em lojas e em sites específicos desses materiais! 
+                </p>
             <br><br>
         <h1 class="js-scroll-trigger text-center">Escolha uma opção de destino final</h1>
         <br/><br/>
@@ -207,7 +237,7 @@
               </a>
           </div>
           <div class="col-md-6 pt-2 pb-2">
-              <a href="./tela16.html">
+              <a href="{% url 'dados:wetlands' %}">
                   <button type="button" class="btn btn-secondary btn-lg btn-block">Wetlands</button>
               </a>
           </div> 

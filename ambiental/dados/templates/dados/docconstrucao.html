@@ -6,8 +6,14 @@
    
     <div class="container">
         <br><br><br><br><br>
-        <h3 class="js-scroll-trigger text-left">Documentação para casas e prédios</h1> <br>
-
+        {% if opcao.possui_construcao == "Vou iniciar uma construção" %}
+            {% if opcao.tela == "4" or opcao.tela == "5" %}
+            <h3 class="js-scroll-trigger text-left">Documentação para casas e prédios</h1> <br>
+            {% else %}
+            <h3 class="js-scroll-trigger text-left">Documentação para loteamento</h1> <br>
+            {% endif %}
+        
+        {% endif %}
         <p class="lead">Caso o seu terreno esteja localizado próximo a um rio, nascente, 
             manancial, em topo de morro, áreas muito declivosas ou em área que contenha 
             vegetação é preciso consultar o Órgão Ambiental da cidade antes de iniciar a 
@@ -16,16 +22,15 @@
             nº 803, Centro, Viçosa/MG. Telefones: 3891-3714 | 3891-7648.
         </p>
 
-        <p class="lead">Clique aqui para saber mais sobre as APPs!</p>
+        <button onClick="maisAPPS()" class="btn btn-success">Clique aqui para saber mais sobre as APPs!</button>
 
-
+        <br><br>
         <p class="lead">Os documentos a serem requisitados no IPLAM também podem ser obtidos no 
             site:</p>
-        <p><a href="http://www.vicosa.mg.gov.br/detalhe-da-materia/info/instituto-de-planejamento-e-meio-ambiente-do-municipio-iplam/11028">
+        <p class="lead"><a href="http://www.vicosa.mg.gov.br/detalhe-da-materia/info/instituto-de-planejamento-e-meio-ambiente-do-municipio-iplam/11028">
             http://www.vicosa.mg.gov.br/detalhe-da-materia/info/instituto-de-planejamento-e
             -meio-ambiente-do-municipio-iplam/11028</a>
         </p>
-
     <ul>
         <li class="lead">
             <a href="{% url 'dados:doc_saae' %}">Documentação SAAE</a>
@@ -44,12 +49,12 @@
         </li>
     </ul>
             
-        <br><br><br><br>
-        <div>
-            <a href="{% url 'dados:tela8' %}">
-                <button type="button" class="btn btn-danger btn-lg">Voltar</button>
-            </a>
-        </div><br>
+    <br><br>
+    <div>
+        <a href="{% url 'dados:tela8' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div><br>
     </div>
     
 {% endblock %}

@@ -19,8 +19,8 @@ class FirstForm(forms.Form):
     num_pav = forms.IntegerField()
     num_pessoas = forms.IntegerField()
 
-class SecondFrom(forms.ModelForm):
-    class Meta:
-        model = Formulario
-        fields = ["bairro", "nome", "area", "area_planta", "num_pav", "num_pessoas"]
-       
+class SecondForm(forms.Form):
+    telhado = forms.FloatField()  
+
+class ThirdForm(forms.Form):
+    num_pessoas = forms.IntegerField()     

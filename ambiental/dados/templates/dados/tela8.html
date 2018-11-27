@@ -7,9 +7,15 @@
 <!-- Option Grid Section -->
 <section class="portfolio" id="portfolio">
     <div class="container">
-        <br/><br/>
-        <h1 class="js-scroll-trigger text-center">Você pode construir, veja abaixo mais informações</h1>
-        <br/><br/>
+        {% if opcao.possui_construcao == "Vou iniciar uma construção" %}
+            <br/><br/>
+            <h1 class="js-scroll-trigger text-center">Veja abaixo mais informações</h1>
+            <br/><br/>
+        {% else %}
+            <br/><br/>
+            <h1 class="js-scroll-trigger text-center">Veja abaixo mais informações</h1>
+            <br/><br/>
+        {% endif %}
         <form class="row">
             <div class="col-md-6 pt-2 pb-2">
                 <a href="{% url 'dados:docconstrucao' %}">

@@ -1,0 +1,139 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+
+<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg th{font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg .tg-baqh{text-align:center;vertical-align:top}
+    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+</style>
+
+<div class="container">
+    <br><br><br><br><br>
+    <h1>Wetlands</h1>
+    <p class="lead" align="justify">Para as wetlands a pessoa que estiver utilizando o site receberá as seguintes informações e instruções:
+        <br><br>
+        O uso das wetlands, ou jardins filtrantes, pode ser feito após o filtro anaeróbio ou apenas para a remoção de águas cinzas, possibilitando em ambos os casos o reuso não potável da água. Através das plantas, as wetlands são capazes de absorver a matéria orgânica presente no esgoto, além disso a camada de brita forma uma espécie de biofiltro com diversas bactérias e microorganismos que consomem os nutrientes presentes na água. Por isso após passar por todo o sistema água está com qualidade melhor e pode ser reutilizada para fins não potáveis.
+        <br>
+    </p>
+    <p class=lead>
+        Esquema de uma wetlands de fluxo horizontal sub-superficial:
+        <div align="center">
+            <style>
+                img{
+                    max-width:100%;
+                    height:auto;
+                    }
+                </style>
+            <img src="../../static/img/wetlands_01.jpg" />
+            Fonte: Sezerino et al
+        </div>
+    </p>
+    <p class=lead align="justify">
+            Caso seja utilizada para remoção de águas cinzas, considera-se a água da pia, chuveiro e tanque. As wetlands projetadas são de fluxo sub-superficial, com brita n° 0 nos primeiros 15cm de entrada e últimos 15cm de saída do sitema, no restante pode-se utilizar brita n° 1. 
+            <br><br>
+            As wetlands devem ser construídas e totalmente impermeabilizadas para evitar a contaminação do solo. Além disso devem ter uma leve inclinação para que a água possa escoar por ela.
+            <br><br>
+            O tubo de entrada da wetlands deve ficar aproximadamente 10cm abaixo do nível da brita como mostra a figura abaixo, é aconselhável utilizar um Tê e um outro tubo com furos para melhor distribuição do efluente nas wetlands. O mesmo deve ser feito do outro lado, na saída, garantindo assim que o fluxo de entrada e saída permaneça equilibrado. Após construir toda a estrutura superficial do jardim filtrante (wetlands) pode-se colocar a brita e então as plantas. As espécies mais indicadas são o junco, a taboa e o capim vetiver. É indicado plantar em grande quantidade para que o sistema obtenha bons resultados.
+    </p>
+    <!-- Após Tanque Séptico e Filtro Anaeróbio -->
+    <p class=lead>
+            Dimensões para Wetlands
+            <div align="center">
+            <table class="tg" style="undefined;table-layout: fixed; width: 759px">
+                    <colgroup>
+                    <col style="width: 152px">
+                    <col style="width: 152px">
+                    <col style="width: 152px">
+                    <col style="width: 152px">
+                    <col style="width: 151px">
+                    </colgroup>
+                      <tr>
+                        <th class="tg-c3ow" colspan="5"><span style="font-weight:bold">Wetlands</span></th>
+                      </tr>
+                      <tr>
+                        <td class="tg-7btt">Altura (H)</td>
+                        <td class="tg-7btt">Altura da brita (h)</td>
+                        <td class="tg-7btt">Área</td>
+                        <td class="tg-7btt">Largura (L)</td>
+                        <td class="tg-7btt">Comprimento (C)</td>
+                      </tr>
+                      {% for x, y in c%}
+                      <tr>
+                        <td class="tg-baqh">0.7</td>
+                        <td class="tg-baqh">0.5</td>
+                        <td class="tg-baqh">{{area}}</td>
+                        <td class="tg-baqh">{{y}}</td>
+                        <td class="tg-baqh">{{x}}</td>
+                      </tr>
+                      {% endfor %}
+                    </table>
+                </div>
+    </p>
+    <p class=lead>
+        <br>
+            Dimensionamento e detalhamento de Wetlands:
+            <div align="center">
+                <style>
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        }
+                    </style>
+                <img src="../../static/img/wetlands_02.png" />
+    
+            </div>
+    </p><p class=lead>
+            <div align="center">
+                    <style>
+                        img{
+                            max-width:100%;
+                            height:auto;
+                            }
+                        </style>
+                    <img src="../../static/img/wetlands_03.png" />
+        
+            </div>
+            <div align="center">
+                    <style>
+                        img{
+                            max-width:100%;
+                            height:auto;
+                            }
+                        </style>
+                    <img src="../../static/img/wetlands_04.png" />
+                    <br>Fonte: Autor
+            </div>
+        </p>
+        <br>
+        <p class=lead>
+            Exemplo de uma wetlands construída de uso residêncial:
+            <div align="center">
+                <style>
+                    img{
+                        max-width:100%;
+                        height:auto;
+                        }
+                </style>
+                <img src="../../static/img/wetlands_05.jpg" />
+                <br>Fonte: Pires (2009)
+            </div>
+        </p>
+        <p class=lead align="justify">
+                A água de saída das wetlands pode ser reutilizada para fins não potáveis na residência, como para regar o jardim, limpeza e outros.
+        </p>
+    <br><br>
+    <div>
+        <a href="{% url 'dados:tela17' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+    <br><br>
+</div>
+
+{% endblock %}

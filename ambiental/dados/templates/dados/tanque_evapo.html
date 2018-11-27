@@ -1,0 +1,208 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Tratamentos{% endblock %}
+
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <br/>
+
+        <div class="container lead">
+            <h3 >Tanque de Evapotranspiração</h3><br>
+            
+            <form class="row" action="/tanque_evapo/" method="post">
+                <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
+                        <label for="{{form.Pessoas}}">Quantidade de pessoas (entre 5 e 10) </label><br>
+                        {% csrf_token %}
+                        {{ form.num_pessoas }}  
+                        <br><br>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-lg" >Confirmar valor</button>
+                        </div>          
+                </div>
+                
+            </form>
+
+            <div >
+            <p >A Fossa de evapotranspiração é um método de tratamento de águas escuras principalmente, ou seja, o esgoto que vem do vaso sanitário, utilizado para o atendimento de até 10 pessoas em outros casos é recomendado o uso de tanques sépticos seguidos de filtros anaeróbicos ou biodigestores. </p>
+            <p >O Tevap é muito recomendável para área rural ou locais com bastante espaço, devido às suas dimensões. A Fossa funciona por meio das plantas que puxam toda a água e matéria orgânica com nutrientes presentes no esgoto do vaso sanitário, assim a partir da evapotranspiração ela libera toda a água para atmosfera e consome a matéria orgânica.</p>
+            <br><h3>Como construir:</h3><br>
+            <p >Primeiramente é importante que a fossa esteja em um local com boa iluminação para que possa ter acesso à luz solar durante boa parte do dia. Também é importante que a fossa seja instalada longe de rios, córregos e águas subterrâneas para evitar a contaminação dos mesmos.</p>
+            <p>As fossas de evapotranspiração podem ser construídas com diversos materiais, como blocos de concreto ou técnico de ferro cimento. As paredes internas precisam ficar bem impermeabilizadas com argamassa.</p>
+            <p>A técnica mais econômica de construir das paredes e do fundo é o ferro-cimento, que é uma técnica de construção com grade de ferro e tela de galinheiro coberto com a camada de argamassa. A argamassa da parede deve ser feita de três partes de areia (lavada média) por uma parte de cimento e o piso deve ser concretado na porção 3 partes de brita para 2 partes de areia (lavada) por 1 parte de cimento.</p>
+            <p>Materiais:</p>
+            <ul>
+                <li>Pneus inservíveis de carros (quantidade depende do comprimento do tanque, descrito na tabela abaixo)</li>
+                <li>Tela de galinheiro, grampos de cerca e cimento preferencialmente o CP III-RS resistente a sulfatos</li>
+                <li>Impermeabilizante líquido de argamassa</li>
+                <li>Entulhos da obra como tijolos e telhas quebradas ou pedras de mão</li>
+                <li>Brita, areia e terra</li>
+                <li>Tubo de PVC 100mm</li>
+                <li>Tê de PVC de 100mm</li>
+                <li>Tampão PVC 100mm</li>
+                <li>Plantas de folhas largas e que gostam de locais muito úmidos ou alagados, como bananeiras, taioba, etc.</li>
+                <li>Pá, cavadeira, carrinho de mão, picareta, trena, colher de pedreiro.</li>
+            </ul> 
+            <br>
+            <h5 class="js-scroll-trigger text-center">Dimensões do tanque de evapotranspiração</h3><br>
+            <div class="text-center">
+                <style>
+                    #ev1{
+                        max-width:100%;
+                        height:auto;
+                        }
+                </style>
+                <img id="ev1" src="../../static/img/evapo_tabela.png" />                
+            </div><br>
+            <br><br> 
+            
+            <div align="center">
+                <p>Consumo material para o tanque de evapotranspiração</p>
+                <table class="text-center" border="solid">
+                    <tr>
+                        <th class="text-center" >Material</th>
+                        <th class="text-center" >Referência</th>
+                        <th class="text-center" >Quantidade para {{n}} pessoas</th>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Cimento CPIII-RS</td>
+                        <td class="tg-amwm">Sacos</td>
+                        <td class="tg-c3ow">{{cimento}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Tela de galinheiro</td>
+                        <td class="tg-amwm">Metros</td>
+                        <td class="tg-c3ow">{{tela}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Pneu (carro)</td>
+                        <td class="tg-amwm">Unidades</td>
+                        <td class="tg-c3ow">{{pneu}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Areia média</td>
+                        <td class="tg-amwm">m<sup>3</sup></td>
+                        <td class="tg-c3ow">{{areia_media}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Pedra de mão ou entulho de construção</td>
+                        <td class="tg-amwm">-</td>
+                        <td class="tg-c3ow">-</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Areia fina (para reboco)</td>
+                        <td class="tg-amwm">m<sup>3</sup></td>
+                        <td class="tg-c3ow">{{areia_fina}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Brita n°1</td>
+                        <td class="tg-amwm">m<sup>3</sup></td>
+                        <td class="tg-c3ow">{{brita}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Impermeabilizante liquido de argamassa, tipo Sika</td>
+                        <td class="tg-amwm">3.5 L</td>
+                        <td class="tg-c3ow">{{imper}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Grampo de cera</td>
+                        <td class="tg-amwm">Sacos</td>
+                        <td class="tg-c3ow">{{grampo}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">T PVC 100 mm</td>
+                        <td class="tg-amwm">Unidades</td>
+                        <td class="tg-c3ow">{{t_pvc}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Cap PVC 100 mm</td>
+                        <td class="tg-amwm">Unidades</td>
+                        <td class="tg-c3ow">{{cap_pvc}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Cano PVC 100 mm</td>
+                        <td class="tg-amwm">Tubo</td>
+                        <td class="tg-c3ow">-</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-amwm">Blocos de concreto</td>
+                        <td class="tg-amwm">-</td>
+                        <td class="tg-c3ow">-</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <br><br>
+            <h5 class="js-scroll-trigger text-center">Esquematização de um Tanque de Evapotranspiração</h3><br>
+            <div class="text-center">
+                <style>
+                    #ev2{
+                        max-width:70%;
+                        height:auto;
+                        }
+                </style>
+                <img id="ev2" src="../../static/img/tanque_evapo.png" />                
+            </div><br>
+            <div class="text-center">
+                <caption>Fonte: Paulo e Fernandes (2009)</caption>
+            </div><br>
+            <br> 
+        <br>
+        <h3 class="js-scroll-trigger text-center">Passo a Passo para construção da fossa:</h3>
+        
+        <br><ol class="lead">
+            <li>Cave um buraco com o comprimento, largura e profundidade indicados na tabela acima.</li>
+            <li>Faça uma argamassa com traço 3:1, ou seja, 3 partes de areia (lavada média) por uma 1 parte de cimento e aplique nas paredes do tanque.
+                <br><br>
+            <h5 class="js-scroll-trigger text-center">Esquematização de um Tanque de Evapotranspiração</h3><br>
+            <div class="text-center">
+                <style>
+                    #ev3{
+                        max-width:50%;
+                        height:auto;
+                        }
+                </style>
+                <img id="ev3" src="../../static/img/tanque_evapo_2.png" />                
+            </div><br>
+            <div class="text-center">
+                <caption>Fonte: EMATER-MG (2012)</caption>
+            </div><br>
+            <br>
+            </li>
+            <li>Revestir a superfície com tela de galinheiro, fixada com grampas de cerca e de vergalhão.</li>
+            <li>Aplique uma camada de argamassa misturada com impermeabilizante líquido de 2 cm feita com traço 1:3, ou seja, 1 parte de cimento e 3 de areia, sobre a tela cobrindo toda a tela na parede.</li>
+            <li>Concrete o fundo com concreto no traço 1:2:3 (cimento, areia e brita)</li>
+            <li>Após secar todo o concreto e a argamassa, comece a fazer o túnel de pneus no fundo do tanque. Introduza o cano de chegada do esgoto dentro do túnel (para isso faça um buraco no primeiro pneu conforme a ilustração abaixo) OBS: que chega com o esgoto deve possuir um T no fim, para fazer a ligação tanto para dentro do pneu quanto para cima, facilitando a inspeção do sistema. O cano de inspeção deve ficar acima da superfície e possui um cap para tampar evitando a entrada de água e animais.</li>
+            <li>Na sequência coloque pneus em fila formando um túnel até em todo o comprimento do tanque.
+                <br><br>
+                <h5 class="js-scroll-trigger text-center">Etapa de acréscimo da camada de brita acima da camada de entulho na fossa evapotranspiradora</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ev3{
+                            max-width:50%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ev3" src="../../static/img/tanque_evapo_3.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption>Fonte: EMATER-MG (2012)</caption>
+                </div><br>
+                <br>
+            </li>
+            <li>Preencha o tanque distribuindo em camadas sucessivas da seguinte: 1° camada de pedras grandes ou entulho de construção ou de telhas. 2ª camada de brita ou cascalho, 3ª camada de areia e finalmente, 4ª e última camada terra. </li>
+        </ol>
+        <p class="lead">Dica: Quando for colocar a brita, cubra a camada de pedras de mão com sacos de embalagem de cebola, evitando assim que o material se perca em meio ao entulho e pedras maiores. A areia virá por sobre a brita, e o mesmo deve ser feito cobrindo a camada de brita, e o mesmo deve ser feito cobrindo a camada de brita com sacos tipo embalagem de cebola. Por último na camada de terra são plantadas as plantas escolhidas.</p>
+
+
+        <br/><br/>  
+        <a href="{% url 'dados:tela16' %}">
+              <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+          </a>        
+    </div>
+</section>
+
+{% endblock %}

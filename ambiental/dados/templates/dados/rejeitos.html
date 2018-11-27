@@ -1,0 +1,64 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Recicláveis{% endblock %}
+<div class="container">
+    <br><br><br><br><br>
+    <h1 class="text-uppercase mb-0">Rejeitos</h1>
+    <br>
+    <div class="lead">
+        <p align="justify">
+
+            São considerados rejeitos:
+        
+            <ul>
+                <li>Raspas de Lápis e raspas de borracha</li>
+                <li>Grampos</li>
+                <li>Papel toalha, papel higiênico e guardanapo</li>
+                <li>Tecidos e panos velhos</li>
+                <li>Espelhos</li>
+                <li>Bituca de cigarro</li>
+                <li>Fraldas</li>
+            </ul>
+       </p>
+        <p align="justify">
+            <b>DESTINAÇÃO ADEQUADA:</b><br>
+            Os rejeitos devem sempre ser enviados aos aterros sanitários, que possuem a estrutura e preparação adequada para recebe-los, sem oferecer riscos de contaminação do solo, da água e do meio ambiente em geral. Viçosa possui um aterro sanitário que recebe cerca de 57 toneladas de lixo por dia, sendo essa uma quantidade muito alta e impactando na vida útil do aterro.
+            <br>
+            Sendo assim o ideal é destinar os recicláveis para as usinas de reciclagem, os orgânicos para compostagem e apenas os rejeitos para o aterro, caso não tenham a opção do resíduo orgânico ser usado na compostagem, ele também deve ser destinado para o aterro sanitário.
+            <br>
+            Os horários de coleta em cada bairro de Viçosa estão disponíveis no site do SAAE:
+        </p>
+        <br>
+        <p align="justify">
+            <div align="center">
+                    Tabela 12 - Rotas de coleta de resíduos sólidos de viçosa.
+                    <style>
+                        img{
+                            max-width:100%;
+                            height:auto;
+                            }
+                    </style>
+                    <img src="../../static/img/horarios.jpg" />
+                    <p align="center">
+                            Fonte: SAAE (2018)
+                            Acesse também em: http://www.saaevicosa.mg.gov.br/servicos/residuos-solidos/horarios
+                    </p>
+                    <br>
+            </div>
+            <p align="justify">
+                    ATENÇÃO! Por motivos de higiene e saúde pública é muito importante COLOCAR O SEU LIXO PARA FORA APENAS PRÓXIMO AO HORÁRIO QUE O CAMINHÃO PASSARÁ RECOLHENDO. Essa atitude é importante pois evita o acúmulo de lixo nas ruas, diminuindo a atração de animais como ratos, baratas e outros que podem causar doenças. Além disso também evita que os cachorros mexam no lixo e espalhem o mesmo pela rua, isso dificulta a coleta para os lixeiros e também torna o ambiente sujo e desagradável. Por isso se perdeu o horário da coleta coloque seu lixo bem fechado em uma sacola e deixe-o guardado dentro de casa até a próxima coleta no dia seguinte.
+            </p>
+        </p>
+    </div>
+    <br><br>
+    <div>
+        <a href="{% url 'dados:tela15' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+    <br><br>
+</div>
+
+{% endblock %}

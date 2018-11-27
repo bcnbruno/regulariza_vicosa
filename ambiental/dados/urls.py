@@ -9,11 +9,8 @@ urlpatterns = [
     path('tela3/', views.tela3, name='tela3'),
     path('tela4/', views.tela4, name='tela4'),
     path('tela5/', views.tela5, name='tela5'),
-    path('tela4_2/', views.tela4_2, name='tela4_2'),
-    path('tela5_2/', views.tela5_2, name='tela5_2'),
-    
     path('tela6/', views.tela6, name='tela6'),
-    path('tela7/', views.tela7, name='tela7'),
+    
     path('tela8/', views.tela8, name='tela8'),   
     path('tela10/', views.tela10, name='tela10'),
     path('tela11/', views.tela11, name='tela11'),
@@ -39,4 +36,10 @@ urlpatterns = [
     path('emissao_alvara_const/', views.emissao_alvara_const, name='emissao_alvara_const'),
     path('emissao_alvara/', views.emissao_alvara, name='emissao_alvara'),
     path('proj_arq/', views.proj_arq, name='proj_arq'),
+    path('cap_agua_chuva/', views.cap_agua_chuva, name='cap_agua_chuva'),
+    path('tanque_evapo/', views.tanque_evapo, name='tanque_evapo'),
+    path('wetlands/', views.wetlands, name='wetlands'),
+    path('wetlands_2/', views.wetlands_2, name='wetlands_2'),
+    path('biodigestores/', views.biodigestores, name='biodigestores'),
+    path('docloteamentos/', views.docloteamentos, name='docloteamentos'),
 ]

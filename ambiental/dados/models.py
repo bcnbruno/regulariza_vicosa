@@ -46,3 +46,8 @@ class Formulario(models.Model):
 class Tanque(models.Model):
     comprimento = models.FloatField()
     largura = models.FloatField()
+
+class OpcaoForm(models.Model):
+    possui_construcao = models.TextField()
+    tela = models.TextField()
+    wetlands = models.TextField()

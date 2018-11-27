@@ -1,0 +1,834 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+    <div class="container">
+        <br><br><br><br><br>
+       
+        <p class="lead">A captação de água da chuva é uma alternativa para o uso de ÁGUA 
+            NÃO POTÁVEL, dentro das residências. Essa água pode ser utilizada para lavar o 
+            carro, a casa, regar as plantas e jardins e até mesmo para a descarga do vaso 
+            sanitário!
+        </p>
+        <p class="lead">Para calcular a quantidade de água que pode ser captada no período 
+            de um ano na sua residência, insira a área de telhado do local onde será instalado
+            o sistema:</p>
+        <form class="row" action="/cap_agua_chuva/" method="post">
+            <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
+                    <label for="{{form.Bairro}}">Área do telhado (m<sup>2</sup>)</label><br>
+                    {% csrf_token %}
+                    {{ form.telhado }}  
+                    <br><br>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-lg" >Confirmar valor</button>
+                    </div>          
+            </div>
+            
+        </form>
+        
+        <p class="lead">Considerando que todas as calhas serão ligadas no sistema de captação de 
+            água da chuva o volume de água que pode ser captado em um ano é de aproximadamente:</p>
+        <p class="lead">{{v}} (L)</p>
+        <p class="lead">Para reservar a água existem diversos tamanhos e opções de caixas d’água e 
+            bombonas nas lojas de materiais de construção. Por isso você pode escolher a melhor 
+            alternativa de acordo com o orçamento e espaço disponível.</p>
+        <p class="lead">Passo a Passo da Construção do Sistema:</p>
+        <p class="lead">Para construção do seu módulo de captação de água da chuva, existem 3 
+            partes importantes:</p>
+        
+        <br>
+        <h3 class="js-scroll-trigger text-center">Sistema de captação das águas da chuva</h3><br>
+        <div class="text-center">
+            <style>
+                #ch1{
+                    max-width:40%;
+                    height:auto;
+                    }
+                </style>
+            <img id="ch1" src="../../static/img/Chuva_1.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Engenheiros Sem Fronteiras (2018)</caption>
+        </div>
+        <br>
+
+        <p class="lead">Os materiais básicos necessários para construção do sistema 
+            de captação de água da chuva são:</p>
+
+        <div align="center">
+            <p>Dimensões filtro anaeróbio</p>
+            <table border="solid">
+                <tr>
+                    <th class="text-center" colspan="4">Materiais necessários para o sistema de captação</th>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">Material</td>
+                    <td class="tg-amwm">Quantidade</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">Adaptador Plena Sifão
+                            1.1/4x40</td>
+                    <td class="tg-amwm">1</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">*Tubo Plastubo esgoto 75</td>
+                    <td class="tg-amwm">6 m</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">*Te plastubo esgoto 75</td>
+                    <td class="tg-amwm">2</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">*Joelho plastubo esgoto 75x90</td>
+                    <td class="tg-amwm">4</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">Cap plastubos esgoto 40</td>
+                    <td class="tg-amwm">1</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">*Cap plastubos esgoto 75</td>
+                    <td class="tg-amwm">1</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">Torneira PVC jardim preta 1/2</td>
+                    <td class="tg-amwm">1</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">Redução tigre rosca 1.1/4x1</td>
+                    <td class="tg-amwm">1</td>
+                </tr>
+                <tr>
+                    <td class="tg-amwm">Torneira PVC jardim preta 1/2</td>
+                    <td class="tg-amwm">1</td>
+                </tr>
+            </table>
+        </div>
+        
+        <br>
+        <p class="lead">*O diâmetro e a quantidade de materiais podem variar de acordo com a residência</p>
+        <div class="text-center">
+            <caption >Fonte: Engenheiros Sem Fronteiras (2018)</caption>
+        </div>
+        
+        <br>
+        <p class="lead"><strong>Filtro auto-limpante</strong></p>
+        <p class="lead">O objetivo do filtro é limpar a sujeira mais grossa que vem do telhado, como folhas e pequenos 
+            galhos de árvores, insetos, e outros.</p>
+        <p class="lead">Materiais necessários:</p>
+        <ul class="lead ">
+            <li>Tubos</li>
+            <li>Tela fina (redinha)</li>
+            <li>Serra</li>
+            <li>Resina epóxi (Durepox®)</li>
+            <li>Lima</li>
+        </ul>
+        
+        <br>
+        <h3 class="js-scroll-trigger text-center">Filtro auto-limpante para água de chuva</h3><br>
+        <div class="text-center">
+            <style>
+                #ch2{
+                    max-width:50%;
+                    height:auto;
+                    }
+                </style>
+            <img id="ch2" src="../../static/img/chuva_2.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br><br>
+        <h3 class="js-scroll-trigger text-center">O passo a passo para fazer o seu filtro 
+            auto-limpante:</h3><br>
+
+        <ol class="lead">
+            <li>Corte dois pedaços de tubo. 
+            Um pedaço de aproximadamente 19cm (esse pedaço será utilizado na confecção da peça 1), e 
+            um pedaço de 22cm (pedaço utilizado para confecção da peça 2). Os pedaços devem ser do 
+            mesmo diâmetro da calha da casa (normalmente 100mm ou 75mm).
+            </li><br>
+            <li>Para montar a peça 1, pegue o pedaço de 19cm e faça dois cortes em 45°, 
+            como mostrado na figura abaixo.</li>
+            <br>
+        <h3 class="js-scroll-trigger text-center">Esquematização do corte dos canos</h3><br>
+        <div class="text-center">
+            <style>
+                #ch3{
+                    max-width:60%;
+                    height:auto;
+                    }
+                </style>
+            <img id="ch3" src="../../static/img/chuva_3.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br><br>
+        <p class="lead">As imagens abaixo exemplificam como cortar o cano com o gabarito.</p>
+        <br>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Imagens do processo e peça 1 pronta.</h3><br>
+        <div class="text-center">
+            <style>
+                #ch4{
+                    max-width:60%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch4" src="../../static/img/chuva_4.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br><br>
+
+        <li>Para fazer a peça 2, pegue o cano de 22cm e faça duas bolsas (alargamento do cano), 
+        uma de 4cm numa ponta e outra de 13cm na outra ponta usando o calor do fogo da boca de um 
+        fogão como nas fotos a seguir. Para fazer o alargamento do cano você pode pegar outro cano 
+        de mesmo diâmetro e colocar um pano dentro do mesmo e então embrulhar com uma sacola, como 
+        indicado abaixo, esse será seu alargador. Quando o pedaço de cano de 22cm estiver ficando 
+        com sua ponta mole você pegará o alargador com pano e colocará dentro do cano aquecido até 
+        uns 4cm para dentro de um lado e 13cm do outro. </li>
+        <p class="lead">DICA: Caso esteja com dificuldades para alargar pegue um copo que seja fino na 
+        base e mais largo na boca, ele também deve ter a boca maior que a do cano, e empurre pra 
+        dentro do cano quente assim que o tirar do fogão. Isso irá alargar um pouco a boca do cano, 
+        facilitando o uso do cano depois.</p>
+        <br>
+        <h3 class="js-scroll-trigger text-center">Etapas do processo</h3><br>
+        <div class="text-center">
+            <style>
+                #ch5{
+                    max-width:50%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch5" src="../../static/img/chuva_5.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br>
+        <li>Neste mesmo pedaço, risque com o lápis um triângulo do lado da bolsa maior (a de 13cm).</li>
+        
+        <br>
+        <h3 class="js-scroll-trigger text-center">Detalhamento da abertura do Filtro</h3><br>
+        <div class="text-center">
+            <style>
+                #ch6{
+                    max-width:50%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch6" src="../../static/img/chuva_6.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br>
+        <li>Para cortar o cano você pode faze-lo no chão ou em uma mesa adequada, para facilitar o suporte a 
+            dica é posicionar o cano com a ajuda de dois joelhos e fazer o corte inicial como mostram as 
+            fotos abaixo.</li>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Corte do Cano</h3><br>
+        <div class="text-center">
+            <style>
+                #ch7{
+                    max-width:50%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch7" src="../../static/img/chuva_7.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br>
+        
+        <li>Corte o restante usando uma serrinha de mão para garantir que não será cortado a mais. Depois com uma lima 
+        ou lixa grossa, arredonde os dois lados de baixo. Guarde esse triângulo para o próximo passo. 
+        Veja foto a seguir.</li>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Etapas do corte e peça 2 pronta.</h3><br>
+        <div class="text-center">
+            <style>
+                #ch8{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch8" src="../../static/img/chuva_8.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br>
+
+        <li>O próximo passo é juntar os dois tubos (peça 1 e peça 2) para montar o filtro. Para isso coloque a tela sobre a 
+        ponta 45° da peça 1 (coloque um pedaço grande que cubra praticamente todo o tubo). Depois encaixe a peça 2, e com 
+        um estilete, corte a sobra da tela. Atenção para que as peças fiquem bem alinhadas como mostrado 
+        na figura abaixo</li>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Etapas da montagem do filtro</h3><br>
+        <div class="text-center">
+            <style>
+                #ch9{
+                    max-width:50%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch9" src="../../static/img/chuva_9.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br>
+
+        <li>Para finalizar a construção do filtro é necessário fazer um bico para colar na boca do filtro. Para isso pode-se fazer um bico apenas com o Durepox®, você pode molda-lo para ficar no mesmo formato abaixo. Há também a opção de utilizar a peça que sobrou do segundo corte de 45° feito no gabarito anteriormente. 
+            Siga os passos mostrados na figura a seguir.<br>
+            a. Primeiro risque com o lápis um triângulo nas pontas da peça.<br>
+            b. Corte na marca do triângulo.<br>
+            c. Em seguida, lixe (com a lima ou lixa grossa) para arredondar as pontas.<br>
+            d. Encaixe na boca do filtro e cole com cola epóxi (Durepox®).<br></li>
+
+            <br>
+            <h3 class="js-scroll-trigger text-center">Etapas de montagem do bico</h3><br>
+            <div class="text-center">
+                <style>
+                    #ch10{
+                        max-width:50%;
+                        height:auto;
+                        }
+                </style>
+                <img id="ch10" src="../../static/img/chuva_10.png" />                
+            </div><br>
+            <div class="text-center">
+                <caption >Fonte: Sempre Sustentável</caption>
+            </div>
+            <br>
+
+            <li>Obs.: Esse bico só deve ser colado após a montagem do filtro (peça 1 + tela + peça 2). Isso porque o Durepox® que 
+            cola o bico pode rachar com a força feito no encaixe.</li>
+        </ol>
+
+        <h3 class="js-scroll-trigger text-center">Separador de água da primeira chuva</h3><br>
+
+        <p class="lead">O funcionamento do separador, também chamado de descarte, é bem simples, quando começa a chover ou em chuvas fracas, 
+            a água vai sair por um pequeno furinho que tem na ponta do Separador. Depois, nas chuvas fortes, o furinho não vai 
+            dar vazão para o excesso de água, e o reservatório irá encher (agora com uma água bem mais limpa) e transbordar 
+            pela conexão da direita do tê, indo direto para a cisterna.</p><br>
+
+        <h3 class="js-scroll-trigger text-left">Objetivo:</h3>
+
+        <p class="lead">Separar e descartar as primeiras águas de chuvas fortes que fazem a lavagem da atmosfera, do telhado, das calhas e 
+            das tubulações. Esta primeira água ficará armazenada para ser descartada, e assim que o separador ficar cheio, a água irá 
+            para o recipiente de armazenamento.</p>
+        
+            <h3 class="js-scroll-trigger text-center">Cálculo do descarte:</h3><br>
+
+        <p class="lead">O descarte deve ser calculado de acordo com o tamanho da área de telhado, pois quanto maior o telhado, maior a quantidade de detritos acumulados nele e por isso mais água contaminada que precisa ser descartada. Assim para cada 1 m² de telhado é preciso 1 litro sendo descartado. No seu caso será necessário um volume de descarte em litros de:
+                {{telhado}}</p>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Separador de águas da chuva</h3><br>
+        <div class="text-center">
+            <style>
+                #ch11{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch11" src="../../static/img/chuva_11.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br>
+
+        <p class="lead">Materiais:</p>
+        <ul class="lead">
+            <li>Tubo</li>
+            <li>Tê</li>
+            <li>Cap de 40</li>
+            <li>Cap de 75</li>
+            <li>Adaptador de sifão 1.1/4x40</li>
+            <li>Redução rosca 1.1/4x1</li>
+            <li>Serra copo 44 mm</li>
+            <li>Furadeira</li>
+            <li>Durepox®</li>
+        </ul>
+        <p class="lead">Passo-a-passo:</p><br>
+        <h3 class="js-scroll-trigger text-center">Ponta do separador</h3>
+        
+        <br>
+        <h3 class="js-scroll-trigger text-center">Peças necessárias</h3><br>
+        <div class="text-center">
+            <style>
+                #ch12{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch12" src="../../static/img/chuva_12.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >As peças enumeradas na Figura 36:</caption>
+        </div>
+        <br>
+
+        <ol class="lead">
+            <li> Cap </li>
+            <li> Redução roscável </li>
+            <li> Adaptador de sifão </li>
+            <li> Cap de 40 mm </li>
+        </ol>
+
+        <div class="lead">Peça 1:  Fazer um furo no centro do cap de 75 mm (ou 100 mm, 
+            depende do diâmetro que for utilizar) com 44 mm de diâmetro. Retirar o miolo 
+            e fazer o acabamento com uma lima ou lixa grossa.</div>
+
+        <div class="lead">AquiUma furadeira com uma serra copo de 44 mm como 
+            representado na Figura 37. você pode usar:</div>
+
+        <div class="lead">Não possuindo uma furadeira desse sentido, o furo pode ser 
+            realizado através dos seguintes passos:</div>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Furação da peça</h3><br>
+        <div class="text-center">
+            <style>
+                #ch13{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch13" src="../../static/img/chuva_13.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div>
+        <br>
+        
+        <p class="lead">Risque com o lápis um diâmetro de 44 mm e faça vários furos próximos à 
+        linha demarcada, seguindo os passos abaixo como demonstrados na linha demarcada 
+        na Figura 38.</p>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Esquematização da sequência de furação 
+            com uma broca comum</h3><br>
+        <div class="text-center">
+            <style>
+                #ch14{
+                    max-width:60%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch14" src="../../static/img/chuva_14.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div><br>
+        <br>
+
+        <p class="lead">Peça 2: Faça com uma lima redonda ou com uma serrinha, três ou quatro 
+            pequenos cortes um pouco largos, partindo da borda até chegar na rosca, como 
+            representado na Figura 39.</p>
+        <p class="lead">Peça 3: O adaptador de sifão pode ser comprado já pronto, só se deve 
+            atentar para que ele seja compatível com a rosca na peça 2, a redução rosqueável, e 
+            que a peça 4, o cap de 40mm, encaixe firmemente nele.  </p>        
+        <br>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Corte da borda</h3><br>
+        <div class="text-center">
+            <style>
+                #ch15{
+                    max-width:50%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch15" src="../../static/img/chuva_15.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div><br>
+        <br>
+
+        <p class="lead">Peça 4: Faça um furo no centro do cap de 
+            40mm usando uma broca de 2,5mm ou um prego pequeno 
+            como na Figura 40.</p>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Detalhe do furo</h3><br>
+        <div class="text-center">
+            <style>
+                #ch16{
+                    max-width:30%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch16" src="../../static/img/chuva_16.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div><br>
+        <br>
+        
+        <p class="lead">Agora, para montar a ponta do separador junte as peças 
+            na seguinte ordem:</p>
+
+        <ul class="lead">
+            <li>Encaixe as peças 1 e 2 e cole com cola epóxi (Durepox®).</li>
+            <li>Passe cola adesiva de PVC no interior da peça 4 e cole na peça 3</li>
+            <li>Espere secar e rosqueie a o conjunto 3+4 no conjunto 1+2</li> 
+        </ul>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Detalhamento da montagem</h3><br>
+        <div class="text-center">
+            <style>
+                #ch17{
+                    max-width:40%;
+                    height:auto;
+                    }
+                #ch17.1{
+                max-width:60%;
+                height:auto;
+                }
+            </style>
+            <img id="ch17" src="../../static/img/chuva_17.png" /> 
+            <img id="ch17.1" src="../../static/img/chuva_17.1.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div><br>
+        <br>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Produto montado</h3><br>
+        <div class="text-center">
+            <style>
+                #ch18{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch18" src="../../static/img/chuva_19.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div><br>
+        <br>
+
+        <h3 class="js-scroll-trigger text-center">Montagem do separador</h3><br>
+        <ol class="lead">
+            <li>Corte um pedaço de tubo 75 mm (ou 100 mm, depende do diâmetro que for utilizar) com 1 metro de comprimento.</li>
+            <li>Faça uma bolsa usando o calor do fogão de 4,5 cm de comprimento em um dos lados desse tubo. </li>
+            <li>Encaixe esse tubo (lado da bolsa) na ponta de baixo do Tê e cole com cola de PVC.</li>
+        </ol><br>
+        <p class="lead">Obs.: Esse Tê conecta o separador de primeira chuva ao filtro e ao tubo que irá para o reservatório de água, como demonstrado na Figura 43.</p>
+        <p class="lead">Obs.: A ponta pode ser retirada para dispensar a água e para fazer a limpeza do furo.</p>
+        
+        <br>
+        <h3 class="js-scroll-trigger text-center">Tampa do filtro</h3><br>
+        <div class="text-center">
+            <style>
+                #ch20{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch20" src="../../static/img/chuva_20.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Sempre Sustentável</caption>
+        </div><br>
+        <br>
+        
+        <p class="lead">O descarte também pode ser feito através de um galão com o volume necessário a ser descartado, o descarte pode se tornar manual, ao instalar uma torneira no galão, tornando o processo mais prático e barato! Esse descarte também pode utilizar uma bolinha flutuante, exemplificado na Figura 44, para melhorar o controle da quantidade de água que irá para o sistema. </p>
+        <p class="lead">Atenção: caso utilize o descarte com galão deve-se lembrar de abrir a torneira dele após um dia de chuva, para que a água suja possa sair, permitindo que ele continue cumprindo sua função de captar a água contaminada oriunda do início da precipitação da chuva.</p>
+    
+        <br>
+        <h3 class="js-scroll-trigger text-center">Esquematização do reservatório</h3><br>
+        <div class="text-center">
+            <style>
+                #ch21{
+                    max-width:60%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch21" src="../../static/img/chuva_21.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: IPT (2015)</caption>
+        </div><br>
+        <br>
+
+        <h3 class="js-scroll-trigger text-center">Reservatório de água</h3><br>
+        <p class="lead">Objetivo: A minicisterna é o reservatório da água da chuva</p>
+        <p class="lead">O reservatório pode ser uma bombona ou uma caixa d’água dependendo da capacidade de captação do telhado e da disponibilidade do espaço para coloca-las.  A bombona é mais estreita sendo assim indicada para locais que tem menos espaço, enquanto a caixa d’água mais larga pode ser colocada em lugares que mais espaço sobrando.</p>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Caixa d’àgua</h3><br>
+        <div class="text-center">
+            <style>
+                #ch22{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch22" src="../../static/img/chuva_23.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Flavia Ferrari<br>
+            <a href="https://www.logismarket.ind.br">https://www.logismarket.ind.br</a><br>
+            <a href="https://flaviaferrari.com.br/2013/11/limpar-caixas-dagua.html">https://flaviaferrari.com.br/2013/11/limpar-caixas-dagua.html</a><br>
+        </caption>
+        </div><br>
+        <br>
+
+        <br>
+        <h3 class="js-scroll-trigger text-center">Bombona de 200 litros</h3><br>
+        <div class="text-center">
+            <style>
+                #ch24{
+                    max-width:40%;
+                    height:auto;
+                    }
+            </style>
+            <img id="ch24" src="../../static/img/chuva_24.png" />                
+        </div><br>
+        <div class="text-center">
+            <caption >Fonte: Engenheiros Sem Fronteiras (2018)</caption>
+        </div><br>
+        <br>
+
+        <p class="lead">Nesse tópico utilizou-se a preparação de uma bombona de 200 litros como reservatório para exemplo.</p>
+        
+        <ol class="lead">
+            <li>Marque dois círculos alinhados um de frente para o outro e abaixo dos anéis da boca da bombona, com o mesmo diâmetro do cano de PVC utilizado (75 ou 100 mm).
+                <br>Utilize uma serra copo para fazer os buracos. Você pode também utilizar uma furadeira comum e fazer vários furinhos próximos do risco, e, aos poucos, juntar esses furinhos (mesma técnica utilizada para o separador de águas feito anteriormente e exemplificado na Figura 38.) Com a lima grossa, vá modelando a borda do furo. 
+                <br>Por último, faça um acabamento com lixa. A Figura 47 mostra um exemplo de como fazer os furos.
+                <br><br>
+                <h3 class="js-scroll-trigger text-center">Detalhamento do tubo pelo reservatório</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch25{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch25" src="../../static/img/chuva_25.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Sempre Sustentável</caption>
+                </div><br>
+                <br>
+                <p class="lead">Após terminar os furos encaixe um tubo atravessando os dois buracos.</p>
+            </li>
+            <li>
+                <p class="lead">Agora vamos instalar as peças internas da Mini-cisterna. O primeiro conjunto de peças é do redutor de turbulência. O objetivo do redutor de turbulências é evitar que a água da chuva que chega na Mini-cisterna crie muita turbulência, misturando toda a sujeira que sedimenta no fundo.</p>
+                <p class="lead"> Como fazer</p>
+                <p class="lead">Materiais</p>
+                <ul class="lead">
+                    <li>Tê de 75 mm (ou 100 mm).</li>
+                    <li>Tubo de 75 mm (ou 10 mm).</li>
+                    <li>2 joelhos de 90º de 75 mm (ou 100 mm).</li>
+                    <li></li>
+                </ul>
+                
+                <br>
+                <h3 class="js-scroll-trigger text-center">Redutor de turbulências</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch26{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch26" src="../../static/img/chuva_26.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Sempre Sustentável</caption>
+                </div><br>
+                <br>
+
+                <p class="lead">Para fazer a ponta do redutor de turbulências, junte dois joelhos de 90° formando um "U" e cole com cola de PVC. Depois encaixe um pedaço de tubo de 75 mm nesse "U" e meça encostando o "U" no fundo da bombona, e marque onde deverá ser cortado esse tubo. Repare que essa marca deve ser feita considerando o pedaço que vai entrar dentro do Tê.</p>
+
+                <br>
+                <h3 class="js-scroll-trigger text-center">Redutor de turbulências em um reservatório</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch27{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch27" src="../../static/img/chuva_27.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Engenheiros Sem Fronteiras (2018)</caption>
+                </div><br>
+                <br>
+
+                <p class="lead">O Tê deve ficar localizado no meio da bombona. Deve ser medida a distância entre a descida de água e o Tê, de maneira que o cano tenha o menor comprimento possível, dessa forma o sistema ficará mais estável. Se o comprimento ultrapassar 60cm, será necessário um suporte para o cano, apoiado no chão ou fixado na parede. Veja os detalhes nas figuras abaixo.</p>
+
+                <br>
+                <h3 class="js-scroll-trigger text-center">Aplicação do sistema</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch28{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch28" src="../../static/img/chuva_28.1.png" />  
+                    <img id="ch28" src="../../static/img/chuva_28.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Engenheiros Sem Fronteiras (2018)</caption>
+                </div><br>
+                <br>
+
+                <p class="lead">O próximo passo é a saída para o ladrão. O objetivo do ladrão é extravasar a água para que quando a bombona esteja cheia, não transborde.</p>
+                <h3 class="js-scroll-trigger text-center">Como fazer:</h3><br>
+                <p class="lead">Na saída do tubo (deixar a menor saída possível como mostra a Figura 50) que atravessa a bombona deve ser encaixado um joelho 90° e, então, outro cano para que a água escorra suavemente pelo ladrão. Em uma das pontas você deve fazer uma bolsa de 4 cm para encaixar esse joelho (alargar o tubo igual foi feito para o filtro). </p>
+                <p class="lead">Ainda no tubo que atravessa a bombona, após o Tê, faça um buraco com 5 cm de largura e 15 cm de comprimento, na parte de baixo (que ficará em contato com a água quando a bombona estiver cheia, mostrado na Figura 51). Assim, quando a bombona encher a água irá sair pelo ladrão. Veja foto abaixo</p>
+                
+                <br>
+                <h3 class="js-scroll-trigger text-center">Furo no tubo</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch29{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch29" src="../../static/img/chuva_29.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Sempre Sustentável</caption>
+                </div><br>
+                <br>
+
+                <p class="lead">Mas para a água que vem do telhado não passar direto pelo ladrão cole uma pequena barreira feita de pedaço de PVC após o Tê e antes do buraco feito anteriormente. Utilize cola epóxi (Durepox®) para reforçar essa barreira.</p>
+                <p class="lead">Lembre-se: a água deve descer pelo Tê para encher o reservatório, o ladrão serve apenas para que ele não transborde.</p>
+            
+                <br>
+                <h3 class="js-scroll-trigger text-center">Vista do furo dentro do tubo</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch30{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch30" src="../../static/img/chuva_30.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Sempre Sustentável</caption>
+                </div><br>
+                <br>
+
+                <p class="lead">O último passo é a instalação da torneira, para a utilização da água armazenada. O tipo de torneira vai depender do local onde o reservatório será instalado. Torneira comum de jardim ou registro de caixa d’água são outras possibilidades.</p>
+                <p class="lead">Antes de tudo, o posicionamento da torneira também deve ser pensado para facilitar o seu uso (coloque o reservatório no local final e marque com um lápis um círculo do mesmo diâmetro da torneira no lugar que será furado +/- 10cm acima do fundo da bombona. </p>
+                <p class="lead">Agora para fazer o furo, você pode utilizar a mesma técnica que usou para fazer os buracos na parte superior da bombona. Em seguida instale a torneira.</p>
+            </li>
+        </ol>
+        <h3 class="js-scroll-trigger text-center">Dicas para a base do reservatório</h3><br>
+        <p class="lead">O ideal é que o reservatório fique mais alto que o chão de forma que você possa colocar um balde abaixo da torneira por exemplo, ou alto o suficiente para uma conexão com a parte interna da casa (Figura 53). Para fazer esse suporte existem várias possibilidades.</p>
+        <p class="lead">Priorize utilizar materiais recicláveis ou reutilize algo que esteja em desuso. Abaixo estão algumas ideias que podem ser utilizadas para a base do seu reservatório.</p>
+        <p class="lead">Obs.: Lembre-se sempre que o suporte deve ter capacidade para sustentar o reservatório completamente cheio, que é muito pesado (1 litro de água pesa aproximadamente 1 Kg)</p>
+        
+        <ol class="lead">
+            <li>Base de pneus de caminhão. Empilhe 2 ou 3 pneus e encha de terra e brita dentro para estabilizar.
+                <br><br>
+                <h3 class="js-scroll-trigger text-center">Base do reservatório em Pneus</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch27{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch27" src="../../static/img/chuva_32.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Sempre Sustentável</caption>
+                </div><br>
+                <br>    
+            </li>
+            <li>
+                Uma base de madeira composta por uma mesinha ou pallets empilhados, por exemplo;
+                <br><br>
+                <h3 class="js-scroll-trigger text-center">Base do reservatório com base de madeira</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch28{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch28" src="../../static/img/chuva_33.png" />    
+                    <img id="ch28" src="../../static/img/chuva_33.1.png" />             
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Sempre Sustentável</caption>
+                </div><br>
+                <br> 
+            </li>
+            <li>
+                Base de alvenaria;
+                <br>
+                <h3 class="js-scroll-trigger text-center">Base de alvenaria</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch28{
+                            max-width:60%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch28" src="../../static/img/chuva_34.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Engenheiros Sem Fronteiras (2018)</caption>
+                </div><br>
+                <br> 
+            </li>
+        </ol>    
+        <h3 class="js-scroll-trigger text-center">Manutenção e limpeza do sistema</h3><br>
+        <ol class="lead">
+            <li>A limpeza do telhado em um sistema de coleta de água da chuva afeta diretamente a qualidade da água armazenada. Quanto mais limpo o telhado, menor pressão é colocada no equipamento. É aconselhável que galhos próximos à calha sejam cortados para evitar acúmulo de folhas e outros materiais que possam comprometer a integridade do módulo.</li>
+            <br><li>Confira sempre o fundo do reservatório, limpe sempre que o fundo estiver muito sujo (principalmente se estiver afetando a qualidade da água). Uma válvula para limpeza deve ser instalada na lateral do sistema bem próximo ao fundo, facilitando a sua limpeza. Essa válvula pode ser uma torneira ou registro. O diâmetro do furo que deve ser feito para colocação da válvula de limpeza deve ser feito de acordo com o diâmetro da válvula.</li>
+            <br><li>O cloro é uma substância bactericida, utilizada para eliminar bactérias da água. Sua maior vantagem é o baixo custo e a segurança conferida à água, quando utilizado em dosagens corretas. O cloro líquido, presente na água sanitária ou em outros alvejantes, geralmente possui de 2 a 5% de hipoclorito de sódio ativo. A quantidade do produto que deve ser adicionada na água armazenada depende da concentração de hipoclorito de sódio ativo do produto que será aplicado. O importante é conhecer a exata concentração de cloro ativo de cada produto, para a sua correta dosagem, bem como a data de validade do produto utilizado. O cloro deve ser adicionado à água, no mínimo, 30 minutos antes do consumo, ou toda vez que a bombona completar o seu volume. Outra opção para cloração é usar cloradores nos quais são utilizadas pastilhas de tamanho e concentrações definidas para diferentes volumes de água.</li>
+            <br><br>
+                <h3 class="js-scroll-trigger text-center">Quantidade de cloro necessária para tratamento da água</h3><br>
+                <div class="text-center">
+                    <style>
+                        #ch29{
+                            max-width:40%;
+                            height:auto;
+                            }
+                    </style>
+                    <img id="ch29" src="../../static/img/chuva_35.png" />                
+                </div><br>
+                <div class="text-center">
+                    <caption >Fonte: Engenheiros Sem Fronteiras (2018)</caption>
+                </div><br>
+                <br> 
+        </ol>        
+        <br><br><br>
+        <div>
+            <a href="{% url 'dados:tela14' %}">
+                <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            </a>
+        </div><br>
+    </div>
+    
+{% endblock %}

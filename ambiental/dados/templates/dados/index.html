@@ -14,16 +14,13 @@
         <form action="/tela3/" method="post">
         <div class="row">   
             <div class="col-md-6 pt-2 pb-2">
-                <a href="{% url 'dados:tela3' %}">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Vou iniciar uma contrução</button>  
-                </a>
+                {% csrf_token %}
+                <input type="submit" name='0' value='Vou iniciar uma construção' class="btn btn-secondary btn-lg btn-block">     
             </div>
             <div class="col-md-6 pt-2 pb-2">
-                <a href="{% url 'dados:tela2' %}">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Já tenho residencia no local</button>
-                </a>
-            </div>
-                                     
+                {% csrf_token %}
+                <input type="submit" name='1' value='Já tenho residencia no local' class="btn btn-secondary btn-lg btn-block">
+            </div>                                     
         </div> 
         </form>
         
