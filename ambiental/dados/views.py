@@ -69,11 +69,11 @@ def tela4(request):
             opcao = OpcaoForm(possui_construcao=op, tela="4")
             opcao.save()
 
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                return render(request, 'dados/tela8_1.html', {'dado':dado})
-
             if op != "":
+                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                    return render(request, 'dados/tela8_1.html', {'dado':dado})
+
                 if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
                     
                     return render(request, 'dados/tela8.html', {'opcao': opcao})
@@ -146,11 +146,11 @@ def tela5(request):
             opcao = OpcaoForm(possui_construcao=op, tela="5")
             opcao.save()
 
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                return render(request, 'dados/tela8_1.html', {})
-
             if op != "":
+                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                    return render(request, 'dados/tela8_1.html', {})
+
                 if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
                     
                     return render(request, 'dados/tela8.html', {'opcao': opcao})
@@ -229,11 +229,11 @@ def tela10(request):
             opcao = OpcaoForm.objects.get()
             op = opcao.possui_construcao
 
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                return render(request, 'dados/tela8_1.html', {})
-
             if op != "":
+                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                    return render(request, 'dados/tela8_1.html', {})
+
                 if OpcaoForm.objects.count() != 0:
                     OpcaoForm.objects.all().delete()
 
@@ -306,11 +306,11 @@ def tela11(request):
             opcao = OpcaoForm.objects.get()
             op = opcao.possui_construcao
 
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                return render(request, 'dados/tela8_1.html', {})
-
             if op != "":
+                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                    return render(request, 'dados/tela8_1.html', {})
+                    
                 if OpcaoForm.objects.count() != 0:
                     OpcaoForm.objects.all().delete()
 
