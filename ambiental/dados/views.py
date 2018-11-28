@@ -121,7 +121,7 @@ def tela5(request):
             num_pav = form['num_pav'].value()
             num_pessoas = form['num_pessoas'].value()
 
-            f = Formulario(bairro=bairro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
                             
             dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)             
@@ -202,7 +202,7 @@ def tela10(request):
             num_pav = form['num_pav'].value()
             num_pessoas = form['num_pessoas'].value()
 
-            f = Formulario(bairro=bairro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
             
             dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
@@ -271,7 +271,7 @@ def tela11(request):
             num_pav = form['num_pav'].value()
             num_pessoas = form['num_pessoas'].value()
 
-            f = Formulario(bairro=bairro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
 
             dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
