@@ -69,12 +69,18 @@
             <a href="{% url 'dados:emissao_terraplanagem' %}">Emissão de Alvará de Movimentação de Terra</a>
         </li>
     </ul>
-            
+    
     <br><br>
     <div>
+        {% if l != "ZRU" %}
         <a href="{% url 'dados:tela8' %}">
             <button type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
+        {% else %}
+        <a href="{% url 'dados:tela8_1' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+        {% endif %}
     </div><br>
     </div>
     

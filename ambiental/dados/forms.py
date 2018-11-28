@@ -5,9 +5,11 @@ from .models import Dados, Formulario
  
 def get_field(st):
     choices = ()
+    if st != 'bairro':
+        choices = (('ZRU', 'ZRU'),)
     for choice in Dados.objects.values(st).distinct().order_by(st):
         choices = choices + ((choice[st], choice[st]),)
-
+    
     return choices
 
 def get_logradouro():
@@ -25,6 +27,7 @@ def get_logradouro():
         ('Fazenda', 'Fazenda'),
         ('Condomínio', 'Condomínio'),
         ('Alameda', 'Alameda'),
+        ('ZRU', 'ZRU'),
     )
     return choices
 

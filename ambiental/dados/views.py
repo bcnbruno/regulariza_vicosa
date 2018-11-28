@@ -55,7 +55,11 @@ def tela4(request):
             f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
 
-            dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+                dado = Dados.objects.get(bairro=bairro) 
+            else:
+                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
+
             opcao = OpcaoForm.objects.get()
             op = opcao.possui_construcao
 
@@ -64,6 +68,10 @@ def tela4(request):
 
             opcao = OpcaoForm(possui_construcao=op, tela="4")
             opcao.save()
+
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                return render(request, 'dados/tela8_1.html', {'dado':dado})
 
             if op != "":
                 if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
@@ -123,8 +131,12 @@ def tela5(request):
 
             f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
-                            
-            dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)             
+            
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+                dado = Dados.objects.get(bairro=bairro) 
+            else:
+                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)                 
+
             opcao = OpcaoForm.objects.get()
             op = opcao.possui_construcao
 
@@ -133,6 +145,10 @@ def tela5(request):
 
             opcao = OpcaoForm(possui_construcao=op, tela="5")
             opcao.save()
+
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                return render(request, 'dados/tela8_1.html', {})
 
             if op != "":
                 if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
@@ -205,9 +221,17 @@ def tela10(request):
             f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
             
-            dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+                dado = Dados.objects.get(bairro=bairro) 
+            else:
+                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)    
+
             opcao = OpcaoForm.objects.get()
             op = opcao.possui_construcao
+
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                return render(request, 'dados/tela8_1.html', {})
 
             if op != "":
                 if OpcaoForm.objects.count() != 0:
@@ -274,9 +298,17 @@ def tela11(request):
             f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
 
-            dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+                dado = Dados.objects.get(bairro=bairro) 
+            else:
+                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)    
+
             opcao = OpcaoForm.objects.get()
             op = opcao.possui_construcao
+
+            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+
+                return render(request, 'dados/tela8_1.html', {})
 
             if op != "":
                 if OpcaoForm.objects.count() != 0:
@@ -327,13 +359,22 @@ def tela12(request):
     return render(request, 'dados/tela12.html', {})
 
 def tela13(request):
-    return render(request, 'dados/tela13.html', {})
+    f = Formulario.objects.get()    
+    l = f.logradouro
+
+    return render(request, 'dados/tela13.html', {'l':l})
 
 def tela14(request):
-    return render(request, 'dados/tela14.html', {})
+    f = Formulario.objects.get()    
+    l = f.logradouro
+
+    return render(request, 'dados/tela14.html', {'l':l})
 
 def tela15(request):
-    return render(request, 'dados/tela15.html', {})
+    f = Formulario.objects.get()    
+    l = f.logradouro
+
+    return render(request, 'dados/tela15.html', {'l':l})
 
 def tela16(request):
     return render(request, 'dados/tela16.html', {})
@@ -407,8 +448,10 @@ def naoehpossivel(request):
 def docconstrucao(request):    
     opcao = OpcaoForm.objects.get()
     tela = opcao.tela
+    f = Formulario.objects.get()    
+    l = f.logradouro
 
-    return render(request, 'dados/docconstrucao.html', {'tela':tela})
+    return render(request, 'dados/docconstrucao.html', {'l':l, 'tela':tela})
     
 
 def docconstrucao_2(request):    
@@ -453,8 +496,10 @@ def orientacao_ocupacao(request):
     return render(request, 'dados/orientacao_ocupacao.html', {'cp_area':cp_area, 'tx_area':tx_area, 'dados':dados, 'ar_arPlanta': ar_arPlanta, 'form':f})
 
 def doc_saae(request):
+    f = Formulario.objects.get()    
+    l = f.logradouro
 
-    return render(request, 'dados/doc_saae.html', {})
+    return render(request, 'dados/doc_saae.html', {'l':l})
 
 def pocos(request):
     f = Formulario.objects.get()

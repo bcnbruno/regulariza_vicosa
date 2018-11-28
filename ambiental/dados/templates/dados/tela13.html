@@ -23,9 +23,15 @@
           </div>                
         </form>
         <br/><br/>  
+        {% if l != "ZRU" %}
         <a href="{% url 'dados:tela8' %}">
             <button type="button" class="btn btn-danger btn-lg">Voltar</button>
-        </a>        
+        </a>
+        {% else %}
+        <a href="{% url 'dados:tela8_1' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+        {% endif %}       
     </div>
 </section>
 
