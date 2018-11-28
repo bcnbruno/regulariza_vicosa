@@ -14,16 +14,21 @@
     <h1 class="js-scroll-trigger text-center">Condomínio Vertical</h1>
     <br/><br/>            
     <form class="row" action="/tela10/" method="post">
-        <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
+        <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
             <label for="{{form.Bairro}}">Bairro</label><br>
             {% csrf_token %}
             {{ form.bairro }}            
         </div>
-        <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
-            <label for="{{form.Nome}}">Rua</label><br>
+        <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
+            <label for="{{form.Logradouro}}">Logradouro</label><br>
+            {% csrf_token %}
+            {{ form.logradouro }}            
+        </div>
+        <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
+            <label for="{{form.Nome}}">Nome</label><br>
             {% csrf_token %}
             {{ form.nome }}            
-        </div>
+        </div>        
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
             <label for="{{form.Area}}">Área do total lote (m<sup>2</sup>)</label><br>
             {% csrf_token %}
@@ -40,7 +45,7 @@
             {{form.num_pav}}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Num_pessoas}}">Número aproximado de pessoas no condomínio</label><br>
+            <label for="{{form.Num_pessoas}}">Número de pessoas no condomínio</label><br>
             {% csrf_token %}
             {{form.num_pessoas}}
         </div>

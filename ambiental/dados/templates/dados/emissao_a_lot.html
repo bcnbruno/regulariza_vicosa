@@ -1,0 +1,41 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container lead">
+    <br><br><br><br>
+    <h3 class="js-scroll-trigger text-left"> Emissão de Licença Ambiental de Loteamento </h3><br>
+
+<p>
+
+<br>Atendendo às diretrizes é necessária a emissão da Licença Ambiental:
+<br>Descrição:
+<br>Este serviço é requerido no Instituto de Planejamento e Meio Ambiente do Município de Viçosa – IPLAM, junto à Diretoria de Meio Ambiente.
+<br>Documentos necessários:
+<br>• Formulário de Caracterização Ambiental – Modelo Prefeitura de Viçosa;
+<br>• Cópia do Formulário de Orientação Básica;
+<br>• RG e CPF/CNPJ do proprietário/procurador/responsável pela intervenção ambiental. Procuração, quando for o caso. Carta de Anuência, quando propriedade pertencente a mais de um proprietário. Cópia do Contrato Social ou Ata da última assembleia, quando pessoa jurídica;
+<br>• Comprovante de endereço;
+<br>• Contrato de arrendamento, comodato, posse ou outro, quando for o caso;
+<br>• Certidão de inteiro teor, emitida pelo Cartório de Registro de Imóvel, atualizada com menos de 1 (um) ano ou, quando for o caso, documento que caracterize a Posse, ou declaração da Prefeitura de obra em via pública;
+<br>• Cópia digital e uma via impressa de planta planimétrica georreferenciada do imóvel, acompanhada de ART, contemplando o uso do solo, benfeitorias, edificações ou projeções para uso de lote urbano consolidado; recursos hídricos dimensionados em seus limites e distâncias dos usos; limites e confrontações do imóvel, tudo devidamente dimensionado, com legenda e quadro de áreas, inclusive quanto ao percentual de ocupação na APP;
+<br>• Certidão Negativa de Débito Municipal – CND - relativamente ao imóvel, se for o caso;
+<br>• RCA/PCA modelo DEMA;
+<br>• Cartas de viabilidade técnica aprovadas pelo SAAE e CEMIG;
+<br>• Carta de descaracterização emitida pelo INCRA de que o imóvel não é rural.
+
+<br>Prazo: Consulte o IPLAM.
+<br>Taxa: Consulte o IPLAM.
+
+</p>
+   
+    <br><br>
+    <div>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div><br>
+{% endblock %}

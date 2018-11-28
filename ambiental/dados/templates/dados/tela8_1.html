@@ -1,0 +1,54 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Possibilidade de construção{% endblock %}
+  
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        {% if opcao.possui_construcao == "Vou iniciar uma construção" %}
+            <br/><br/>
+            <h1 class="js-scroll-trigger text-center">Veja abaixo mais informações</h1>
+            <br/><br/>
+        {% else %}
+            <br/><br/>
+            <h1 class="js-scroll-trigger text-center">Veja abaixo mais informações</h1>
+            <br/><br/>
+        {% endif %}
+        <form class="row">
+            <div class="col-md-6 pt-2 pb-2">
+                <a href="{% url 'dados:docconstrucao' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Documentação necessária para construção</button>  
+                </a>
+            </div>
+            <div class="col-md-6 pt-2 pb-2">
+                <a href="{% url 'dados:orientacao_ocupacao' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Orientações de uso e ocupação</button>
+                </a>
+            </div>
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela13' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Coleta e tratamento de esgotos</button>  
+                </a>
+            </div>
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela14' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Abasteciemento de água</button>
+                </a>
+            </div>
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela15' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Gerenciamento de resíduos sólidos</button>
+                </a>
+            </div>      
+            
+        </form>
+        <br/><br/>
+        <a href="{% url 'dados:d_construir' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>        
+    </div>
+</section>
+
+{% endblock %}

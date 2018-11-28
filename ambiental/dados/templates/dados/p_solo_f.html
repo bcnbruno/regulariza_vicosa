@@ -1,0 +1,43 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container lead">
+    <br><br><br><br>
+    <h3 class="js-scroll-trigger text-left"> Diretrizes para Projetos de parcelamento do solo em condomínios horizontais fechados
+</h3><br>
+
+<p>
+<br>   Os projetos para parcelamento do solo em condomínios horizontais fechados não poderão impedir a continuidade do sistema viário público existente ou projetado, sendo necessários pareceres favoráveis das Secretarias Municipais de Obras e Serviços Públicos, de Trânsito e Transporte Público e de Agricultura e Meio Ambiente para que sejam autorizados e aprovados.
+<br>    O projeto para condomínio horizontal deve satisfazer às exigências contidas nas Leis Federais nº 4.591/64 e nº 6.766/79 que dispõe sobre o condomínio em edificações e as incorporações imobiliárias e dispõe sobre o Parcelamento do Solo Urbano e dá outras Providências, respectivamente, e satisfazer também as leis municipais, estas apresentadas pelo aplicativo:
+<br>    [http://www.planalto.gov.br/ccivil_03/leis/L6766.htm]
+<br>    [http://www.planalto.gov.br/ccivil_03/LEIS/L4591.htm]
+<br>    I - prever a execução da infraestrutura viária, drenagem de águas pluviais, rede de energia elétrica e de iluminação, sistema de abastecimento de água e portaria de acesso, além de sistema de coleta, destinação e tratamento de esgoto a serem executados pelos condôminos;
+<br>    II - construir na entrada do condomínio guarita com instalação sanitária;
+<br>    III - fechar o perímetro do condomínio com muro de alvenaria ou similar.
+<br>    Na apresentação do projeto de condomínio horizontal deverão estar discriminadas:
+<br>    I - área eventualmente reservada como de utilização exclusiva de cada unidade autônoma;
+<br>    II - área destinada à circulação;
+<br>    III - área de recreação e lazer destinada a uso comum;
+<br>    IV - fração ideal de cada unidade autônoma, no cálculo da qual entra todo o terreno.
+<br>    Os projetos de condomínio horizontal estão isentos das exigências relativas à transferência ao Município da propriedade das vias de circulação e de lazer, mas estas áreas deverão ser projetadas e implantadas de acordo com a presente Lei e a Lei Federal nº 6.766/79, não podendo ter seu destino alterado sem aprovação de 2/3 dos condôminos e da Prefeitura Municipal de Viçosa, sendo que as áreas de preservação ambiental permanente não poderão ter seus destinos alterados.
+<br>    Compete exclusivamente aos condomínios, com relação a suas áreas internas:
+<br>    I - coleta de lixo;
+<br>    II - manutenção da infraestrutura;
+<br>    III - preservação de áreas verdes de uso comunitário local;
+<br>    IV - direitos e deveres assegurados na legislação pertinente.
+<br>    Quando as glebas de terrenos, sobre os quais se pretende instituir condomínios por unidades autônomas, não forem servidas pelas redes públicas de abastecimento de água potável, esgoto sanitário e energia elétrica, tais serviços serão implantados e mantidos pelos condôminos, devendo sua implantação ser comprovada, previamente, mediante projetos técnicos submetidos à aprovação das empresas concessionárias de serviços públicos.
+    
+    A entrada do condomínio deverá ser construída fora dos limites do logradouro público que dá acesso ao condomínio e dentro dos limites da gleba, de forma que não interfira no trânsito, e deverá possuir duas pista de rolamento, destinadas à entrada e saída de veículos do condomínio, separadas por um canteiro central, com largura não inferior a três metros, passeio para pedestre com largura mínima de 2 (dois) metros, área para estacionamento fora da pista de rolamento e pista para retorno com raio mínimo de 10 (dez) metros.
+</p>
+   
+    <br><br>
+    <div>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div><br>
+{% endblock %}

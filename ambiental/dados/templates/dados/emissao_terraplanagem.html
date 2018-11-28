@@ -1,0 +1,60 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container lead">
+    <br><br><br><br>
+    <h3 class="js-scroll-trigger text-left">Emissão de Alvará de Movimentação de Terra </h3><br>
+
+    <p>Este serviço é requerido no Instituto de Planejamento e Meio Ambiente do Município de Viçosa – IPLAM, junto à Diretoria de Meio Ambiente.</p>
+   
+    <p>Então você precisará da emissão de um Alvará para a Movimentação de Terra:<br>
+    Descrição:<br>
+    Este serviço é requerido no Instituto de Planejamento e Meio Ambiente do Município de Viçosa – IPLAM, junto à Diretoria de Cartografia e Agrimensura - DCA. Existindo algum erro no projeto de Terraplanagem apresentado ao IPLAM, é emitido um parecer ao Responsável Técnico pelo projeto ou ao proprietário do imóvel, cobrando-se uma taxa no valor de 0,60 UFM. Uma vez corrigido o projeto, será emitido o Alvará de Movimentação de Terra, e para cada alvará emitido é cobrada uma taxa no valor de 0,60 UFM. A cada nova entrada de documentos, atendimento de parecer ou qualquer outra solicitação o IPLAM/DCA tem prazo para resposta de 30 dias úteis, seja a resposta em forma de parecer ou emissão do Alvará.
+Documentos necessários:<br><br>
+   • Requerimento com pedido de terraplanagem, assinado pelo proprietário;<br>
+   • Certidão de Registro de Imóveis original e revalidada (30 dias);<br>
+   • Certidão Negativa de Débitos Municipais do Imóvel;<br>
+   • ISSQN dos responsáveis técnicos;<br>
+   • Cópia do alvará de bota-fora;<br>
+   • Contrato de prestação de serviço contendo o volume a ser movimentado e o número do alvará do bota-fora;
+   <br>• ART de execução de obra /serviço da terraplanagem (m3) de acordo com a Lei Municipal nº 1.633/2004 Capítulo III, Art. 10, Parágrafo 4°:
+§4°- Quando houver serviços de terraplanagem e movimentos de terra, a obra deverá ter Anotações de Responsabilidade Técnica (ART) de projeto e de execução desses serviços, em separado.
+<br>• ART do levantamento planialtimétrico (m2);
+<br>• ART de projeto de terraplanagem (m3);
+<br>• 02 (duas) cópias do projeto geométrico completo contendo:
+Planta planialtimétrica com representação do canevá, orientação, escala numérica e as seções transversais estaqueadas ao longo do perfil;
+<br>• Perfil longitudinal com a representação dos eixos horizontal/vertical, as cotas de terreno e greide, estaqueamento e os outros elementos de projeto;
+<br>• Seção transversal com a representação dos eixos horizontal/vertical, as cotas de terreno e greide, estaqueamento e os outros elementos de projeto;
+<br>• Tabela de balanceamento de corte e aterro, com empolamento de 30%;
+<br>• Curvas de nível cotadas com equidistância máxima de 1,00 metro;
+<br>• Planta de localização com o lote amarrado à esquina mais próxima;
+<br>• Quadro de convenções;
+<br>• Quadro de áreas;
+<br>• Representação das edificações existentes no lote;
+<br>• Representação de linhas de divisas e nome dos confrontantes;
+<br>• Assinatura do proprietário e responsável técnico;
+<br>• Projeto geométrico completo em formato digital (.dxf).
+<br><br>
+Prazo:<br> 
+30 dias úteis.<br>
+
+Taxa:<br>
+0,60 UFM por parecer/correção e 0,60 UFM por certidão emitida.<br>
+[UFM= R$ 49,09 (2018)]<br>
+
+Onde requerer:<br>
+Instituto de Planejamento e Meio Ambiente do Município (IPLAM).<br>
+Rua Dr. Milton Bandeira, nº 380, Viçosa Shopping - 3º piso, Centro.</p>
+
+   
+    <br><br>
+    <div>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div><br>
+{% endblock %}

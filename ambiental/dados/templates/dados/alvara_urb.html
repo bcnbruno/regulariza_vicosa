@@ -1,0 +1,47 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container lead">
+    <br><br><br><br>
+    <h3 class="js-scroll-trigger text-left">  Do Alvará de Urbanização para o Projeto de Loteamento</h3><br>
+
+<p>
+
+<br>Por último para começar a construir será necessário ter o Alvará de construção que deverá ter os seguintes itens e deveres a serem cumpridos, de acordo com a lei municipal nº 1469/2001:
+<br>A Prefeitura não aprovará loteamento de glebas, cuja realização exija a execução, por parte do poder público municipal, de obras e serviços de infraestrutura, inclusive de vias de acesso nas áreas adjacentes, a não ser que tais obras e serviços forem executados pelo loteador às suas próprias custas.
+<br>Aprovado o projeto de loteamento, a Prefeitura emitirá o alvará de urbanização para a execução das obras e serviços de infraestrutura do loteamento, com prazo de validade que respeitará o cronograma de execução das obras, como previsto no inciso XI do artigo 18, constando, no mínimo, de:
+<br>I - abertura de vias de circulação com pista de rolamento e passeios, com pavimentação da pista de rolamento sujeita à compactação e pavimentação poliédrica do tipo paralelepípedo, bloquete ou asfalto;
+<br>II - demarcação dos lotes, quadras e logradouros com a colocação de marcos de concreto;
+<br>III - obras destinadas ao escoamento de águas pluviais, inclusive galerias, guias ou meios-fios, sarjetas e canaletas, conforme normas e padrões técnicos estabelecidos pela Associação Brasileira de Normas Técnicas (ABNT);
+<br>IV - construção do sistema público de coleta de esgoto sanitário, de acordo com as normas e padrões técnicos estabelecidos pela ABNT e pelo SAAE;
+<br>V - construção de sistema público de abastecimento de água, de acordo com as normas e padrões técnicos estabelecidos pela ABNT e pelo SAAE;
+<br>VI - obras de contenção de taludes e de aterros destinados a evitar desmoronamento de terra e assoreamento de talvegues;
+<br>VII - construção de rede de energia elétrica e de iluminação pública, de acordo com as normas e padrões técnicos exigidos pela Cemig.
+<br>A Prefeitura julgará, no prazo máximo de 30 (trinta) dias, o requerimento de alvará para urbanização do loteamento, fundamentando, técnica e legalmente, a aceitação ou recusa.
+<br>Não será permitido o calçamento do tipo pedra fincada.
+<br>A aprovação do projeto de loteamento pela Prefeitura fica condicionada à assinatura do termo de compromisso pelo loteador, no qual este se obriga a:
+<br>I - executar, à própria custa, no prazo fixado no cronograma de obras, todas as obras e os equipamentos urbanos exigidos com fundamentos nesta Lei;
+<br>II - facilitar a fiscalização permanente, pela Prefeitura, durante a execução das obras e dos serviços;
+<br>III - iniciar a venda dos lotes somente após registro do loteamento;
+<br>IV - cumprir outras exigências específicas que venham a ser feitas pela Prefeitura com fundamento nesta Lei;
+<br>V - comunicar qualquer modificação no projeto original à Prefeitura Municipal, com antecedência, para análise e aprovação pelo órgão competente.
+<br>O alvará de execução pode ser revogado a qualquer momento, caso não seja cumprida qualquer disposição desta Lei ou obrigação contraída perante a Prefeitura;
+<br>Depois de aprovadas as obras especificadas, o loteador deverá apresentar à Prefeitura Municipal o projeto final contendo:
+<br>I - o sistema de vias com as respectivas hierarquias, dimensões e numeração;
+<br>II - o quadro demonstrativo contendo a área da gleba, a área total parcelada, o número de lotes, as dimensões e as áreas de cada lote e as áreas doadas ao Município.
+<br>A Prefeitura terá um prazo de 30 dias corridos para vistoriar e aprovar definitivamente o projeto de loteamento, para fins de registro. O prazo é contado a partir da data de protocolo da entrada do processo.
+<br>Os espaços livres para uso público, as vias e praças, as áreas destinadas a edifícios públicos e outros equipamentos urbanos constantes do projeto e do memorial descritivo não poderão ter sua destinação alterada pelo loteador ou pelo poder público municipal, a partir da aprovação do loteamento, salvo as hipóteses de caducidade da licença ou desistência do loteador, sendo, neste caso, observadas as exigências do artigo 23 da Lei Federal nº 6.766/79.
+
+</p>
+   
+    <br><br>
+    <div>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div><br>
+{% endblock %}

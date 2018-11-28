@@ -1,0 +1,40 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container lead">
+    <br><br><br><br>
+    <h3 class="js-scroll-trigger text-left">Emissão de Autorização de Autorização para corte de árvores em área urbana </h3><br>
+
+    <p>Este serviço é requerido no Instituto de Planejamento e Meio Ambiente do Município de Viçosa – IPLAM, junto à Diretoria de Meio Ambiente.</p>
+    <br>
+    <h5 class="js-scroll-trigger text-left">Documentos necessários:</h5>
+    <br>
+    <ul>
+        <li>Formulário de requerimento preenchido;</li>
+        <li>RG;</li>
+        <li>CPF</li>
+        <li>Comprovante de residência.</li>
+    </ul>
+    <br>
+    <h5 class="js-scroll-trigger text-left">Prazo </h5><br>
+    <p>Consulte o IPLAM.</p><br>
+    <h5 class="js-scroll-trigger text-left">Taxa:</h5>
+    <p>Consulte o IPLAM</p><br>
+    <h5 class="js-scroll-trigger text-left">Onde requerer:</h5>
+    <p>Instituto de Planejamento e Meio Ambiente do Município (IPLAM).<br>
+            Rua Dr. Milton Bandeira, nº 380, Viçosa Shopping - 3º piso, Centro.</p>
+    <br>
+    <h5 class="js-scroll-trigger text-left">Mais informações:</h5><br>
+    <p>(31) 3892-4360<br>
+            iplamvicosa@gmail.com</p>
+    <br><br>
+    <div>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div><br>
+{% endblock %}

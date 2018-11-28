@@ -38,6 +38,7 @@ class FiltroBAA(models.Model):
 class Formulario(models.Model):
     bairro = models.TextField()
     nome = models.TextField()
+    logradouro = models.TextField()
     area = models.FloatField()
     area_planta = models.FloatField()
     num_pav = models.IntegerField()

@@ -3,7 +3,9 @@
 {% block content %}
 
 {% block title %}Construção de prédio{% endblock %}
-
+<style>
+attrs={'style': 'width:10px'}
+</style>
 <!-- Grid Section -->
 <section class="predio" id="predio">
     <br>
@@ -16,13 +18,18 @@
     <br><br>
     <form class="row" action="/tela4/" method="post">
     
-        <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
+        <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
             <label for="{{form.Bairro}}">Bairro</label><br>
             {% csrf_token %}
             {{ form.bairro }}            
         </div>
-        <div class="form-group col-md-4 col-md-6 pt-2 pb-2">
-            <label for="{{form.Nome}}">Rua</label><br>
+        <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
+            <label for="{{form.Logradouro}}">Logradouro</label><br>
+            {% csrf_token %}
+            {{ form.logradouro }}            
+        </div>
+        <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
+            <label for="{{form.Nome}}">Nome</label><br>
             {% csrf_token %}
             {{ form.nome }}            
         </div>        
@@ -37,12 +44,12 @@
             {{ form.area_planta }}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Num_pav}}"> Número de pavimentos (com garagem)</label><br>
+            <label for="{{form.Num_pav}}"> Número de pavimentos</label><br>
             {% csrf_token %}
             {{form.num_pav}}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Num_pessoas}}"> Número aproximado de pessoas no prédio</label><br>
+            <label for="{{form.Num_pessoas}}"> Número de pessoas no prédio</label><br>
             {% csrf_token %}
             {{form.num_pessoas}}
         </div>

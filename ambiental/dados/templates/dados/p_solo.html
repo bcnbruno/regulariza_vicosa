@@ -1,0 +1,50 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container lead">
+    <br><br><br><br>
+    <h3 class="js-scroll-trigger text-left">Diretrizes para o Parcelamento do solo </h3><br>
+
+<p>Antes de iniciar a construção do loteamento saiba que ele deve seguir as seguintes diretrizes:
+<br>De acordo com a lei nº 1469/2001 que institui o Parcelamento do Solo do Município de Viçosa, antes da apreciação do projeto, a Prefeitura fixará as diretrizes para a elaboração do projeto de loteamento e das obras de infraestrutura urbana, atendendo requerimento do interessado, instruído com os seguintes documentos:
+<br>I - certidão negativa de ônus real expedida pelo Cartório de Registro de Imóveis competente, com prazo não superior a 30 (trinta) dias;
+<br>II - planta de situação do imóvel permitindo sua perfeita localização, além das posições dos arruamentos, rodovias, serviços de abastecimentos de água e de energia elétrica presentes nos arredores;
+<br>III - Parecer do SAAE quanto à possibilidade de abastecimento de água potável e da coleta, do tratamento e da destinação de esgotos sanitários;
+<br>IV - planta do imóvel, em duas (2) vias, na escala 1:2. 000 ou maior, assinada pelo proprietário ou seu representante legal e por profissional registrado no Conselho Regional de Engenharia, Arquitetura e Agronomia (CREA), com o respectivo comprovante do recolhimento do Imposto Sobre Serviços de Qualquer Natureza (ISSQN) no Município de Viçosa, contendo:
+<br>a) curvas de nível com equidistância de um metro;
+<br>b) localização dos mananciais, cursos d`água correntes e dormentes;
+<br>c) localização dos arruamentos vizinhos, das linhas de transmissão de energia elétrica, rede de telefonia, dutos e demais instalações com suas respectivas faixas de domínio ou servidões, das vias de comunicação, das áreas livres e dos equipamentos urbanos e comunitários existentes no local e adjacências;
+<br>d) localização dos acidentes naturais ou artificiais, matas e florestas, bosques, árvores frondosas isoladas, agrupamentos descontínuos ou isolados de árvores e afloramentos rochosos;
+<br>e) construções existentes no imóvel;
+<br>f) servidões existentes;
+<br>g) áreas alagadiças ou sujeitas a inundações;
+<br>h) delimitação da gleba a ser parcelada, perfeitamente definida, com indicação de todos os confrontantes;
+<br>i) esboço do que se propõe realizar, definindo o tipo de uso predominante e o cálculo da área do imóvel.
+<br>A Prefeitura terá o prazo máximo de 30 (trinta) dias para fixar as diretrizes a que se refere este artigo, suspendendo-se esse prazo durante o período necessário ao atendimento de eventuais exigências que forem feitas ao loteador. A resposta das diretrizes será feita sempre por escrito, com comprovante de recebimento do loteador ou seu procurador.
+<br>As diretrizes a serem fornecidas pela Prefeitura compreenderão:
+<br>I - características, dimensionamento e traçados das vias de circulação do sistema viário do Município, que deverão ter continuidade na gleba a lotear;
+<br>II - faixas não-edificantes exigidas nos termos desta Lei;
+<br>III - laudo técnico, analisando pormenorizadamente as características da gleba e mencionando as providências e requisitos que devam ser exigidos, contendo, pelo menos:
+<br>a) indicação das áreas não-loteáveis, de acordo com a legislação pertinente, especificando, em cada situação, as providências necessárias para torná-las loteáveis, quando for possível;
+<br>b) recomendação quanto a obras e medidas preventivas, relativas a:
+<br>1 - estabilidade de cortes e aterros;
+<br>2 - erosão e deslizamento de encostas;
+<br>3 - assoreamento e agravamento de enchentes;
+<br>IV - localização e dimensões aproximadas das áreas livres de uso público e institucional;
+<br>V - relação das obras e equipamentos urbanos que deverão ser projetados e executados pelo proprietário, especificando-se a definição de área e testada dos lotes, de acordo com as disposições desta e de outras leis pertinentes.
+<br>O projeto ficará vinculado ao objeto do requerimento das diretrizes e somente poderá ser executado nos termos das normas expedidas pela Prefeitura.
+<br>Caso o loteador não tenha interesse em executar o projeto conforme as diretrizes expedidas, poderá formular outro requerimento, com objeto diverso.
+<br>É vedado aos agentes públicos responsáveis pela elaboração das diretrizes fazer exigências que não se encontram previstas em lei, ainda que tecnicamente recomendadas, sob pena de responsabilidade. As diretrizes para loteamento vigorarão pelo prazo máximo de 2 (dois) anos.
+</p>
+   
+    <br><br>
+    <div>
+        <a href="{% url 'dados:docconstrucao' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div><br>
+{% endblock %}

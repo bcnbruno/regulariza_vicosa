@@ -1,0 +1,54 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Página Inicial{% endblock %}
+   
+<div class="container lead">
+    <br><br><br><br>
+    <h3 class="js-scroll-trigger text-left">Regularização de Obras </h3><br>
+
+    <p >Se a opção escolhida no início for a de já possuir construção no terreno perguntar se a mesma já está regularizada com a prefeitura. Caso a pessoa opte pela opção que não está regularizada aparecerá o seguinte texto:</p>     
+
+    <p >Atenção: Lembre-se que o fato de pagar IPTU contas de Água e Luz não são indicativos da casa estar regularizada com a prefeitura.
+    </p>
+    <br>
+    <h5 class="js-scroll-trigger text-left">Descrição:</h5><br>
+
+    <p>Regularização de obras no município de Viçosa (MG).</p><br>
+
+    <h5 class="js-scroll-trigger text-left">Documentos:</h5><br>
+
+    <ul>
+        <li>Certidão de Registro de Imóveis – CRI revalidado;</li>
+        <li>Certidão Negativa de Débitos Municipais – CND do lote;</li>
+        <li>Cópia do RG ou documento similar de identificação;</li>
+        <li>Pessoa Jurídica: Cópia do contrato social da empresa (no caso de mais de um responsável legal todos deverão assinar o projeto arquitetônico ou quadro de áreas ou apresentar procuração nomeando o responsável por movimentar o processo junto ao IPLAM);</li>
+        <li>Anotação de responsabilidade técnica (ART) ou Registro de responsabilidade técnica (RRT);</li>
+        <li>ISSQN dos responsáveis técnicos;</li>
+        <li>Projeto arquitetônico completo;</li>
+        <li>Quadro de áreas (modelo IPLAM) (facultativo para os casos de edificações destinadas ao uso residencial unifamiliar);</li>
+        <li>Laudo técnico referente à elaboração do projeto do sistema de prevenção e combate a incêndio e pânico, acompanhado de ART ou RRT (exceto para edificações destinadas ao uso residencial unifamiliar);</li>
+        <li>Protocolo de análise de projeto de prevenção e combate a incêndio e pânico junto ao Corpo de Bombeiros Militar de Minas Gerais (exceto para edificações destinadas ao uso residencial unifamiliar)</li>
+        <li>Auto de Vistoria do Corpo de Bombeiros – AVCB (exceto para edificações destinadas ao uso residencial unifamiliar);</li>
+        <li>Declaração assinada pelo responsável técnico pela execução civil e pelo proprietário sobre o cumprimento das exigências das leis nº. 2.496/15 e nº. 2.573/16 que trata do reaproveitamento da água proveniente das chuvas (edificações a serem executadas ou ainda em fase de construção destinadas ao uso residenciais, comerciais e industriais com 02 ou mais pavimentos ou 01 pavimento com área superior a 100m²);</li>
+        <li>Declaração informando que o projeto atende às exigências construtivas do condomínio (nos casos de edificações executadas em condomínios);</li>
+        <li>Cópia do comprovante de pagamento do Auto de infração emitido pelo IPLAM.</li>
+    </ul>
+    <br>
+    <h5 class="js-scroll-trigger text-left">Prazo para prestação do serviço: </h5>
+    <p>30 dias úteis.</p><br>
+    <h5 class="js-scroll-trigger text-left">Taxas:</h5>
+    <p>Consulte o IPLAM</p><br>
+    <p>Estando sua obra regularizada com a prefeitura você pode entrar com o pedido de Habite-se que garante a obra ter sido executada de acordo com o projeto aprovado e facilita a venda ou financiamento do imóvel.</p>
+    <br><br>
+    <div>
+        <a href="{% url 'dados:emissao_habitasse_2' %}">
+            <button type="button" class="btn btn-primary btn-lg">Continuar</button>
+        </a>
+        <a href="{% url 'dados:ta_regularizado' %}">
+            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>
+    </div>
+</div><br>
+{% endblock %}
