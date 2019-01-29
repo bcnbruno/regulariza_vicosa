@@ -23,6 +23,12 @@
         <!-- Custom styles for this template -->
         <link href="../../static/dados/bootstrap/css/freelancer.min.css" rel="stylesheet">
 
+        {% load staticfiles %}
+        <script src="{% static "js/jquery.js" %}"></script>
+        <script src="{% static "js/rango-jquery.js" %}"></script>
+        <!--<script type="text/javascript" src="{{ STATIC_URL }} /static/js/jquery.js">
+        </script>--> 
+
         <title>
             {% block title %}{% endblock %}
         </title>
