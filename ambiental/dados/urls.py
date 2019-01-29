@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import url
 from . import views
 
 app_name = 'dados'
@@ -54,4 +55,5 @@ urlpatterns = [
     path('p_solo_f/', views.p_solo_f, name='p_solo_f'),
     path('emissao_a_lot/', views.emissao_a_lot, name='emissao_a_lot'),
     path('alvara_urb/', views.alvara_urb, name='alvara_urb'),
+    url(r'ajax/escolha_bairro/$', views.escolha_bairro, name='escolha_bairro'),
 ]

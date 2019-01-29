@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
 from django.utils import timezone
 from django.db.models import Q
 from .models import Dados, Formulario, TSeptico, Tanque, OpcaoForm, FiltroBAA
@@ -40,18 +41,18 @@ def tela4(request):
         Formulario.objects.all().delete()
     
     if request.method == 'POST':
+        
         form = FirstForm(request.POST)
-        if form.is_valid():
-            
+
+        if form.is_valid():            
             bairro = form['bairro'].value()
-            nome = form['nome'].value()
+            nome = form['nome'].value()            
             logradouro = form['logradouro'].value()
             area = form['area'].value()
             area_planta = form['area_planta'].value()
             num_pav = form['num_pav'].value()
-            num_pessoas = form['num_pessoas'].value()
+            num_pessoas = form['num_pessoas'].value()            
 
-    
             f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
 
@@ -658,4 +659,19 @@ def alvara_urb(request):
     
     return render(request, 'dados/alvara_urb.html', {})
 
+def escolha_bairro(request):
+    bairro = request.GET.get('bairro', None)
+    #data = {
+        #'texto': Dados.objects.filter(bairro__iexact=bairro).exists()
+        #'texto': bairro
+    #}
+    choices = ''
+    dados = Dados.objects.filter(bairro__exact = str(bairro))
+    for choice in dados:
+        choices = choices + choice.rua.upper() + ' - ' + choice.nome + ',' 
+    
+    data = {
+        'nomes': choices
+    }
 
+    return JsonResponse(data)

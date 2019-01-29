@@ -5501,7 +5501,7 @@ button.close {
     height: calc(100vh - (1.75rem * 2));
   }
   .modal-sm {
-    max-width: 300px;
+    max-width: 600px;
   }
 }
 

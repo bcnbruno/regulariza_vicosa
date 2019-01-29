@@ -1,4 +1,4 @@
-$(document).ready( function() {
+/*$(document).ready( function() {
     $("#id_bairro").change( function(event) {
         var bairro = $(this).val();
         
@@ -20,5 +20,5 @@ $(document).ready( function() {
         });
 
     });
-});
+});*/
 
