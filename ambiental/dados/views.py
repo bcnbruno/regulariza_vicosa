@@ -257,7 +257,7 @@ def orientacao_ocupacao(request):
     bairro = f.bairro
     nome = f.nome
     logradouro = f.logradouro
-    dados = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
+    dados = Dados.objects.get(bairro=bairro, rua=logradouro, nome=logradouro + ' - ' + nome) 
 
     ar_arPlanta = round( ((f.area_planta / f.area)*100), 2) 
     tx_area = (dados.taxa_prm/100) * f.area_planta
