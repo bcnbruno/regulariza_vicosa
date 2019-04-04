@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.utils import timezone
@@ -43,23 +44,21 @@ def tela4(request):
     if request.method == 'POST':
         
         form = FirstForm(request.POST)
-
+       
         if form.is_valid():            
             bairro = form['bairro'].value()
             nome = form['nome'].value()            
-            logradouro = form['logradouro'].value()
             area = form['area'].value()
             area_planta = form['area_planta'].value()
             num_pav = form['num_pav'].value()
-            num_pessoas = form['num_pessoas'].value()            
+            num_pessoas = form['num_pessoas'].value()    
 
-            f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            nomes = nome.split(" - ", 1)
+
+            f = Formulario(bairro=bairro, logradouro=nomes[0], nome=nomes[1], area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
             f.save()
 
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-                dado = Dados.objects.get(bairro=bairro) 
-            else:
-                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome) 
+            dado = Dados.objects.get(bairro=bairro, rua=nomes[0], nome=nome) 
 
             opcao = OpcaoForm.objects.get()
             op = opcao.possui_construcao
@@ -71,9 +70,8 @@ def tela4(request):
             opcao.save()
 
             if op != "":
-                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                    return render(request, 'dados/tela8_1.html', {'dado':dado})
+                #if str(logradouro) == "ZRU" or str(nome) == "ZRU":
+                #    return render(request, 'dados/tela8_1.html', {'dado':dado})
 
                 if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
                     
@@ -107,88 +105,11 @@ def tela4(request):
                     return render(request, 'dados/naoehpossivel.html', {'value': v})
             else:
                 return render(request, 'dados/ta_regularizado.html', {})
-
+    
     else:
         form = FirstForm()
 
     return render(request, 'dados/tela4.html', {'form': form})
-
-def tela5(request):
-    
-    if Formulario.objects.count() != 0:
-        Formulario.objects.all().delete()
-    
-    if request.method == 'POST':
-        form = FirstForm(request.POST)
-        if form.is_valid():
-            
-            bairro = form['bairro'].value()
-            nome = form['nome'].value()
-            logradouro = form['logradouro'].value()
-            area = form['area'].value()
-            area_planta = form['area'].value()
-            num_pav = form['num_pav'].value()
-            num_pessoas = form['num_pessoas'].value()
-
-            f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
-            f.save()
-            
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-                dado = Dados.objects.get(bairro=bairro) 
-            else:
-                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)                 
-
-            opcao = OpcaoForm.objects.get()
-            op = opcao.possui_construcao
-
-            if OpcaoForm.objects.count() != 0:
-                OpcaoForm.objects.all().delete()
-
-            opcao = OpcaoForm(possui_construcao=op, tela="5")
-            opcao.save()
-
-            if op != "":
-                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                    return render(request, 'dados/tela8_1.html', {})
-
-                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
-                    
-                    return render(request, 'dados/tela8.html', {'opcao': opcao})
-
-                elif int(num_pav) > dado.num_pav and float(area) < dado.area_min:
-                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
-                    para a zona que está localizado, o número máximo de pavimentos \
-                    para essa zona é " + str(dado.num_pav) + ". \
-                        A construção possui área menor que a exigida pela lei 1420/2000 \
-                    para a zona que está localizado, a área mínima para essa zona é \
-                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-
-                elif int(num_pav) > dado.num_pav:
-                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
-                    para a zona que está localizado, o número máximo de pavimentos \
-                    para essa zona é " + str(dado.num_pav) + ". Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-                
-                elif float(area) < dado.area_min:
-                    v = "A construção possui área menor que a exigida pela lei 1420/2000 \
-                    para a zona que está localizado, a área mínima para essa zona é \
-                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-            else:
-                return render(request, 'dados/ta_regularizado.html', {})
-
-    else:
-        form = FirstForm()
-
-    return render(request, 'dados/tela5.html', {'form': form})
 
 def tela6(request):
     return render(request, 'dados/tela6.html', {})
@@ -201,160 +122,6 @@ def tela8(request):
 
 def tela8_1(request):
     return render(request, 'dados/tela8_1.html', {})
-
-def tela10(request):
-
-    if Formulario.objects.count() != 0:
-        Formulario.objects.all().delete()
-
-    if request.method == 'POST':
-        form = FirstForm(request.POST)
-        if form.is_valid():
-            
-            bairro = form['bairro'].value()
-            nome = form['nome'].value()
-            logradouro = form['logradouro'].value()
-            area = form['area'].value()
-            area_planta = form['area'].value()
-            num_pav = form['num_pav'].value()
-            num_pessoas = form['num_pessoas'].value()
-
-            f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
-            f.save()
-            
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-                dado = Dados.objects.get(bairro=bairro) 
-            else:
-                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)    
-
-            opcao = OpcaoForm.objects.get()
-            op = opcao.possui_construcao
-
-            if op != "":
-                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                    return render(request, 'dados/tela8_1.html', {})
-
-                if OpcaoForm.objects.count() != 0:
-                    OpcaoForm.objects.all().delete()
-
-                opcao = OpcaoForm(possui_construcao=op, tela="10")
-                opcao.save()
-
-                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
-                    
-                    return render(request, 'dados/tela8.html', {'opcao': opcao})
-
-                elif int(num_pav) > dado.num_pav and float(area) < dado.area_min:
-                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
-                    para a zona que está localizado, o número máximo de pavimentos \
-                    para essa zona é " + str(dado.num_pav) + ". \
-                        A construção possui área menor que a exigida pela lei 1420/2000 \
-                    para a zona que está localizado, a área mínima para essa zona é \
-                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-
-                elif int(num_pav) > dado.num_pav:
-                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
-                    para a zona que está localizado, o número máximo de pavimentos \
-                    para essa zona é " + str(dado.num_pav) + ". Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-                
-                elif float(area) < dado.area_min:
-                    v = "A construção possui área menor que a exigida pela lei 1420/2000 \
-                    para a zona que está localizado, a área mínima para essa zona é \
-                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-            else:
-                return render(request, 'dados/ta_regularizado.html', {})
-
-    else:
-        form = FirstForm()
-
-    return render(request, 'dados/tela10.html', {'form': form})
-
-def tela11(request):
-    
-    if Formulario.objects.count() != 0:
-        Formulario.objects.all().delete()
-
-    if request.method == 'POST':
-        form = FirstForm(request.POST)
-        if form.is_valid():
-            
-            bairro = form['bairro'].value()
-            nome = form['nome'].value()
-            logradouro = form['logradouro'].value()
-            area = form['area'].value()
-            area_planta = form['area'].value()
-            num_pav = form['num_pav'].value()
-            num_pessoas = form['num_pessoas'].value()
-
-            f = Formulario(bairro=bairro, logradouro=logradouro, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
-            f.save()
-
-            if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-                dado = Dados.objects.get(bairro=bairro) 
-            else:
-                dado = Dados.objects.get(bairro=bairro, rua=logradouro, nome=nome)    
-
-            opcao = OpcaoForm.objects.get()
-            op = opcao.possui_construcao
-
-            if op != "":
-                if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-
-                    return render(request, 'dados/tela8_1.html', {})
-                    
-                if OpcaoForm.objects.count() != 0:
-                    OpcaoForm.objects.all().delete()
-
-                opcao = OpcaoForm(possui_construcao=op, tela="11")
-                opcao.save()
-
-                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
-            
-                    return render(request, 'dados/tela8.html', {'opcao': opcao})
-
-                elif int(num_pav) > dado.num_pav and float(area) < dado.area_min:
-                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
-                    para a zona que está localizado, o número máximo de pavimentos \
-                    para essa zona é " + str(dado.num_pav) + ". \
-                        A construção possui área menor que a exigida pela lei 1420/2000 \
-                    para a zona que está localizado, a área mínima para essa zona é \
-                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})    
-
-                elif int(num_pav) > dado.num_pav:
-                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
-                    para a zona que está localizado, o número máximo de pavimentos \
-                    para essa zona é " + str(dado.num_pav) + ". Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-                
-                elif float(area) < dado.area_min:
-                    v = "A construção possui área menor que a exigida pela lei 1420/2000 \
-                    para a zona que está localizado, a área mínima para essa zona é \
-                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
-                    melhores esclarecimentos."
-
-                    return render(request, 'dados/naoehpossivel.html', {'value': v})
-            else:
-                return render(request, 'dados/ta_regularizado.html', {})
-  
-    else:
-        form = FirstForm()
-
-    return render(request, 'dados/tela11.html', {'form': form})
 
 def tela12(request):
     return render(request, 'dados/tela12.html', {})
@@ -668,7 +435,8 @@ def escolha_bairro(request):
     choices = ''
     dados = Dados.objects.filter(bairro__exact = str(bairro))
     for choice in dados:
-        choices = choices + choice.rua.upper() + ' - ' + choice.nome + ',' 
+        #choices = choices + choice.rua.upper() + ' - ' + choice.nome + ','
+        choices = choices + choice.nome + ',' 
     
     data = {
         'nomes': choices

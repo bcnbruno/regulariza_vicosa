@@ -9,12 +9,11 @@ urlpatterns = [
     path('tela2/', views.tela2, name='tela2'),
     path('tela3/', views.tela3, name='tela3'),
     path('tela4/', views.tela4, name='tela4'),
-    path('tela5/', views.tela5, name='tela5'),
+    
     path('tela6/', views.tela6, name='tela6'),    
     path('tela8/', views.tela8, name='tela8'), 
     path('tela8_1/', views.tela8_1, name='tela8_1'),    
-    path('tela10/', views.tela10, name='tela10'),
-    path('tela11/', views.tela11, name='tela11'),
+   
     path('tela12/', views.tela12, name='tela12'),
     path('tela13/', views.tela13, name='tela13'),
     path('tela14/', views.tela14, name='tela14'),
