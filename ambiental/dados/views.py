@@ -53,6 +53,10 @@ def tela4(request):
             num_pav = form['num_pav'].value()
             num_pessoas = form['num_pessoas'].value()    
 
+            if str(nome) == "ZR":
+                dado = Dados.objects.get(bairro=bairro, rua="ZR", nome="ZR") 
+                return render(request, 'dados/tela8_1.html', {'dado':dado})
+
             nomes = nome.split(" - ", 1)
 
             f = Formulario(bairro=bairro, logradouro=nomes[0], nome=nomes[1], area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
