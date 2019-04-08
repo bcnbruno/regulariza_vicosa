@@ -468,3 +468,7 @@ def escolha_bairro(request):
     }
 
     return JsonResponse(data)
+
+def referencias(request):
+    
+    return render(request, 'dados/referencias.html', {})
