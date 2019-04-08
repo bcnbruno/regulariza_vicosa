@@ -54,7 +54,10 @@ def tela4(request):
             num_pessoas = form['num_pessoas'].value()    
 
             if str(nome) == "ZR":
-                dado = Dados.objects.get(bairro=bairro, rua="ZR", nome="ZR") 
+                dado = Dados.objects.get(bairro=bairro, rua="ZR", nome="ZR")
+                f = Formulario(bairro=bairro, logradouro=nome, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+                f.save()
+                
                 return render(request, 'dados/tela8_1.html', {'dado':dado})
 
             nomes = nome.split(" - ", 1)
@@ -74,11 +77,8 @@ def tela4(request):
             opcao.save()
 
             if op != "":
-                #if str(logradouro) == "ZRU" or str(nome) == "ZRU":
-                #    return render(request, 'dados/tela8_1.html', {'dado':dado})
 
-                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:
-                    
+                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:                    
                     return render(request, 'dados/tela8.html', {'opcao': opcao})
                 
                 elif int(num_pav) > dado.num_pav and float(area) < dado.area_min:
@@ -268,10 +268,31 @@ def orientacao_ocupacao(request):
     return render(request, 'dados/orientacao_ocupacao.html', {'cp_area':cp_area, 'tx_area':tx_area, 'dados':dados, 'ar_arPlanta': ar_arPlanta, 'form':f})
 
 def doc_saae(request):
-    f = Formulario.objects.get()    
+    f = Formulario.objects.get()   
+    if f.logradouro != 'ZR':
+        nome = f.logradouro + ' - ' + f.nome
+    else:
+        nome = f.nome
+    bairro = f.bairro 
+    d = Dados.objects.get(bairro=bairro, nome=nome)
     l = f.logradouro
+    e = d.esgoto
 
-    return render(request, 'dados/doc_saae.html', {'l':l})
+    return render(request, 'dados/doc_saae.html', {'l':l, 'e':e})
+
+def doc_saae_2(request):
+    f = Formulario.objects.get()   
+    if f.logradouro != 'ZR':
+        nome = f.logradouro + ' - ' + f.nome
+    else:
+        nome = f.nome
+    bairro = f.bairro 
+    d = Dados.objects.get(bairro=bairro, nome=nome)
+    l = f.logradouro
+    a = d.agua
+
+    return render(request, 'dados/doc_saae_2.html', {'l':l, 'a':a})
+
 
 def pocos(request):
     f = Formulario.objects.get()

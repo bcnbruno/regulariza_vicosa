@@ -7,14 +7,10 @@
 <div class="container">
     <br><br><br><br><br><br>
         
-    {% if e == "S" %}
-    <p class="lead">O seu terreno possuí acesso à rede de coleta de esgoto do SAAE por isso recomendamos 
-        entrar em contato com o mesmo para realizar os requerimentos. A autarquia irá realizar todos os 
-        procedimentos para a conexão, como dimensionar o ramal de ligação, prover a mão de obra e o material 
-        necessário para a para a execução da mesma, sendo esta realizada depois das obras do projeto aprovado 
-        serem concluídas, caberá ao requerente da ligação o pagamento das taxas requeridas pela autarquia, valores 
-        que serão providenciados por ela após a realização de um levantamento, como também fornecer os seguintes 
-        documentos:</p>
+    {% if a == "S" %}
+    <p class="lead">O proprietário do imóvel deve fazer o pedido para o SAAE prover a ligação do imóvel que será executada 
+        depois que a obra do projeto já estiver concluída devendo o dono pagar uma taxa que deverá ser consultada junto ao 
+        SAAE e apresentar os seguintes documentos:</p>
     <ol class="lead">
         <li>Certidão de numeração fornecida pelo Setor de Cadastro da Prefeitura ou 
             outro documento que vier a substituí-lo;</li> 
@@ -22,6 +18,8 @@
         <li>cópia da planta de situação e da planta baixa do projeto arquitetônico 
             aprovado pela municipalidade, no caso de prédios com subsolo e/ou acima de 3
             (três) pavimentos (10 m de altura) e área superior ou igual a 300 m<sup>2</sup>.</li>
+        <li>cópia da planta de situação e da planta baixa do projeto arquitetônico aprovado pela municipalidade, no caso de 
+            prédios com subsolo e/ou acima de 3(três) pavimentos (10 m de altura) e área superior ou igual a 300 m<sup>2</sup>. </li>
     </ol>
     <p class="lead">Parágrafo Único - O ramal predial para construção ou definitivo será dimensionado
         Parágrafo Único - O ramal predial para construção ou definitivo será dimensionado
@@ -38,7 +36,7 @@
         
     <div><br>
         {% if l != "ZR" %}
-        <a href="{% url 'dados:tela13' %}">
+        <a href="{% url 'dados:tela14' %}">
             <button type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% else %}

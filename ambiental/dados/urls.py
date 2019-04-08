@@ -32,6 +32,7 @@ urlpatterns = [
     path('sumidouro/', views.sumidouro, name='sumidouro'),
     path('orientacao_ocupacao/', views.orientacao_ocupacao, name='orientacao_ocupacao'),
     path('doc_saae/', views.doc_saae, name='doc_saae'),
+    path('doc_saae_2', views.doc_saae_2, name='doc_saae_2'),
     path('pocos/', views.pocos, name='pocos'),
     path('emissao_habitasse/', views.emissao_habitasse, name='emissao_habitasse'),
     path('emissao_habitasse_2/', views.emissao_habitasse_2, name='emissao_habitasse_2'),

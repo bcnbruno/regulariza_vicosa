@@ -11,6 +11,9 @@ class Dados(models.Model):
     taxa_prm = models.IntegerField()
     num_pav = models.IntegerField()
     coef_aprov = models.FloatField()
+    agua = models.TextField()
+    esgoto = models.TextField()
+    lixo = models.TextField()
 
 class TSeptico(models.Model):
     num_pessoas = models.IntegerField()
