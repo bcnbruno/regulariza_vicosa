@@ -70,16 +70,25 @@
                             <td class="tg-c3ow">Comprimento (m)</td>
                             <td class="tg-c3ow">Largura (m)</td>
                         </tr>
-                        {% for x, y in c%}
+                        {% if limite == 'N' %}
+                            {% for x, y in c%}
+                            <tr>
+                                <td class="tg-amwm">{{volume}}</td>
+                                <td class="tg-amwm">{{profundidade}}</td>
+                                <td class="tg-amwm">{{area}}</td>
+                                <td class="tg-amwm">{{x}}</td>
+                                <td class="tg-amwm">{{y}}</td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
                         <tr>
                             <td class="tg-amwm">{{volume}}</td>
                             <td class="tg-amwm">{{profundidade}}</td>
                             <td class="tg-amwm">{{area}}</td>
-                            <td class="tg-amwm">{{x}}</td>
-                            <td class="tg-amwm">{{y}}</td>
+                            <td class="tg-amwm">{{area}}</td>
+                            <td class="tg-amwm">{{1}}</td>
                         </tr>
-                        {% endfor %}
-                        
+                        {%endif%}
                 </table>
             </div>
             <br><br><br>

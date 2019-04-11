@@ -7,7 +7,7 @@
 <div class="container">
     <br><br><br><br><br><br>
         
-    {% if a == "S" %}
+    {% if a == 'S' %}
     <p class="lead">O proprietário do imóvel deve fazer o pedido para o SAAE prover a ligação do imóvel que será executada 
         depois que a obra do projeto já estiver concluída devendo o dono pagar uma taxa que deverá ser consultada junto ao 
         SAAE e apresentar os seguintes documentos:</p>
@@ -27,12 +27,15 @@
     <p class="lead">A ligação de água e/ou esgoto está sujeita ao pagamento de valores, estes devem 
         ser orçados junto ao SAAE e podem ser pagos em parcela única ou em até 10 parcelas 
         ndo necessário, para a concessão da ligação, o pagamento da primeira parcela.</p>
-    {% else %}
+    {% elif a == 'N' %}
     <p class="lead">O seu terreno não possuí acesso à rede de coleta de esgoto do SAAE por isso recomendamos entrar em 
         contato com o mesmo para melhores informações. Existe também formas de tratamento individuais, confira na opção 
-        OUTRAS FORMAS DE TRATAMENTO na página anterior.</p>        
-    {% endif %}  
-            
+        OUTRAS FORMAS DE TRATAMENTO na página anterior.</p>
+    {% else %}
+    <p class="lead">O seu terreno não possuí informações sobre a rede de coleta de esgoto do SAAE de acordo com nosso banco de dados, por isso recomendamos entrar em 
+        contato com o mesmo para melhores informações. Existe também formas de tratamento individuais, confira na opção 
+        OUTRAS FORMAS DE TRATAMENTO na página anterior</p>            
+    {% endif %}              
         
     <div><br>
         {% if l != "ZR" %}

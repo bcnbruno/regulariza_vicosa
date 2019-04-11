@@ -18,36 +18,36 @@ attrs={'style': 'width:10px'}
     <br><br>
     <form class="row" action="/tela4/" method="post">    
         <div class="form-group col-md-6 col-md-4 pt-2 pb-2">
-            <label for="{{form.Bairro}}">Bairro</label><br>
+            <label for="{{form.Bairro}}">Bairro</label><br><br>
             {% csrf_token %}
             {{ form.bairro }}            
         </div>   
         <div class="form-group col-md-6 col-md-4 pt-2 pb-2">
-            <label for="{{form.Nome}}">Nome</label><br>
+            <label for="{{form.Nome}}">Nome</label><br><br>
             {% csrf_token %}
             {{ form.nome }}            
         </div>        
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Area}}">Área total do lote (m<sup>2</sup>)</label><br>
+            <label for="{{form.Area}}">Área total do lote (m<sup>2</sup>)</label><br><br>
             {% csrf_token %}
             {{ form.area }}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Area}}">Área construída em planta (m<sup>2</sup>)</label><br>
+            <label for="{{form.Area}}">Área construída em planta (m<sup>2</sup>)</label><br><br>
             {% csrf_token %}
             {{ form.area_planta }}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Num_pav}}"> Número de pavimentos</label><br>
+            <label for="{{form.Num_pav}}">Número de pavimentos incluindo garagem</label><br>
             {% csrf_token %}
             {{form.num_pav}}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Num_pessoas}}"> Número de pessoas no prédio</label><br>
+            <label for="{{form.Num_pessoas}}"> Número de pessoas no prédio</label><br><br>
             {% csrf_token %}
             {{form.num_pessoas}}
         </div>
-        <br><br>
+        
         <div>
             <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
         </div>

@@ -7,7 +7,7 @@
 <div class="container">
     <br><br><br><br><br><br>
         
-    {% if e == "S" %}
+    {% if e == 'S' %}
     <p class="lead">O seu terreno possuí acesso à rede de coleta de esgoto do SAAE por isso recomendamos 
         entrar em contato com o mesmo para realizar os requerimentos. A autarquia irá realizar todos os 
         procedimentos para a conexão, como dimensionar o ramal de ligação, prover a mão de obra e o material 
@@ -29,13 +29,16 @@
     <p class="lead">A ligação de água e/ou esgoto está sujeita ao pagamento de valores, estes devem 
         ser orçados junto ao SAAE e podem ser pagos em parcela única ou em até 10 parcelas 
         ndo necessário, para a concessão da ligação, o pagamento da primeira parcela.</p>
-    {% else %}
+    {% elif e == 'N' %}
     <p class="lead">O seu terreno não possuí acesso à rede de coleta de esgoto do SAAE por isso recomendamos entrar em 
         contato com o mesmo para melhores informações. Existe também formas de tratamento individuais, confira na opção 
         OUTRAS FORMAS DE TRATAMENTO na página anterior.</p>        
+    {% else %} 
+    <p class="lead">O seu terreno não possuí informações sobre a rede de coleta de esgoto do SAAE de acordo com nosso banco de dados, por isso recomendamos entrar em 
+        contato com o mesmo para melhores informações. Existe também formas de tratamento individuais, confira na opção 
+        OUTRAS FORMAS DE TRATAMENTO na página anterior</p>       
     {% endif %}  
-            
-        
+                    
     <div><br>
         {% if l != "ZR" %}
         <a href="{% url 'dados:tela13' %}">

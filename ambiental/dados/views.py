@@ -159,6 +159,7 @@ def comprimento(area):
         if (c / l) >= 2 and (c / l) <= 4:
             comp.append(round(c, 2))
             larg.append(round(l, 2))
+       
     return comp, larg
 
 def calc_volume(pessoas):
@@ -182,6 +183,10 @@ def tela17(request):
 
     texto = ''
 
+    limite = 'N'
+    if int(pessoas) >= 4 and int(pessoas) <= 6:
+        limite = 'S'
+    
     if int(pessoas) <= 100:
         tanque = TSeptico.objects.get(num_pessoas=pessoas)
         volume = tanque.volume_util_M        
@@ -206,7 +211,7 @@ def tela17(request):
     c = zip(comp,larg)
     
 
-    return render(request, 'dados/tela17.html', {'vol_f':vol_f,'area_f':area_f,'diametro_f':diametro_f, 'texto':texto, 'c':c, 'pessoas':pessoas, 'volume':volume, 'profundidade':profundidade, 'diametro':diametro, 'area':area, 'comp':comp, 'larg':larg})
+    return render(request, 'dados/tela17.html', {'limite':limite,'vol_f':vol_f,'area_f':area_f,'diametro_f':diametro_f, 'texto':texto, 'c':c, 'pessoas':pessoas, 'volume':volume, 'profundidade':profundidade, 'diametro':diametro, 'area':area, 'comp':comp, 'larg':larg})
 
 
 

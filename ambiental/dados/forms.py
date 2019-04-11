@@ -5,8 +5,6 @@ from .models import Dados, Formulario
  
 def get_field(st):
     choices = ()
-    if st != 'bairro':
-        choices = (('ZRU', 'ZRU'),)
     for choice in Dados.objects.values(st).distinct().order_by(st):
         choices = choices + ((choice[st], choice[st]),)
     
