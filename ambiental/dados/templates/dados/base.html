@@ -23,7 +23,7 @@
         <!-- Custom styles for this template -->
         <link href="../../static/dados/bootstrap/css/freelancer.min.css" rel="stylesheet">
 
-        {% load staticfiles %}
+        {% load static %}
         <script src="{% static "js/jquery.js" %}"></script>
         <script src="{% static "js/rango-jquery.js" %}"></script>
         <!--<script type="text/javascript" src="{{ STATIC_URL }} /static/js/jquery.js">
@@ -38,7 +38,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
         <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Regulariza Viçosa - MG</a>
+        <a class="navbar-brand js-scroll-trigger" href="../../">Regulariza Viçosa - MG</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -46,13 +46,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../">Tela Inicial</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../sobre/">Sobre</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../">Sobre</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../">Contato</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../contato/">Contato</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
                 <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'dados:referencias' %}">Referências</a>

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% block title %}Página Inicial{% endblock %}
+{% block title %}Documentação SAAE{% endblock %}
    
 <div class="container">
     <br><br><br><br><br><br>
@@ -42,11 +42,11 @@
     <div><br>
         {% if l != "ZR" %}
         <a href="{% url 'dados:tela13' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% else %}
         <a href="{% url 'dados:tela8_1' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% endif %}  
     </div><br>

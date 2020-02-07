@@ -4,9 +4,10 @@ from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.utils import timezone
 from django.db.models import Q
-from .models import Dados, Formulario, TSeptico, Tanque, OpcaoForm, FiltroBAA
-from .forms import FirstForm, SecondForm, ThirdForm
+from .models import Dados, Formulario, FormularioCondVertical, TSeptico, Tanque, OpcaoForm, FiltroBAA
+from .forms import FirstForm, SecondForm, ThirdForm, CondVertForm
 import pylab as pl
+import numpy as np
 import math
 
 caminho = ""
@@ -14,6 +15,10 @@ caminho = ""
 def index(request):
 
     return render(request, 'dados/index.html', {})
+
+def tela_escolha(request):
+
+    return render(request, 'dados/tela_escolha.html', {})
 
 def tela2(request):
     
@@ -36,7 +41,7 @@ def tela3(request):
 
     return render(request, 'dados/tela3.html', {})
 
-def tela4(request):
+def tela_predio(request):
 
     if Formulario.objects.count() != 0:
         Formulario.objects.all().delete()
@@ -113,7 +118,253 @@ def tela4(request):
     else:
         form = FirstForm()
 
-    return render(request, 'dados/tela4.html', {'form': form})
+    return render(request, 'dados/tela_predio.html', {'form': form})
+
+def tela_casa(request):
+
+    if Formulario.objects.count() != 0:
+        Formulario.objects.all().delete()
+    
+    if request.method == 'POST':
+        
+        form = FirstForm(request.POST)
+       
+        if form.is_valid():            
+            bairro = form['bairro'].value()
+            nome = form['nome'].value()            
+            area = form['area'].value()
+            area_planta = form['area_planta'].value()
+            num_pav = form['num_pav'].value()
+            num_pessoas = form['num_pessoas'].value()    
+
+            if str(nome) == "ZR":
+                dado = Dados.objects.get(bairro=bairro, rua="ZR", nome="ZR")
+                f = Formulario(bairro=bairro, logradouro=nome, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+                f.save()
+                
+                return render(request, 'dados/tela8_1.html', {'dado':dado})
+
+            nomes = nome.split(" - ", 1)
+
+            f = Formulario(bairro=bairro, logradouro=nomes[0], nome=nomes[1], area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f.save()
+
+            dado = Dados.objects.get(bairro=bairro, rua=nomes[0], nome=nome) 
+
+            opcao = OpcaoForm.objects.get()
+            op = opcao.possui_construcao
+
+            if OpcaoForm.objects.count() != 0:
+                OpcaoForm.objects.all().delete()
+
+            opcao = OpcaoForm(possui_construcao=op, tela="4")
+            opcao.save()
+
+            if op != "":
+
+                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:                    
+                    return render(request, 'dados/tela8.html', {'opcao': opcao})
+                
+                elif int(num_pav) > dado.num_pav and float(area) < dado.area_min:
+                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
+                    para a zona que está localizado, o número máximo de pavimentos \
+                    para essa zona é " + str(dado.num_pav) + ". \
+                    A construção possui área menor que a exigida pela lei 1420/2000 \
+                    para a zona que está localizado, a área mínima para essa zona é \
+                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos."
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+
+                elif int(num_pav) > dado.num_pav:
+                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
+                    para a zona que está localizado, o número máximo de pavimentos \
+                    para essa zona é " + str(dado.num_pav) + ". Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos." 
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+                
+                elif float(area) < dado.area_min:
+                    v = "A construção possui área menor que a exigida pela lei 1420/2000 \
+                    para a zona que está localizado, a área mínima para essa zona é \
+                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos."
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+            else:
+                return render(request, 'dados/ta_regularizado.html', {})
+    
+    else:
+        form = FirstForm()
+
+    return render(request, 'dados/tela_casa.html', {'form': form})
+
+def tela_cond_horizontal(request):
+
+    if Formulario.objects.count() != 0:
+        Formulario.objects.all().delete()
+    
+    if request.method == 'POST':
+        
+        form = FirstForm(request.POST)
+       
+        if form.is_valid():            
+            bairro = form['bairro'].value()
+            nome = form['nome'].value()            
+            area = form['area'].value()
+            area_planta = form['area_planta'].value()
+            num_pav = form['num_pav'].value()
+            num_pessoas = form['num_pessoas'].value()    
+
+            if str(nome) == "ZR":
+                dado = Dados.objects.get(bairro=bairro, rua="ZR", nome="ZR")
+                f = Formulario(bairro=bairro, logradouro=nome, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+                f.save()
+                
+                return render(request, 'dados/tela8_1.html', {'dado':dado})
+
+            nomes = nome.split(" - ", 1)
+
+            f = Formulario(bairro=bairro, logradouro=nomes[0], nome=nomes[1], area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f.save()
+
+            dado = Dados.objects.get(bairro=bairro, rua=nomes[0], nome=nome) 
+
+            opcao = OpcaoForm.objects.get()
+            op = opcao.possui_construcao
+
+            if OpcaoForm.objects.count() != 0:
+                OpcaoForm.objects.all().delete()
+
+            opcao = OpcaoForm(possui_construcao=op, tela="4")
+            opcao.save()
+
+            if op != "":
+
+                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:                    
+                    return render(request, 'dados/tela8.html', {'opcao': opcao})
+                
+                elif int(num_pav) > dado.num_pav and float(area) < dado.area_min:
+                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
+                    para a zona que está localizado, o número máximo de pavimentos \
+                    para essa zona é " + str(dado.num_pav) + ". \
+                    A construção possui área menor que a exigida pela lei 1420/2000 \
+                    para a zona que está localizado, a área mínima para essa zona é \
+                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos."
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+
+                elif int(num_pav) > dado.num_pav:
+                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
+                    para a zona que está localizado, o número máximo de pavimentos \
+                    para essa zona é " + str(dado.num_pav) + ". Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos." 
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+                
+                elif float(area) < dado.area_min:
+                    v = "A construção possui área menor que a exigida pela lei 1420/2000 \
+                    para a zona que está localizado, a área mínima para essa zona é \
+                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos."
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+            else:
+                return render(request, 'dados/ta_regularizado.html', {})
+    
+    else:
+        form = FirstForm()
+
+    return render(request, 'dados/tela_cond_horizontal.html', {'form': form})
+
+def tela_cond_vertical(request):
+
+    if Formulario.objects.count() != 0:
+        Formulario.objects.all().delete()
+    
+    if request.method == 'POST':
+        
+        form = FirstForm(request.POST)
+        formCondVertical = CondVertForm(request.POST)
+
+        if formCondVertical.is_valid():
+            num_lotes = formCondVertical['num_lotes'].value()
+            num_predios = formCondVertical['num_predios'].value()
+
+            f = FormularioCondVertical(num_lotes=num_lotes, num_predios=num_predios)
+            f.save()
+       
+        if form.is_valid():            
+            bairro = form['bairro'].value()
+            nome = form['nome'].value()            
+            area = form['area'].value()
+            area_planta = form['area_planta'].value()
+            num_pav = form['num_pav'].value()
+            num_pessoas = form['num_pessoas'].value()    
+
+            if str(nome) == "ZR":
+                dado = Dados.objects.get(bairro=bairro, rua="ZR", nome="ZR")
+                f = Formulario(bairro=bairro, logradouro=nome, nome=nome, area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+                f.save()
+                
+                return render(request, 'dados/tela8_1.html', {'dado':dado})
+
+            nomes = nome.split(" - ", 1)
+
+            f = Formulario(bairro=bairro, logradouro=nomes[0], nome=nomes[1], area=area, area_planta=area_planta, num_pav=num_pav, num_pessoas=num_pessoas)
+            f.save()            
+
+            dado = Dados.objects.get(bairro=bairro, rua=nomes[0], nome=nome) 
+
+            opcao = OpcaoForm.objects.get()
+            op = opcao.possui_construcao
+
+            if OpcaoForm.objects.count() != 0:
+                OpcaoForm.objects.all().delete()
+
+            opcao = OpcaoForm(possui_construcao=op, tela="4")
+            opcao.save()
+
+            if op != "":
+
+                if int(num_pav) <= dado.num_pav and float(area) >= dado.area_min:                    
+                    return render(request, 'dados/tela8.html', {'opcao': opcao})
+                
+                elif int(num_pav) > dado.num_pav and float(area) < dado.area_min:
+                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
+                    para a zona que está localizado, o número máximo de pavimentos \
+                    para essa zona é " + str(dado.num_pav) + ". \
+                    A construção possui área menor que a exigida pela lei 1420/2000 \
+                    para a zona que está localizado, a área mínima para essa zona é \
+                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos."
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+
+                elif int(num_pav) > dado.num_pav:
+                    v = "A sua construção possui mais pavimentos do que o exigido pela lei 1420/2000 \
+                    para a zona que está localizado, o número máximo de pavimentos \
+                    para essa zona é " + str(dado.num_pav) + ". Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos." 
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+                
+                elif float(area) < dado.area_min:
+                    v = "A construção possui área menor que a exigida pela lei 1420/2000 \
+                    para a zona que está localizado, a área mínima para essa zona é \
+                    " + str(dado.area_min) + " metros quadrados. Em caso de dúvidas procure o IPLAM para\
+                    melhores esclarecimentos."
+
+                    return render(request, 'dados/naoehpossivel.html', {'value': v})
+            else:
+                return render(request, 'dados/ta_regularizado.html', {})
+    
+    else:
+        form = FirstForm()
+
+    return render(request, 'dados/tela_cond_vertical.html', {'form': form})
+
 
 def tela6(request):
     return render(request, 'dados/tela6.html', {})
@@ -154,7 +405,8 @@ def tela16(request):
 def comprimento(area):
     comp = []
     larg = []
-    for l in pl.frange(0.8, 100, 0.2):
+    for l in np.arange(0.8, 100, 0.2):
+        l = round(l, 1)    
         c = round((area / l),1)
         if (c / l) >= 2 and (c / l) <= 4:
             comp.append(round(c, 2))
@@ -477,3 +729,36 @@ def escolha_bairro(request):
 def referencias(request):
     
     return render(request, 'dados/referencias.html', {})
+
+def sobre(request):
+    
+    return render(request, 'dados/sobre.html', {})
+
+def contato(request):
+    
+    return render(request, 'dados/contato.html', {})
+
+def tela_alternativas(request):
+
+    return render(request, 'dados/tela_alternativas.html', {})
+
+def tela_alternativas_esgoto(request):
+
+    return render(request, 'dados/tela_alternativas_esgoto.html', {})
+
+def tela_alternativas_cap_agua(request):
+    volume = '__'
+    telhado = ''
+    if request.method == 'POST':
+        form = SecondForm(request.POST)
+        
+        if form.is_valid():
+            render(request, 'dados/tela_alternativas_cap_agua.html', {'form': form, 'v':volume})
+            telhado = float(form['telhado'].value())
+            volume = round( volume_captacao(telhado), 2 )
+
+    else:
+        form = SecondForm()
+
+    return render(request, 'dados/tela_alternativas_cap_agua.html', {'form': form, 'v':volume, 'telhado':telhado} )
+

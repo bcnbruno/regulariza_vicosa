@@ -19,6 +19,10 @@ class FirstForm(forms.Form):
     num_pav = forms.IntegerField(widget=forms.TextInput(attrs={'size': '20'}))
     num_pessoas = forms.IntegerField(widget=forms.TextInput(attrs={'size': '20'}))
 
+class CondVertForm(forms.Form):
+    num_lotes = forms.IntegerField(widget=forms.TextInput(attrs={'size': '20'}))
+    num_predios = forms.IntegerField(widget=forms.TextInput(attrs={'size': '20'}))
+
 class SecondForm(forms.Form):
     telhado = forms.FloatField()  
 

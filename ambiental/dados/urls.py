@@ -6,9 +6,13 @@ app_name = 'dados'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('tela_escolha/', views.tela_escolha, name='tela_escolha'),
     path('tela2/', views.tela2, name='tela2'),
     path('tela3/', views.tela3, name='tela3'),
-    path('tela4/', views.tela4, name='tela4'),
+    path('tela_predio/', views.tela_predio, name='tela_predio'),
+    path('tela_casa/', views.tela_casa, name='tela_casa'),
+    path('tela_cond_horizontal/', views.tela_cond_horizontal, name='tela_cond_horizontal'),
+    path('tela_cond_vertical/', views.tela_cond_vertical, name='tela_cond_vertical'),
     
     path('tela6/', views.tela6, name='tela6'),    
     path('tela8/', views.tela8, name='tela8'), 
@@ -21,6 +25,10 @@ urlpatterns = [
     path('tela16/', views.tela16, name='tela16'),
     path('tela17/', views.tela17, name='tela17'),
     path('tela18/', views.tela18, name='tela18'),
+
+    path('tela_alternativas/', views.tela_alternativas, name='tela_alternativas'),
+    path('tela_alternativas_esgoto/', views.tela_alternativas_esgoto, name='tela_alternativas_esgoto'),
+    path('tela_alternativas_cap_agua/', views.tela_alternativas_cap_agua, name='tela_alternativas_cap_agua'),
     
     path('regularizadosim/', views.regularizadosim, name='regularizadosim'),
     path('naoehpossivel/', views.naoehpossivel, name='naoehpossivel'),
@@ -56,5 +64,8 @@ urlpatterns = [
     path('emissao_a_lot/', views.emissao_a_lot, name='emissao_a_lot'),
     path('alvara_urb/', views.alvara_urb, name='alvara_urb'),
     path('referencias/', views.referencias, name='referencias'),
+    path('sobre/', views.sobre, name='sobre'),
+    path('contato/', views.contato, name='contato'),
+    
     url(r'ajax/escolha_bairro/$', views.escolha_bairro, name='escolha_bairro'),
 ]

@@ -47,6 +47,10 @@ class Formulario(models.Model):
     num_pav = models.IntegerField()
     num_pessoas = models.IntegerField()
 
+class FormularioCondVertical(models.Model):
+    num_lotes = models.IntegerField()
+    num_predios = models.IntegerField()
+
 class Tanque(models.Model):
     comprimento = models.FloatField()
     largura = models.FloatField()

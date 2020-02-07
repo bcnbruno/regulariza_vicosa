@@ -8,30 +8,22 @@
 <header class="masthead bg-primary text-white text-center">
     <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="../../static/dados/bootstrap/img/profile.png" alt="">
-        <h1 class="text-uppercase mb-0">Sistema de Regularização Ambiental</h1>
-        <br/><br/>
-        
-        <form action="/tela3/" method="post">
-        <div class="row">   
-            <div class="col-md-6 pt-2 pb-2">
+        <h1 style="font-size: 42pt;" class="text-uppercase mb-0">Sistema de Regularização Ambiental</h1>
+        <br/><br/><br/>
+        <form action="/tela_escolha/" method="post">
+            <div class="col-md pt-2 pb-2">
                 {% csrf_token %}
-                <input type="submit" name='0' value='Vou iniciar uma construção' class="btn btn-secondary btn-lg btn-block">     
-            </div>
-            <div class="col-md-6 pt-2 pb-2">
-                {% csrf_token %}
-                <input type="submit" name='1' value='Já tenho residencia no local' class="btn btn-secondary btn-lg btn-block">
-            </div>                                     
-        </div> 
-        </form>
-        
-    </div>
+                <input type="submit" name='0' value='Iniciar' class="btn btn-secondary btn-lg btn-block">     
+            </div> 
+        </form> 
+    </div>       
 </header>
 
 <div class="container">
 </div>
 <div class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>Copyright &copy; Your Website 2018</small>
+        <small>Copyright &copy; Your Website 2020</small>
     </div>
 </div>
 

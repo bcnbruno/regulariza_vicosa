@@ -1,0 +1,39 @@
+{% extends 'dados/base.html' %}
+
+{% block content %}
+
+{% block title %}Escolha{% endblock %}
+
+<!-- Option Grid Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <br/><br/>
+        <h1 class="js-scroll-trigger text-center">Escolha o que deseja fazer</h1>
+        
+        <br/><br/>
+        <form action="/tela3/" method="post">
+            <div class="row">   
+                <div class="col-md-6 pt-2 pb-2">
+                    {% csrf_token %}
+                    <input type="submit" name='0' value='Vou iniciar uma construção' class="btn btn-secondary btn-lg btn-block">     
+                </div>
+                <div class="col-md-6 pt-2 pb-2">
+                    {% csrf_token %}
+                    <input type="submit" name='1' value='Já tenho residencia no local' class="btn btn-secondary btn-lg btn-block">
+                </div>                                     
+            </div> 
+            </form>
+        <br/><br/>  
+        <a href="{% url 'dados:index' %}">
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
+        </a>        
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+
+
+       

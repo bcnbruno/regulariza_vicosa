@@ -18,26 +18,19 @@
         </div>
         
         <br/>
-        <form class="row">
-          <div class="col-md-6 pt-2 pb-2">
-              <a href="{% url 'dados:doc_saae' %}">
-                  <button type="button" class="btn btn-secondary btn-lg btn-block">Documentação para ligação na rede</button>  
-              </a>
-          </div>
-          <div class="col-md-6 pt-2 pb-2">
-              <a href="{% url 'dados:tela16' %}">
-                  <button type="button" class="btn btn-secondary btn-lg btn-block">Outras formas de tratamento</button>
-              </a>
-          </div>                
-        </form>
+        <div align="center">
+            <a href="{% url 'dados:doc_saae' %}">
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Documentação para ligação na rede</button>  
+            </a>
+        </div>  
         <br/><br/>  
         {% if l != "ZR" %}
         <a href="{% url 'dados:tela8' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% else %}
         <a href="{% url 'dados:tela8_1' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% endif %}       
     </div>

@@ -8,12 +8,12 @@
 <section class="predio" id="predio">
   <div class="container">
     <div class=" container text-left">
-        <p onClick="maisZRU()" class="btn btn-success">Aviso para zonas rurais</p>
+        <p style="background-color: #9a3333; border-color: #9a3333;" onClick="maisZRU()" class="btn btn-success">Aviso para zonas rurais</p>
     </div>            
     <div class="container">
     <h1 class="js-scroll-trigger text-center">Condomínio Vertical</h1>
     <br/><br/>            
-    <form class="row" action="/tela4/" method="post">
+    <form class="row" action="/tela_predio/" method="post">
         <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
             <label for="{{form.Bairro}}">Bairro</label><br>
             {% csrf_token %}
@@ -50,11 +50,11 @@
             {{form.num_pessoas}}
         </div>
         <div>
-                <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+                <button style="background-color: #09735e; border-color: #09735e;" type="submit" class="btn btn-primary btn-lg">Continuar</button>
         </div>
         <div>
             <a href="{% url 'dados:tela6' %}">
-                <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+                <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
             </a>
         </div>
                   

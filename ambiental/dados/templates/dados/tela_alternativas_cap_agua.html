@@ -6,6 +6,8 @@
    
     <div class="container">
         <br><br><br><br><br>
+
+        <h1 class="js-scroll-trigger text-center">Captação água da chuva</h1><br>
        
         <p class="lead">A captação de água da chuva é uma alternativa para o uso de ÁGUA 
             NÃO POTÁVEL, dentro das residências. Essa água pode ser utilizada para lavar o 
@@ -15,7 +17,7 @@
         <p class="lead">Para calcular a quantidade de água que pode ser captada no período 
             de um ano na sua residência, insira a área de telhado do local onde será instalado
             o sistema:</p>
-        <form class="row" action="/cap_agua_chuva/" method="post">
+        <form class="row" action="/tela_alternativas_cap_agua/" method="post">
             <div class="form-group col-md-4 col-md-3 pt-2 pb-2">
                     <label for="{{form.Bairro}}">Área do telhado (m<sup>2</sup>)</label><br>
                     {% csrf_token %}
@@ -825,7 +827,7 @@
         </ol>        
         <br><br><br>
         <div>
-            <a href="{% url 'dados:tela14' %}">
+            <a href="{% url 'dados:tela_alternativas' %}">
                 <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
             </a>
         </div><br>

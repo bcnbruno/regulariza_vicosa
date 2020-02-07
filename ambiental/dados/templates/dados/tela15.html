@@ -38,13 +38,11 @@
     
     <br/><br/>  
     {% if l != "ZR" %}
-    <a href="{% url 'dados:tela8' %}">
-        <button type="button" class="btn btn-danger btn-lg">Voltar</button>
-    </a>
+        <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg" onclick="history.back()">Voltar</button>
+    
     {% else %}
-    <a href="{% url 'dados:tela8_1' %}">
-        <button type="button" class="btn btn-danger btn-lg">Voltar</button>
-    </a>
+        <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg" onclick="history.back()">Voltar</button>
+    
     {% endif %}        
     </div>
 </section>

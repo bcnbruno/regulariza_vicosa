@@ -7,31 +7,39 @@
 <!-- Option Grid Section -->
 <section class="portfolio" id="portfolio">
     <div class="container">
-        <br/><br/>
-        <h1 class="js-scroll-trigger text-center">O que você deseja?</h1>
-        <br/><br/>
+        {% if opcao.possui_construcao == "Vou iniciar uma construção" %}
+            <br/><br/>
+            <h1 class="js-scroll-trigger text-center">Dicas ambientais</h1>
+            <br/><br/>
+        {% else %}
+            <br/><br/>
+            <h1 class="js-scroll-trigger text-center">Dicas ambientais</h1>
+            <br/><br/>
+        {% endif %}
         <form class="row">
+            
             <div class="col-md-4 pt-2 pb-2">
-                <a href="{% url 'dados:tela13' %}">
+                <a href="{% url 'dados:tela_alternativas_esgoto' %}">
                     <button type="button" class="btn btn-secondary btn-lg btn-block">Coleta e tratamento de esgotos</button>  
                 </a>
             </div>
             <div class="col-md-4 pt-2 pb-2">
-                <a href="{% url 'dados:tela14' %}">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Abasteciemento de água</button>
+                <a href="{% url 'dados:tela_alternativas_cap_agua' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Abastecimento de água</button>
                 </a>
             </div>
             <div class="col-md-4 pt-2 pb-2">
                 <a href="{% url 'dados:tela15' %}">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Autorização para corte de árvores</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Gerenciamento de resíduos sólidos</button>
                 </a>
             </div>      
             
         </form>
-        <br/><br/>
-        <a href="{% url 'dados:tela3' %}">
+        <br/><br/>  
+        <a href="{% url 'dados:tela8' %}">
             <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
-        </a>        
+        </a>   
+        <br/><br/>   
     </div>
 </section>
 

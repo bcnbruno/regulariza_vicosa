@@ -21,7 +21,7 @@
             Em Viçosa, o órgão ambiental responsável é o IPLAM localizado na Rua Dr. Milton Bandeira, nº 380, Viçosa Shopping - 3º piso, Centro Telefone: (31) 3892-4360.
         </p>
 
-        <button onClick="maisAPPS()" class="btn btn-success">Clique aqui para saber mais sobre as APPs!</button>
+        <button style="background-color: #9a3333; border-color: #9a3333;" onClick="maisAPPS()" class="btn btn-success">Clique aqui para saber mais sobre as APPs!</button>
 
         <br><br>
         <p class="lead">Os documentos a serem requisitados no IPLAM também podem ser obtidos no 
@@ -73,11 +73,11 @@
     <div>
         {% if l != "ZR" %}
         <a href="{% url 'dados:tela8' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% else %}
         <a href="{% url 'dados:tela8_1' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% endif %}
     </div><br>

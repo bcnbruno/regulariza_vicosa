@@ -27,18 +27,28 @@
                     <button type="button" class="btn btn-secondary btn-lg btn-block">Coleta e tratamento de esgotos</button>  
                 </a>
             </div>
-            <div class="col-md-6 pt-2 pb-2">
+            <div class="col-md-4 pt-2 pb-2">
                 <a href="{% url 'dados:tela14' %}">
                     <button type="button" class="btn btn-secondary btn-lg btn-block">Abastecimento de água</button>
                 </a>
             </div>
-            <div class="col-md-6 pt-2 pb-2">
+            <div class="col-md-4 pt-2 pb-2">
                 <a href="{% url 'dados:tela15' %}">
                     <button type="button" class="btn btn-secondary btn-lg btn-block">Gerenciamento de resíduos sólidos</button>
                 </a>
             </div>      
-            
+            <div class="col-md-4 pt-2 pb-2">
+                <a href="{% url 'dados:tela_alternativas' %}">
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Outras alternativas</button>
+                </a>
+            </div>            
         </form>
+        <div>
+            <br><br>
+            <a href="{% url 'dados:tela3' %}">
+                <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
+            </a>
+        </div>
         <br/><br/>      
     </div>
 </section>

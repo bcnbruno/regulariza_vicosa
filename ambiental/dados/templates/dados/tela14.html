@@ -8,20 +8,15 @@
 <section class="portfolio" id="portfolio">
     <div class="container">
     <br/><br/>
-    <h1 class="js-scroll-trigger text-center">Formas de abasteciemento</h1>
+    <h1 class="js-scroll-trigger text-center">Formas de abastecimento</h1>
     <br/>
     <form class="row">
-    <div class="col-md-4 pt-2 pb-2">
-        <a href="{% url 'dados:cap_agua_chuva' %}">
-            <button type="button" class="btn btn-secondary btn-lg btn-block">Captação de água da chuva</button>  
-        </a>
-    </div>                     
-    <div class="col-md-4 pt-2 pb-2">
+    <div class="col-md-6 pt-2 pb-2">
         <a href="{% url 'dados:doc_saae_2' %}">
             <button type="button" class="btn btn-secondary btn-lg btn-block">Documentação para ligação na rede</button>  
         </a>
     </div>
-    <div class="col-md-4 pt-2 pb-2">
+    <div class="col-md-6 pt-2 pb-2">
         <a href="{% url 'dados:pocos' %}">
             <button type="button" class="btn btn-secondary btn-lg btn-block">Através de poços</button>  
         </a>
@@ -31,11 +26,11 @@
     <br/><br/>  
         {% if l != "ZR" %}
         <a href="{% url 'dados:tela8' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% else %}
         <a href="{% url 'dados:tela8_1' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
+            <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
         </a>
         {% endif %}     
     </div>

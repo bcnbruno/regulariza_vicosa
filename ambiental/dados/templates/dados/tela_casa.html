@@ -2,28 +2,26 @@
 
 {% block content %}
 
-{% block title %}Construção de prédio{% endblock %}
-<style>
-attrs={'style': 'width:10px'}
-</style>
+{% block title %}Construção de casa{% endblock %}
+
 <!-- Grid Section -->
 <section class="predio" id="predio">
     <br>
     <div class=" container text-left">
-        <p onClick="maisZRU()" class="btn btn-success">Aviso para zonas rurais</p>
+        <p style="background-color: #9a3333; border-color: #9a3333;" onClick="maisZRU()" class="btn btn-success">Aviso para zonas rurais</p>
     </div>            
     <div class="container">
     
-    <h1 class="js-scroll-trigger text-center">Prédio</h1>
+    <h1 class="js-scroll-trigger text-center">Casa</h1>
     <br><br>
-    <form class="row" action="/tela4/" method="post">    
+    <form class="row" action="/tela_predio/" method="post">    
         <div class="form-group col-md-6 col-md-4 pt-2 pb-2">
-            <label for="{{form.Bairro}}">Bairro</label><br><br>
+            <label for="{{form.Bairro}}">Bairro</label><br>
             {% csrf_token %}
             {{ form.bairro }}            
         </div>   
         <div class="form-group col-md-6 col-md-4 pt-2 pb-2">
-            <label for="{{form.Nome}}">Nome</label><br><br>
+            <label for="{{form.Nome}}">Nome</label><br>
             {% csrf_token %}
             {{ form.nome }}            
         </div>        
@@ -43,20 +41,21 @@ attrs={'style': 'width:10px'}
             {{form.num_pav}}
         </div>
         <div class="form-group col-md-2 col-md-3 pt-2 pb-2">
-            <label for="{{form.Num_pessoas}}"> Número de pessoas no prédio</label><br><br>
+            <label for="{{form.Num_pessoas}}"> Número de pessoas na casa</label><br><br>
             {% csrf_token %}
             {{form.num_pessoas}}
+        </div>     
+        <div style="margin-right: 5px;padding-left: 15px;">
+            <br>
+            <button style="background-color: #09735e; border-color: #09735e;" type="submit" class="btn btn-primary btn-lg">Continuar</button>
         </div>
-        
         <div>
-            <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
-        </div>
-        <div>
-        <a href="{% url 'dados:tela3' %}">
-            <button type="button" class="btn btn-danger btn-lg">Voltar</button>
-        </a>
-        </div>        
-    </form>
+            <br>
+            <a href="{% url 'dados:tela3' %}">
+                <button style="background-color: #9a3333; border-color: #9a3333;" type="button" class="btn btn-danger btn-lg">Voltar</button>
+            </a>
+        </div>                   
+    </form>    
     <br/><br>
     <div>    
   </div>
